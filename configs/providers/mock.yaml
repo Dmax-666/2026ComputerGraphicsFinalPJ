@@ -1,0 +1,13 @@
+name: mock
+description: Offline provider for tests and demos.
+
+models:
+  planner:
+    provider: mock
+    model: mock-planner
+  critic:
+    provider: mock
+    model: mock-vision-critic
+  image:
+    provider: mock
+    model: mock-image-generator

@@ -1,0 +1,52 @@
+name: story_comic
+description: Generate a one-page comic from a short story.
+workflow: visual_composition
+
+models:
+  planner:
+    provider: mock
+    model: mock-planner
+  critic:
+    provider: mock
+    model: mock-vision-critic
+  image:
+    provider: mock
+    model: mock-image-generator
+
+agents:
+  - planner
+  - style_director
+  - image_generator
+  - critic
+  - revision_controller
+
+assets:
+  types:
+    - character_reference
+    - panel
+    - speech_bubble
+  default_panel_count: 4
+  panel_count_range: [4, 8]
+
+render:
+  type: comic_page
+  page_size: [1600, 2400]
+  margin: 80
+  gutter: 32
+  background: "#f8f3e8"
+  text_rendering: postprocess
+
+revision:
+  max_rounds: 3
+  retry_budget_per_asset: 2
+  quality_threshold: 0.75
+
+evaluators:
+  - narrative_consistency
+  - character_consistency
+  - text_layout_quality
+
+outputs:
+  save_intermediate: true
+  save_final_image: true
+  save_report: true

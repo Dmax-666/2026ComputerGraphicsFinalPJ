@@ -1,0 +1,17 @@
+name: openai_compatible
+description: Template for OpenAI-compatible LLM, VLM, and image generation APIs.
+
+env:
+  api_key: OPENAI_API_KEY
+  base_url: OPENAI_BASE_URL
+
+models:
+  planner:
+    provider: openai_compatible
+    model: gpt-5
+  critic:
+    provider: openai_compatible
+    model: gpt-5-v
+  image:
+    provider: openai_compatible
+    model: gpt-image-2

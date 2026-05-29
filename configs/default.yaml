@@ -1,0 +1,10 @@
+project:
+  name: graphic-agent
+  output_root: outputs
+
+runtime:
+  save_intermediate: true
+  fail_fast: false
+
+providers:
+  default: mock

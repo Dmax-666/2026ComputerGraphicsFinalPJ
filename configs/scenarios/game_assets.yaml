@@ -1,0 +1,52 @@
+name: game_assets
+description: Generate a consistent 2D game asset pack from a design document.
+workflow: visual_asset_pack
+
+models:
+  planner:
+    provider: mock
+    model: mock-planner
+  critic:
+    provider: mock
+    model: mock-vision-critic
+  image:
+    provider: mock
+    model: mock-image-generator
+
+agents:
+  - planner
+  - style_director
+  - image_generator
+  - critic
+  - revision_controller
+
+assets:
+  categories:
+    - characters
+    - environments
+    - props
+    - icons
+    - ui_elements
+  assets_per_category: 2
+
+render:
+  type: asset_sheet
+  page_size: [1800, 1600]
+  margin: 72
+  gutter: 28
+  background: "#101820"
+
+revision:
+  max_rounds: 3
+  retry_budget_per_asset: 2
+  quality_threshold: 0.8
+
+evaluators:
+  - style_consistency
+  - asset_completeness
+  - category_coverage
+
+outputs:
+  save_intermediate: true
+  save_final_image: true
+  save_report: true
