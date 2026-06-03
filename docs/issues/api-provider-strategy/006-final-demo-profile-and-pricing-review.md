@@ -14,16 +14,15 @@ This slice is HITL because it involves current pricing, billing access, API key 
 
 ## Acceptance criteria
 
-- [ ] Pricing is refreshed against official provider pages and the checked date is recorded.
+- [x] Pricing is refreshed against official provider pages and the checked date is recorded.
 - [ ] The team chooses one primary final-demo provider profile and one fallback profile.
 - [ ] The team confirms who owns API key setup and that keys will remain outside the repository.
 - [ ] The team selects which scenario outputs should be generated with real image models.
-- [ ] The final demo budget includes baseline cost and retry-buffer cost.
-- [ ] The final report explains why mock remains the reproducible baseline even when real images are shown.
+- [x] The final demo budget includes baseline cost and retry-buffer cost.
+- [x] The final report explains why mock remains the reproducible baseline even when real images are shown.
 
 ## Blocked by
 
 - Issue 1: Provider Profile Resolution.
 - Issue 2: Pre-run API Budget Estimate.
 - Issue 5: OpenAI-compatible Real-provider Tracer Path.
-

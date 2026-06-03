@@ -14,14 +14,13 @@ The completed slice should allow the mock profile, OpenAI-compatible profile, Go
 
 ## Acceptance criteria
 
-- [ ] A provider profile can define planner, critic, and image generator model roles independently.
-- [ ] Unknown providers, missing role mappings, and missing model versions fail with clear validation errors.
-- [ ] Mock remains the default provider profile for tests and no-key demos.
-- [ ] Provider profiles can pin pricing source dates and supplier-specific caveats.
-- [ ] Configuration tests cover the mock profile and at least one real-provider profile.
-- [ ] Documentation explains how a scenario selects a provider profile without embedding API keys.
+- [x] A provider profile can define planner, critic, and image generator model roles independently.
+- [x] Unknown providers, missing role mappings, and missing model versions fail with clear validation errors.
+- [x] Mock remains the default provider profile for tests and no-key demos.
+- [x] Provider profiles can pin pricing source dates and supplier-specific caveats.
+- [x] Configuration tests cover the mock profile and at least one real-provider profile.
+- [x] Documentation explains how a scenario selects a provider profile without embedding API keys.
 
 ## Blocked by
 
 None - can start immediately.
-

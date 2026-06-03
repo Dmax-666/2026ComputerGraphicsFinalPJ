@@ -14,14 +14,13 @@ The completed slice should protect secrets, keep tests offline, and make failed 
 
 ## Acceptance criteria
 
-- [ ] Real provider profiles declare required environment variable names for credentials.
-- [ ] Missing API keys produce clear structured errors before paid calls are attempted.
-- [ ] Provider call failures are captured in reports with provider, role, model, and failure reason.
-- [ ] No real API keys are written to reports, logs, fixtures, or committed files.
-- [ ] Real-provider tests are opt-in and skipped unless the relevant API key is present.
-- [ ] Offline tests cover missing-key and provider-error behavior with fake providers.
+- [x] Real provider profiles declare required environment variable names for credentials.
+- [x] Missing API keys produce clear structured errors before paid calls are attempted.
+- [x] Provider call failures are captured in reports with provider, role, model, and failure reason.
+- [x] No real API keys are written to reports, logs, fixtures, or committed files.
+- [x] Real-provider tests are opt-in and skipped unless the relevant API key is present.
+- [x] Offline tests cover missing-key and provider-error behavior with fake providers.
 
 ## Blocked by
 
 Issue 1: Provider Profile Resolution.
-

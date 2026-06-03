@@ -14,16 +14,15 @@ The completed slice should support an optional real-provider run for at least on
 
 ## Acceptance criteria
 
-- [ ] Planner, critic, and image generator roles can resolve to OpenAI-compatible model settings.
-- [ ] The real-provider path returns structured pipeline objects rather than passing free-form text between stages.
-- [ ] At least one existing scenario can run through the OpenAI-compatible path when a valid key is present.
-- [ ] The same report files are produced in mock mode and OpenAI-compatible mode.
-- [ ] Tests use fake transports or skipped opt-in smoke tests, not mandatory paid calls.
-- [ ] Documentation states that real-provider mode is optional and mock remains the stable demo path.
+- [x] Planner, critic, and image generator roles can resolve to OpenAI-compatible model settings.
+- [x] The real-provider path returns structured pipeline objects rather than passing free-form text between stages.
+- [x] At least one existing scenario can run through the OpenAI-compatible path when a valid key is present.
+- [x] The same report files are produced in mock mode and OpenAI-compatible mode.
+- [x] Tests use fake transports or skipped opt-in smoke tests, not mandatory paid calls.
+- [x] Documentation states that real-provider mode is optional and mock remains the stable demo path.
 
 ## Blocked by
 
 - Issue 1: Provider Profile Resolution.
 - Issue 3: Actual Provider Usage in CostSummary.
 - Issue 4: Provider Key and Failure Handling.
-
