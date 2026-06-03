@@ -8,6 +8,7 @@ from graphic_agent.schemas import (
     ProviderUsage,
     RunBudgetEstimate,
     ScenarioConfig,
+    SuiteBudgetEstimate,
 )
 
 
@@ -40,6 +41,37 @@ def estimate_run_budget(
         },
         baseline_total_usd=round(baseline_total, 6),
         with_retry_buffer_usd=round(baseline_total + retry_buffer_cost, 6),
+    )
+
+
+def combine_suite_estimates(
+    suite_name: str,
+    provider_profile: ProviderProfile,
+    task_estimates: list[tuple[str, RunBudgetEstimate]],
+) -> SuiteBudgetEstimate:
+    """Combine per-task budget estimates into one suite estimate."""
+
+    task_rows = [
+        {
+            "name": task_name,
+            "planned_assets": estimate.planned_asset_count,
+            "retry_buffer_assets": estimate.retry_buffer_asset_count,
+            "baseline_total_usd": estimate.baseline_total_usd,
+            "with_retry_buffer_usd": estimate.with_retry_buffer_usd,
+        }
+        for task_name, estimate in task_estimates
+    ]
+    return SuiteBudgetEstimate(
+        suite_name=suite_name,
+        provider_profile=provider_profile.name,
+        task_estimates=task_rows,
+        total_planned_assets=sum(row["planned_assets"] for row in task_rows),
+        total_retry_buffer_assets=sum(row["retry_buffer_assets"] for row in task_rows),
+        baseline_total_usd=round(sum(row["baseline_total_usd"] for row in task_rows), 6),
+        with_retry_buffer_usd=round(
+            sum(row["with_retry_buffer_usd"] for row in task_rows),
+            6,
+        ),
     )
 
 

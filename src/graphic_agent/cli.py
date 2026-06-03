@@ -9,8 +9,8 @@ from rich.table import Table
 
 from graphic_agent.agents.planner import Planner
 from graphic_agent.agents.style_director import StyleDirector
-from graphic_agent.config import load_provider_profile, load_scenario, load_task
-from graphic_agent.costing import estimate_run_budget
+from graphic_agent.config import load_demo_suite, load_provider_profile, load_scenario, load_task
+from graphic_agent.costing import combine_suite_estimates, estimate_run_budget
 from graphic_agent.pipeline import GraphicAgentPipeline
 from graphic_agent.provider_runtime import validate_provider_environment
 
@@ -152,6 +152,81 @@ def estimate(
     table.add_row("With Retry Buffer", str(estimate_result.with_retry_buffer_usd))
     for name, value in estimate_result.components.items():
         table.add_row(name, str(value))
+    console.print(table)
+
+
+@app.command("estimate-suite")
+def estimate_suite(
+    suite: Annotated[
+        Path,
+        typer.Option(
+            "--suite",
+            exists=True,
+            dir_okay=False,
+            readable=True,
+            help="Path to a demo suite YAML file.",
+        ),
+    ],
+    provider_profile: Annotated[
+        Path,
+        typer.Option(
+            "--provider-profile",
+            exists=True,
+            dir_okay=False,
+            readable=True,
+            help="Provider profile YAML used for suite budget estimates.",
+        ),
+    ],
+) -> None:
+    """Estimate total API budget for a demo suite without provider calls."""
+
+    suite_config = load_demo_suite(suite)
+    suite_root = suite.resolve().parent.parent
+    profile_config = load_provider_profile(provider_profile)
+    planner = Planner()
+    style_director = StyleDirector()
+    task_estimates = []
+
+    for suite_task in suite_config.tasks:
+        scenario_config = load_scenario(suite_root / suite_task.scenario)
+        task = load_task(suite_root / suite_task.input)
+        style_guide = style_director.create_style_guide(task, scenario_config)
+        planned_assets = planner.plan(task, scenario_config, style_guide)
+        task_estimates.append(
+            (
+                suite_task.name,
+                estimate_run_budget(
+                    scenario_config,
+                    profile_config,
+                    planned_asset_count=len(planned_assets),
+                ),
+            )
+        )
+
+    suite_estimate = combine_suite_estimates(
+        suite_config.name,
+        profile_config,
+        task_estimates,
+    )
+
+    table = Table(title="Graphic Agent Suite Budget Estimate")
+    table.add_column("Field", style="cyan")
+    table.add_column("Value", style="green")
+    table.add_row("Suite", suite_estimate.suite_name)
+    table.add_row("Provider Profile", suite_estimate.provider_profile)
+    table.add_row("Total Assets", str(suite_estimate.total_planned_assets))
+    table.add_row("Retry Buffer Assets", str(suite_estimate.total_retry_buffer_assets))
+    table.add_row("Baseline Total", str(suite_estimate.baseline_total_usd))
+    table.add_row("With Retry Buffer", str(suite_estimate.with_retry_buffer_usd))
+    for row in suite_estimate.task_estimates:
+        table.add_row(
+            str(row["name"]),
+            (
+                f"{row['planned_assets']} assets, "
+                f"${row['baseline_total_usd']} baseline, "
+                f"${row['with_retry_buffer_usd']} with retry"
+            ),
+        )
     console.print(table)
 
 

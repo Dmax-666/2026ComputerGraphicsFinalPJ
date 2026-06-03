@@ -3,7 +3,7 @@
 from pathlib import Path
 from typing import Any
 
-from graphic_agent.schemas import ProviderProfile, ScenarioConfig, VisualTask
+from graphic_agent.schemas import DemoSuiteConfig, ProviderProfile, ScenarioConfig, VisualTask
 
 
 def _load_yaml_library():
@@ -40,6 +40,12 @@ def load_provider_profile(path: Path | str) -> ProviderProfile:
     """Load and validate a provider profile config."""
 
     return ProviderProfile(**load_yaml(path))
+
+
+def load_demo_suite(path: Path | str) -> DemoSuiteConfig:
+    """Load and validate a demo suite config."""
+
+    return DemoSuiteConfig(**load_yaml(path))
 
 
 def resolve_provider_profile(name: str, providers_dir: Path | str) -> ProviderProfile:

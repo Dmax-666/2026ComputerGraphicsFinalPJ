@@ -116,6 +116,28 @@ class VisualTask(BaseModel):
         return cls(**payload)
 
 
+class DemoSuiteTask(BaseModel):
+    """One scenario/input pair included in a demo suite."""
+
+    name: str
+    scenario: str
+    input: str
+
+
+class DemoSuiteConfig(BaseModel):
+    """A named set of demo tasks used for presentation budget planning."""
+
+    name: str
+    description: str = ""
+    tasks: list[DemoSuiteTask] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def validate_tasks(self) -> "DemoSuiteConfig":
+        if not self.tasks:
+            raise ValueError("DemoSuiteConfig requires at least one task.")
+        return self
+
+
 class StyleGuide(BaseModel):
     """Reusable style memory shared by all generated assets."""
 
@@ -295,6 +317,18 @@ class RunBudgetEstimate(BaseModel):
     planned_asset_count: int
     retry_buffer_asset_count: int
     components: dict[str, float] = Field(default_factory=dict)
+    baseline_total_usd: float = 0.0
+    with_retry_buffer_usd: float = 0.0
+
+
+class SuiteBudgetEstimate(BaseModel):
+    """Pre-run budget estimate for a named demo suite."""
+
+    suite_name: str
+    provider_profile: str
+    task_estimates: list[dict[str, Any]] = Field(default_factory=list)
+    total_planned_assets: int = 0
+    total_retry_buffer_assets: int = 0
     baseline_total_usd: float = 0.0
     with_retry_buffer_usd: float = 0.0
 

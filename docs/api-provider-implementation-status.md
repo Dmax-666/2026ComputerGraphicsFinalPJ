@@ -46,6 +46,14 @@ graphic-agent estimate \
   --provider-profile configs/providers/openai_compatible.yaml
 ```
 
+Estimate the full final demo suite:
+
+```bash
+graphic-agent estimate-suite \
+  --suite configs/demo_suite.yaml \
+  --provider-profile configs/providers/openai_compatible.yaml
+```
+
 Check provider environment safely:
 
 ```bash

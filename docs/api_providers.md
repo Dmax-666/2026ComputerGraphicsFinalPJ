@@ -42,6 +42,14 @@ graphic-agent estimate \
 
 Omitting `--provider-profile` estimates the default mock profile and should report zero API spend.
 
+Estimate all final demo scenarios together:
+
+```bash
+graphic-agent estimate-suite \
+  --suite configs/demo_suite.yaml \
+  --provider-profile configs/providers/openai_compatible.yaml
+```
+
 Before a presentation, run the local readiness gate:
 
 ```bash

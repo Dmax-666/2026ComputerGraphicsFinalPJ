@@ -73,9 +73,8 @@ Baseline asset counts before retries:
 Use the CLI estimate command before any paid run:
 
 ```bash
-graphic-agent estimate \
-  --scenario configs/scenarios/story_comic.yaml \
-  --input examples/story_comic_robot_cat.yaml \
+graphic-agent estimate-suite \
+  --suite configs/demo_suite.yaml \
   --provider-profile configs/providers/openai_compatible.yaml
 ```
 

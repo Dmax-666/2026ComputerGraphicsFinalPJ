@@ -137,3 +137,28 @@ def test_demo_readiness_does_not_run_real_provider_when_env_missing(tmp_path: Pa
     assert "missing environment" in result.stdout.lower()
     assert "OPENAI_API_KEY" in result.stdout
     assert not (tmp_path / "real/reports/result.json").exists()
+
+
+def test_estimate_suite_reports_three_demo_total() -> None:
+    runner = CliRunner()
+
+    result = runner.invoke(
+        app,
+        [
+            "estimate-suite",
+            "--suite",
+            str(ROOT / "configs/demo_suite.yaml"),
+            "--provider-profile",
+            str(ROOT / "configs/providers/openai_compatible.yaml"),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "final_demo_suite" in result.stdout
+    assert "Total Assets" in result.stdout
+    assert "23" in result.stdout
+    assert "story_comic" in result.stdout
+    assert "game_assets" in result.stdout
+    assert "concept_art_board" in result.stdout
+    assert "1.237" in result.stdout
+    assert "3.251" in result.stdout

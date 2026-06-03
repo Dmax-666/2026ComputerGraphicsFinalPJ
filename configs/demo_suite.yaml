@@ -1,0 +1,12 @@
+name: final_demo_suite
+description: Final presentation demo suite for API budget planning.
+tasks:
+  - name: story_comic
+    scenario: configs/scenarios/story_comic.yaml
+    input: examples/story_comic_robot_cat.yaml
+  - name: game_assets
+    scenario: configs/scenarios/game_assets.yaml
+    input: examples/game_assets_fantasy_rpg.yaml
+  - name: concept_art_board
+    scenario: configs/scenarios/concept_art_board.yaml
+    input: examples/concept_art_cyberpunk_hero.yaml
