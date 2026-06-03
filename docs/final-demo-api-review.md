@@ -70,10 +70,13 @@ Baseline asset counts before retries:
 - Concept Art Board: 8 images
 - Total: 23 images
 
-Use `estimate_run_budget` before any paid run:
+Use the CLI estimate command before any paid run:
 
 ```bash
-python -m pytest tests/test_costing.py -q
+graphic-agent estimate \
+  --scenario configs/scenarios/story_comic.yaml \
+  --input examples/story_comic_robot_cat.yaml \
+  --provider-profile configs/providers/openai_compatible.yaml
 ```
 
 Recommended working budget:
