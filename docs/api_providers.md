@@ -54,3 +54,17 @@ pricing:
   source_url: "https://developers.openai.com/api/docs/pricing"
 ```
 
+## Pre-run Budget Estimates
+
+Use `estimate_run_budget` before a real-provider run to show expected API spend without calling external services.
+
+```python
+from graphic_agent.config import load_provider_profile, load_scenario
+from graphic_agent.costing import estimate_run_budget
+
+scenario = load_scenario("configs/scenarios/story_comic.yaml")
+profile = load_provider_profile("configs/providers/openai_compatible.yaml")
+estimate = estimate_run_budget(scenario, profile, planned_asset_count=5)
+```
+
+The estimate reports planner, critic, image generation, and retry-buffer components. Mock estimates remain zero-cost.

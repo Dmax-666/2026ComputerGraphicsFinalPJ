@@ -7,6 +7,10 @@ env:
 pricing:
   source_checked_at: "2026-06-03"
   source_url: "https://www.alibabacloud.com/help/en/model-studio/models"
+  assumptions:
+    planner_call_usd: 0.001
+    critic_call_usd: 0.003
+    image_generation_usd: 0.03
   estimated_all_demo_usd:
     qwen_image_plus: 0.70
 

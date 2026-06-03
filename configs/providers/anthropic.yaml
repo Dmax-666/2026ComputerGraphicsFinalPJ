@@ -8,6 +8,10 @@ pricing:
   source_checked_at: "2026-06-03"
   source_url: "https://platform.claude.com/docs/en/about-claude/pricing"
   notes: "Text and vision profile; image generation must come from another provider."
+  assumptions:
+    planner_call_usd: 0.003
+    critic_call_usd: 0.006
+    image_generation_usd: 0.0
 
 models:
   planner:

@@ -8,6 +8,10 @@ pricing:
   source_checked_at: "2026-06-03"
   source_url: "https://api-docs.deepseek.com/quick_start/pricing"
   notes: "Text-only profile; image generation must come from another provider."
+  assumptions:
+    planner_call_usd: 0.001
+    critic_call_usd: 0.0
+    image_generation_usd: 0.0
 
 models:
   planner:

@@ -4,6 +4,10 @@ description: Offline provider for tests and demos.
 pricing:
   source_checked_at: "2026-06-03"
   notes: "Offline mock provider; no API cost."
+  assumptions:
+    planner_call_usd: 0.0
+    critic_call_usd: 0.0
+    image_generation_usd: 0.0
 
 models:
   planner:

@@ -8,6 +8,10 @@ env:
 pricing:
   source_checked_at: "2026-06-03"
   source_url: "https://developers.openai.com/api/docs/pricing"
+  assumptions:
+    planner_call_usd: 0.002
+    critic_call_usd: 0.004
+    image_generation_usd: 0.053
   estimated_all_demo_usd:
     image_medium: 1.28
     image_high: 4.91

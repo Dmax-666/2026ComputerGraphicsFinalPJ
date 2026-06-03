@@ -261,6 +261,17 @@ class CostSummary(BaseModel):
     """How many generation attempts each asset required (asset_id -> count)."""
 
 
+class RunBudgetEstimate(BaseModel):
+    """Pre-run API budget estimate derived from provider profile assumptions."""
+
+    provider_profile: str
+    planned_asset_count: int
+    retry_buffer_asset_count: int
+    components: dict[str, float] = Field(default_factory=dict)
+    baseline_total_usd: float = 0.0
+    with_retry_buffer_usd: float = 0.0
+
+
 class PipelineResult(BaseModel):
     """Serializable result of one full pipeline run."""
 
