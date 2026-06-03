@@ -7,7 +7,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from graphic_agent.config import load_scenario, load_task
+from graphic_agent.config import load_provider_profile, load_scenario, load_task
 from graphic_agent.pipeline import GraphicAgentPipeline
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
@@ -52,12 +52,23 @@ def run(
             help="Output directory for generated artifacts.",
         ),
     ],
+    provider_profile: Annotated[
+        Path | None,
+        typer.Option(
+            "--provider-profile",
+            exists=True,
+            dir_okay=False,
+            readable=True,
+            help="Optional provider profile YAML. Defaults to mock when omitted.",
+        ),
+    ] = None,
 ) -> None:
     """Run a configured visual generation scenario."""
 
     scenario_config = load_scenario(scenario)
+    profile_config = load_provider_profile(provider_profile) if provider_profile else None
     task = load_task(input_path)
-    pipeline = GraphicAgentPipeline(scenario_config, output)
+    pipeline = GraphicAgentPipeline(scenario_config, output, provider_profile=profile_config)
     result = pipeline.run(task)
 
     table = Table(title="Graphic Agent Run")
@@ -68,6 +79,7 @@ def run(
     table.add_row("Assets", str(len(result.generated_assets)))
     table.add_row("Score", str(result.critique.score))
     table.add_row("Decision", result.revision.action)
+    table.add_row("Provider Profile", profile_config.name if profile_config else "mock")
     table.add_row("Final Image", result.final_image)
     console.print(table)
 

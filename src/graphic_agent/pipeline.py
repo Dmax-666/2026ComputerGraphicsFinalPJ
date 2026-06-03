@@ -14,25 +14,39 @@ from graphic_agent.schemas import (
     CostSummary,
     GeneratedAsset,
     PipelineResult,
+    ProviderProfile,
     ScenarioConfig,
     VisualTask,
 )
 from graphic_agent.tools.image_gen import MockImageGenerator
+from graphic_agent.tools.openai_compatible import build_openai_compatible_image_generator
 from graphic_agent.tools.storage import RunStorage
 
 
 class GraphicAgentPipeline:
     """Run one scenario with one task input."""
 
-    def __init__(self, scenario: ScenarioConfig, output_dir: Path | str) -> None:
+    def __init__(
+        self,
+        scenario: ScenarioConfig,
+        output_dir: Path | str,
+        provider_profile: ProviderProfile | None = None,
+        image_generator=None,
+    ) -> None:
         self.scenario = scenario
+        self.provider_profile = provider_profile
         self.storage = RunStorage(output_dir)
         self.style_director = StyleDirector()
         self.planner = Planner()
-        self.image_generator = MockImageGenerator()
+        self.image_generator = image_generator or self._build_image_generator(provider_profile)
         self.critic = VisionCritic()
         self.revision_controller = RevisionController()
         self.renderer = get_renderer(scenario.render.type)
+
+    def _build_image_generator(self, provider_profile: ProviderProfile | None):
+        if provider_profile and provider_profile.name == "openai_compatible":
+            return build_openai_compatible_image_generator(provider_profile)
+        return MockImageGenerator()
 
     def run(self, task: VisualTask) -> PipelineResult:
         self.storage.prepare()

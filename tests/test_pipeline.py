@@ -2,10 +2,55 @@
 
 from pathlib import Path
 
-from graphic_agent.config import load_scenario, load_task
+from PIL import Image
+
+from graphic_agent.config import load_provider_profile, load_scenario, load_task
 from graphic_agent.pipeline import GraphicAgentPipeline
+from graphic_agent.schemas import (
+    AssetSpec,
+    GeneratedAsset,
+    ProviderProfile,
+    ProviderUsage,
+    StyleGuide,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+class FakeOpenAICompatibleImageGenerator:
+    def __init__(self, provider_profile: ProviderProfile) -> None:
+        self.provider_profile = provider_profile
+
+    def generate(
+        self,
+        spec: AssetSpec,
+        style_guide: StyleGuide,
+        output_dir: Path,
+        round_index: int = 1,
+    ) -> GeneratedAsset:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        width, height = spec.size
+        path = output_dir / f"{spec.order:03d}_{spec.id}_fake_openai.png"
+        Image.new("RGB", (width, height), (80, 120, 160)).save(path)
+        usage = ProviderUsage(
+            role="image",
+            provider_profile=self.provider_profile.name,
+            provider=self.provider_profile.models["image"].provider,
+            model=self.provider_profile.models["image"].model,
+            image_generations=1,
+            estimated_cost_usd=0.053,
+        )
+        return GeneratedAsset(
+            spec_id=spec.id,
+            path=str(path),
+            prompt=spec.prompt,
+            seed=round_index,
+            round_index=round_index,
+            metadata={
+                "provider": self.provider_profile.name,
+                "provider_usage": usage.model_dump(mode="json"),
+            },
+        )
 
 
 def test_story_comic_pipeline(tmp_path: Path) -> None:
@@ -76,3 +121,23 @@ def test_concept_art_board_pipeline(tmp_path: Path) -> None:
     # Reports saved
     assert (tmp_path / "concept/reports/cost_summary.json").exists()
     assert (tmp_path / "concept/reports/context_memory.json").exists()
+
+
+def test_pipeline_accepts_openai_compatible_image_generator(tmp_path: Path) -> None:
+    scenario = load_scenario(ROOT / "configs/scenarios/story_comic.yaml")
+    task = load_task(ROOT / "examples/story_comic_robot_cat.yaml")
+    profile = load_provider_profile(ROOT / "configs/providers/openai_compatible.yaml")
+    image_generator = FakeOpenAICompatibleImageGenerator(profile)
+
+    result = GraphicAgentPipeline(
+        scenario,
+        tmp_path / "real_provider",
+        provider_profile=profile,
+        image_generator=image_generator,
+    ).run(task)
+
+    assert result.revision.action == "accept"
+    assert (tmp_path / "real_provider/reports/result.json").exists()
+    assert (tmp_path / "real_provider/reports/cost_summary.json").exists()
+    assert result.cost_summary.provider_usage
+    assert result.cost_summary.provider_usage[0].provider_profile == "openai_compatible"

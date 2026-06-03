@@ -2,7 +2,11 @@ from pathlib import Path
 
 from graphic_agent.config import load_provider_profile
 from graphic_agent.costing import record_provider_failure
-from graphic_agent.provider_runtime import capture_provider_failure, validate_provider_environment
+from graphic_agent.provider_runtime import (
+    capture_provider_failure,
+    resolve_model_role,
+    validate_provider_environment,
+)
 from graphic_agent.schemas import CostSummary
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,3 +68,15 @@ def test_provider_failure_is_structured_and_recorded_without_secrets() -> None:
     assert failure.reason == "quota exceeded for request"
     assert summary.provider_failures == [failure]
     assert "sk-" not in summary.model_dump_json()
+
+
+def test_resolve_openai_compatible_model_roles() -> None:
+    profile = load_provider_profile(ROOT / "configs/providers/openai_compatible.yaml")
+
+    planner = resolve_model_role(profile, "planner")
+    critic = resolve_model_role(profile, "critic")
+    image = resolve_model_role(profile, "image")
+
+    assert planner.model == "gpt-5.4-mini"
+    assert critic.model == "gpt-5.4"
+    assert image.model == "gpt-image-2"

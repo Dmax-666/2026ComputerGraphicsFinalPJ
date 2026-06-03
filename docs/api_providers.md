@@ -21,6 +21,16 @@ from graphic_agent.config import resolve_provider_profile
 profile = resolve_provider_profile("openai_compatible", "configs/providers")
 ```
 
+CLI runs default to mock. A real-provider run must opt in explicitly:
+
+```bash
+graphic-agent run \
+  --scenario configs/scenarios/story_comic.yaml \
+  --input examples/story_comic_robot_cat.yaml \
+  --output outputs/story_comic_real \
+  --provider-profile configs/providers/openai_compatible.yaml
+```
+
 ## Built-in Profiles
 
 - `mock`: deterministic offline test and no-key demo provider.
