@@ -44,6 +44,16 @@ env:
   base_url: OPENAI_BASE_URL
 ```
 
+Use `validate_provider_environment` before a real-provider run. It reports which environment variables are required or missing, but never returns their values.
+
+```python
+from graphic_agent.config import load_provider_profile
+from graphic_agent.provider_runtime import validate_provider_environment
+
+profile = load_provider_profile("configs/providers/openai_compatible.yaml")
+status = validate_provider_environment(profile)
+```
+
 ## Pricing Metadata
 
 Provider profiles include pricing source metadata so demo cost estimates can be refreshed before the final presentation.
@@ -85,3 +95,5 @@ estimated_cost_usd: 0.053
 ```
 
 If usage metadata is absent, Graphic Agent falls back to deterministic mock-style image counts.
+
+Provider exceptions should be converted with `capture_provider_failure` and recorded in `CostSummary.provider_failures`. Failure records include provider profile, role, model, reason, and retryability, but no credential values.

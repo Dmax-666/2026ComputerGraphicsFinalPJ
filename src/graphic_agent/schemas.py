@@ -255,6 +255,17 @@ class ProviderUsage(BaseModel):
     estimated_cost_usd: float = 0.0
 
 
+class ProviderFailure(BaseModel):
+    """Structured provider failure captured without credential values."""
+
+    provider_profile: str
+    role: str
+    provider: str
+    model: str
+    reason: str
+    retryable: bool = False
+
+
 class CostSummary(BaseModel):
     """Tracks compute cost across the pipeline run.
 
@@ -274,6 +285,7 @@ class CostSummary(BaseModel):
     per_asset_calls: dict[str, int] = Field(default_factory=dict)
     """How many generation attempts each asset required (asset_id -> count)."""
     provider_usage: list[ProviderUsage] = Field(default_factory=list)
+    provider_failures: list[ProviderFailure] = Field(default_factory=list)
 
 
 class RunBudgetEstimate(BaseModel):
@@ -285,6 +297,15 @@ class RunBudgetEstimate(BaseModel):
     components: dict[str, float] = Field(default_factory=dict)
     baseline_total_usd: float = 0.0
     with_retry_buffer_usd: float = 0.0
+
+
+class ProviderEnvironmentStatus(BaseModel):
+    """Secret-safe readiness check for a provider profile environment."""
+
+    provider_profile: str
+    ready: bool
+    required_env: list[str] = Field(default_factory=list)
+    missing_env: list[str] = Field(default_factory=list)
 
 
 class PipelineResult(BaseModel):

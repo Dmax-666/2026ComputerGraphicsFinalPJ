@@ -3,6 +3,7 @@
 from graphic_agent.schemas import (
     CostSummary,
     GeneratedAsset,
+    ProviderFailure,
     ProviderProfile,
     ProviderUsage,
     RunBudgetEstimate,
@@ -54,6 +55,16 @@ def record_provider_usage(cost_summary: CostSummary, usage: ProviderUsage) -> Co
         6,
     )
     cost_summary.provider_usage.append(usage)
+    return cost_summary
+
+
+def record_provider_failure(
+    cost_summary: CostSummary,
+    failure: ProviderFailure,
+) -> CostSummary:
+    """Merge one structured provider failure into a run cost summary."""
+
+    cost_summary.provider_failures.append(failure)
     return cost_summary
 
 
