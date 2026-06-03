@@ -42,6 +42,17 @@ graphic-agent estimate \
 
 Omitting `--provider-profile` estimates the default mock profile and should report zero API spend.
 
+Before a presentation, run the local readiness gate:
+
+```bash
+graphic-agent demo-readiness \
+  --scenario configs/scenarios/story_comic.yaml \
+  --input examples/story_comic_robot_cat.yaml \
+  --output outputs/readiness_story_comic
+```
+
+The command runs the full pipeline only for the mock profile. Passing a real-provider profile checks environment and budget readiness without calling paid APIs.
+
 ## Built-in Profiles
 
 - `mock`: deterministic offline test and no-key demo provider.

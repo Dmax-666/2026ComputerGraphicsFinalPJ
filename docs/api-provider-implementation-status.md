@@ -53,6 +53,17 @@ graphic-agent provider-check \
   --provider-profile configs/providers/openai_compatible.yaml
 ```
 
+Run the local demo-readiness gate:
+
+```bash
+graphic-agent demo-readiness \
+  --scenario configs/scenarios/story_comic.yaml \
+  --input examples/story_comic_robot_cat.yaml \
+  --output outputs/readiness_story_comic
+```
+
+`demo-readiness` runs the full pipeline only for the mock profile. For real-provider profiles, it checks environment variables and budget estimates without spending API budget.
+
 Run the stable mock demo:
 
 ```bash
@@ -89,4 +100,3 @@ graphic-agent run \
 - [ ] Choose which scenario outputs should be generated with real models.
 - [ ] Review generated gallery assets.
 - [ ] Refresh pricing assumptions on the final report date.
-

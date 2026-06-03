@@ -186,5 +186,85 @@ def provider_check(
         raise typer.Exit(code=1)
 
 
+@app.command("demo-readiness")
+def demo_readiness(
+    scenario: Annotated[
+        Path,
+        typer.Option(
+            "--scenario",
+            "-s",
+            exists=True,
+            dir_okay=False,
+            readable=True,
+            help="Path to a scenario YAML file.",
+        ),
+    ],
+    input_path: Annotated[
+        Path,
+        typer.Option(
+            "--input",
+            "-i",
+            exists=True,
+            dir_okay=False,
+            readable=True,
+            help="Path to a task input YAML file.",
+        ),
+    ],
+    output: Annotated[
+        Path,
+        typer.Option(
+            "--output",
+            "-o",
+            file_okay=False,
+            help="Output directory for mock readiness artifacts.",
+        ),
+    ],
+    provider_profile: Annotated[
+        Path | None,
+        typer.Option(
+            "--provider-profile",
+            exists=True,
+            dir_okay=False,
+            readable=True,
+            help="Optional provider profile YAML. Real profiles are checked, not run.",
+        ),
+    ] = None,
+) -> None:
+    """Check demo readiness without accidentally spending real API budget."""
+
+    scenario_config = load_scenario(scenario)
+    profile_path = provider_profile or _default_provider_profile_path(scenario)
+    profile_config = load_provider_profile(profile_path)
+    task = load_task(input_path)
+    style_guide = StyleDirector().create_style_guide(task, scenario_config)
+    planned_assets = Planner().plan(task, scenario_config, style_guide)
+    estimate_result = estimate_run_budget(
+        scenario_config,
+        profile_config,
+        planned_asset_count=len(planned_assets),
+    )
+    environment_status = validate_provider_environment(profile_config)
+
+    mock_result_ready = False
+    if profile_config.name == "mock":
+        mock_result = GraphicAgentPipeline(scenario_config, output).run(task)
+        mock_result_ready = mock_result.revision.action in {"accept", "stop"}
+
+    table = Table(title="Graphic Agent Demo Readiness")
+    table.add_column("Check", style="cyan")
+    table.add_column("Status", style="green")
+    table.add_row("Provider Profile", profile_config.name)
+    environment_label = "ready" if environment_status.ready else "missing environment"
+    table.add_row("Provider Environment", environment_label)
+    table.add_row("Missing Env", ", ".join(environment_status.missing_env) or "(none)")
+    table.add_row("Budget Estimate", str(estimate_result.with_retry_buffer_usd))
+    table.add_row("Mock Pipeline", "ready" if mock_result_ready else "not run")
+    table.add_row("Overall", "ready" if environment_status.ready else "blocked")
+    console.print(table)
+
+    if not environment_status.ready:
+        raise typer.Exit(code=1)
+
+
 if __name__ == "__main__":
     app()
