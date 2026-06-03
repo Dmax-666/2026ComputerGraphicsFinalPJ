@@ -1,0 +1,52 @@
+from pathlib import Path
+
+from typer.testing import CliRunner
+
+from graphic_agent.cli import app
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_estimate_command_reports_budget_without_running_pipeline() -> None:
+    runner = CliRunner()
+
+    result = runner.invoke(
+        app,
+        [
+            "estimate",
+            "--scenario",
+            str(ROOT / "configs/scenarios/story_comic.yaml"),
+            "--input",
+            str(ROOT / "examples/story_comic_robot_cat.yaml"),
+            "--provider-profile",
+            str(ROOT / "configs/providers/openai_compatible.yaml"),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "openai_compatible" in result.stdout
+    assert "Planned Assets" in result.stdout
+    assert "5" in result.stdout
+    assert "Baseline Total" in result.stdout
+    assert "0.271" in result.stdout
+    assert "With Retry Buffer" in result.stdout
+    assert "0.801" in result.stdout
+
+
+def test_estimate_command_defaults_to_mock_profile() -> None:
+    runner = CliRunner()
+
+    result = runner.invoke(
+        app,
+        [
+            "estimate",
+            "--scenario",
+            str(ROOT / "configs/scenarios/story_comic.yaml"),
+            "--input",
+            str(ROOT / "examples/story_comic_robot_cat.yaml"),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "mock" in result.stdout
+    assert "0.0" in result.stdout

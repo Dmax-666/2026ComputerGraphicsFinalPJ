@@ -31,6 +31,17 @@ graphic-agent run \
   --provider-profile configs/providers/openai_compatible.yaml
 ```
 
+Estimate API spend before running a real provider:
+
+```bash
+graphic-agent estimate \
+  --scenario configs/scenarios/story_comic.yaml \
+  --input examples/story_comic_robot_cat.yaml \
+  --provider-profile configs/providers/openai_compatible.yaml
+```
+
+Omitting `--provider-profile` estimates the default mock profile and should report zero API spend.
+
 ## Built-in Profiles
 
 - `mock`: deterministic offline test and no-key demo provider.
