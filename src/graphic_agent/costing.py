@@ -1,6 +1,13 @@
 """Pre-run API budget estimation."""
 
-from graphic_agent.schemas import ProviderProfile, RunBudgetEstimate, ScenarioConfig
+from graphic_agent.schemas import (
+    CostSummary,
+    GeneratedAsset,
+    ProviderProfile,
+    ProviderUsage,
+    RunBudgetEstimate,
+    ScenarioConfig,
+)
 
 
 def estimate_run_budget(
@@ -33,3 +40,45 @@ def estimate_run_budget(
         baseline_total_usd=round(baseline_total, 6),
         with_retry_buffer_usd=round(baseline_total + retry_buffer_cost, 6),
     )
+
+
+def record_provider_usage(cost_summary: CostSummary, usage: ProviderUsage) -> CostSummary:
+    """Merge one provider usage record into a run cost summary."""
+
+    cost_summary.total_prompt_tokens += usage.prompt_tokens
+    cost_summary.total_completion_tokens += usage.completion_tokens
+    cost_summary.total_image_generations += usage.image_generations
+    cost_summary.total_vision_calls += usage.vision_calls
+    cost_summary.estimated_cost_usd = round(
+        cost_summary.estimated_cost_usd + usage.estimated_cost_usd,
+        6,
+    )
+    cost_summary.provider_usage.append(usage)
+    return cost_summary
+
+
+def record_generated_assets(
+    cost_summary: CostSummary,
+    generated_assets: list[GeneratedAsset],
+    *,
+    is_retry: bool,
+) -> CostSummary:
+    """Record generated assets and optional provider usage metadata."""
+
+    cost_summary.total_generation_calls += len(generated_assets)
+    if is_retry:
+        cost_summary.total_retry_calls += len(generated_assets)
+
+    fallback_image_generations = 0
+    for asset in generated_assets:
+        cost_summary.per_asset_calls[asset.spec_id] = (
+            cost_summary.per_asset_calls.get(asset.spec_id, 0) + 1
+        )
+        usage_payload = asset.metadata.get("provider_usage")
+        if usage_payload:
+            record_provider_usage(cost_summary, ProviderUsage.model_validate(usage_payload))
+        else:
+            fallback_image_generations += 1
+
+    cost_summary.total_image_generations += fallback_image_generations
+    return cost_summary

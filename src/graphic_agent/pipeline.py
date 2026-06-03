@@ -6,6 +6,7 @@ from graphic_agent.agents.critic import VisionCritic
 from graphic_agent.agents.planner import Planner
 from graphic_agent.agents.revision import RevisionController
 from graphic_agent.agents.style_director import StyleDirector
+from graphic_agent.costing import record_generated_assets
 from graphic_agent.registry import get_renderer
 from graphic_agent.schemas import (
     AssetSpec,
@@ -48,12 +49,7 @@ class GraphicAgentPipeline:
         context_memory = ContextMemory()
         cost_summary = CostSummary()
         generated_assets = self._generate_all(specs, style_guide, round_index=1)
-        cost_summary.total_image_generations += len(generated_assets)
-        cost_summary.total_generation_calls += len(generated_assets)
-        for asset in generated_assets:
-            cost_summary.per_asset_calls[asset.spec_id] = (
-                cost_summary.per_asset_calls.get(asset.spec_id, 0) + 1
-            )
+        record_generated_assets(cost_summary, generated_assets, is_retry=False)
 
         # Populate reference image paths into context memory after initial generation.
         for asset in generated_assets:
@@ -112,13 +108,7 @@ class GraphicAgentPipeline:
                 style_guide,
                 round_index=round_index + 1,
             )
-            cost_summary.total_retry_calls += len(regenerated)
-            cost_summary.total_image_generations += len(regenerated)
-            cost_summary.total_generation_calls += len(regenerated)
-            for asset in regenerated:
-                cost_summary.per_asset_calls[asset.spec_id] = (
-                    cost_summary.per_asset_calls.get(asset.spec_id, 0) + 1
-                )
+            record_generated_assets(cost_summary, regenerated, is_retry=True)
             generated_assets = self._replace_assets(generated_assets, regenerated)
 
         if final_composition is None or final_report is None or final_decision is None:

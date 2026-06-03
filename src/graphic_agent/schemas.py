@@ -241,6 +241,20 @@ class RevisionDecision(BaseModel):
 
 
 
+class ProviderUsage(BaseModel):
+    """Actual usage returned by one provider role call."""
+
+    role: str
+    provider_profile: str
+    provider: str
+    model: str
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    image_generations: int = 0
+    vision_calls: int = 0
+    estimated_cost_usd: float = 0.0
+
+
 class CostSummary(BaseModel):
     """Tracks compute cost across the pipeline run.
 
@@ -259,6 +273,7 @@ class CostSummary(BaseModel):
     estimated_cost_usd: float = 0.0
     per_asset_calls: dict[str, int] = Field(default_factory=dict)
     """How many generation attempts each asset required (asset_id -> count)."""
+    provider_usage: list[ProviderUsage] = Field(default_factory=list)
 
 
 class RunBudgetEstimate(BaseModel):

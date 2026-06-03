@@ -68,3 +68,20 @@ estimate = estimate_run_budget(scenario, profile, planned_asset_count=5)
 ```
 
 The estimate reports planner, critic, image generation, and retry-buffer components. Mock estimates remain zero-cost.
+
+## Actual Usage Reports
+
+Real providers should attach usage metadata to generated assets or role-call results using the `ProviderUsage` shape. The pipeline merges this into `CostSummary`, so reports stay provider-neutral.
+
+For image generation, `GeneratedAsset.metadata.provider_usage` may include:
+
+```yaml
+role: image
+provider_profile: openai_compatible
+provider: openai_compatible
+model: gpt-image-2
+image_generations: 1
+estimated_cost_usd: 0.053
+```
+
+If usage metadata is absent, Graphic Agent falls back to deterministic mock-style image counts.
