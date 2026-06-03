@@ -32,8 +32,10 @@ python -m ruff check .
 
 Latest verified result:
 
-- `67 passed`
+- `70 passed, 1 skipped`
 - `ruff check .`: all checks passed
+
+The skipped test is `tests/test_openai_compatible_live.py`. It is a paid live smoke test and only runs when explicitly enabled.
 
 ## Demo Commands
 
@@ -90,6 +92,17 @@ graphic-agent run \
   --output outputs/story_comic_real \
   --provider-profile configs/providers/openai_compatible.yaml
 ```
+
+Run the opt-in live provider smoke test after HITL approval:
+
+```bash
+set GRAPHIC_AGENT_RUN_REAL_API=1
+set OPENAI_API_KEY=<your-api-key>
+set OPENAI_BASE_URL=https://api.openai.com/v1
+python -m pytest tests/test_openai_compatible_live.py -q
+```
+
+This test generates one image and can incur API cost.
 
 ## Architecture Notes
 

@@ -61,6 +61,21 @@ graphic-agent demo-readiness \
 
 The command runs the full pipeline only for the mock profile. Passing a real-provider profile checks environment and budget readiness without calling paid APIs.
 
+## Opt-in Live Smoke Test
+
+The repository includes one paid live smoke test for the OpenAI-compatible image provider. It is skipped by default.
+
+Run it only after HITL approval on a funded API account:
+
+```bash
+set GRAPHIC_AGENT_RUN_REAL_API=1
+set OPENAI_API_KEY=<your-api-key>
+set OPENAI_BASE_URL=https://api.openai.com/v1
+python -m pytest tests/test_openai_compatible_live.py -q
+```
+
+The normal test suite should show this test as skipped unless those variables are set.
+
 ## Built-in Profiles
 
 - `mock`: deterministic offline test and no-key demo provider.

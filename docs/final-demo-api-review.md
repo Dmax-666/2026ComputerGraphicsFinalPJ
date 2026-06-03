@@ -88,6 +88,7 @@ Recommended working budget:
 
 - [ ] API key owner confirmed.
 - [ ] `graphic-agent provider-check --provider-profile configs/providers/openai_compatible.yaml` passes on the demo machine.
+- [ ] `GRAPHIC_AGENT_RUN_REAL_API=1 python -m pytest tests/test_openai_compatible_live.py -q` passes on the demo machine.
 - [ ] Primary profile approved.
 - [ ] Fallback profile approved.
 - [ ] Final scenario outputs selected for real image generation.
