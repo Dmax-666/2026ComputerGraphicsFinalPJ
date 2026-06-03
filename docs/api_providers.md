@@ -75,6 +75,15 @@ profile = load_provider_profile("configs/providers/openai_compatible.yaml")
 status = validate_provider_environment(profile)
 ```
 
+From the CLI:
+
+```bash
+graphic-agent provider-check \
+  --provider-profile configs/providers/openai_compatible.yaml
+```
+
+The command exits with code `1` when required environment variables are missing.
+
 ## Pricing Metadata
 
 Provider profiles include pricing source metadata so demo cost estimates can be refreshed before the final presentation.

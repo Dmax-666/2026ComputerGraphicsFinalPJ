@@ -12,6 +12,7 @@ from graphic_agent.agents.style_director import StyleDirector
 from graphic_agent.config import load_provider_profile, load_scenario, load_task
 from graphic_agent.costing import estimate_run_budget
 from graphic_agent.pipeline import GraphicAgentPipeline
+from graphic_agent.provider_runtime import validate_provider_environment
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 console = Console()
@@ -152,6 +153,37 @@ def estimate(
     for name, value in estimate_result.components.items():
         table.add_row(name, str(value))
     console.print(table)
+
+
+@app.command("provider-check")
+def provider_check(
+    provider_profile: Annotated[
+        Path,
+        typer.Option(
+            "--provider-profile",
+            exists=True,
+            dir_okay=False,
+            readable=True,
+            help="Provider profile YAML to validate against environment variables.",
+        ),
+    ],
+) -> None:
+    """Check whether a provider profile has its required environment variables."""
+
+    profile_config = load_provider_profile(provider_profile)
+    status = validate_provider_environment(profile_config)
+
+    table = Table(title="Graphic Agent Provider Check")
+    table.add_column("Field", style="cyan")
+    table.add_column("Value", style="green")
+    table.add_row("Provider Profile", status.provider_profile)
+    table.add_row("Status", "ready" if status.ready else "missing environment")
+    table.add_row("Required Env", ", ".join(status.required_env) or "(none)")
+    table.add_row("Missing Env", ", ".join(status.missing_env) or "(none)")
+    console.print(table)
+
+    if not status.ready:
+        raise typer.Exit(code=1)
 
 
 if __name__ == "__main__":

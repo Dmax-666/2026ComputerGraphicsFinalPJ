@@ -50,3 +50,42 @@ def test_estimate_command_defaults_to_mock_profile() -> None:
     assert result.exit_code == 0
     assert "mock" in result.stdout
     assert "0.0" in result.stdout
+
+
+def test_provider_check_reports_missing_env_without_secret_values() -> None:
+    runner = CliRunner()
+
+    result = runner.invoke(
+        app,
+        [
+            "provider-check",
+            "--provider-profile",
+            str(ROOT / "configs/providers/openai_compatible.yaml"),
+        ],
+        env={},
+    )
+
+    assert result.exit_code == 1
+    assert "openai_compatible" in result.stdout
+    assert "Missing Env" in result.stdout
+    assert "OPENAI_API_KEY" in result.stdout
+    assert "OPENAI_BASE_URL" in result.stdout
+    assert "sk-" not in result.stdout
+
+
+def test_provider_check_passes_for_mock_profile() -> None:
+    runner = CliRunner()
+
+    result = runner.invoke(
+        app,
+        [
+            "provider-check",
+            "--provider-profile",
+            str(ROOT / "configs/providers/mock.yaml"),
+        ],
+        env={},
+    )
+
+    assert result.exit_code == 0
+    assert "mock" in result.stdout
+    assert "ready" in result.stdout.lower()

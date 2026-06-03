@@ -85,6 +85,7 @@ Recommended working budget:
 ## Human Decisions
 
 - [ ] API key owner confirmed.
+- [ ] `graphic-agent provider-check --provider-profile configs/providers/openai_compatible.yaml` passes on the demo machine.
 - [ ] Primary profile approved.
 - [ ] Fallback profile approved.
 - [ ] Final scenario outputs selected for real image generation.
@@ -106,4 +107,3 @@ Recommended working budget:
 - DeepSeek pricing: https://api-docs.deepseek.com/quick_start/pricing
 - Anthropic Claude pricing: https://platform.claude.com/docs/en/about-claude/pricing
 - Alibaba Cloud Model Studio pricing: https://www.alibabacloud.com/help/en/model-studio/models
-
