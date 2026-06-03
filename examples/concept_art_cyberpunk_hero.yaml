@@ -1,0 +1,17 @@
+title: Cyberpunk Hero Concept Exploration
+prompt: >
+  Design exploration for a cyberpunk street samurai character.
+  The character is a female mercenary in a neon-lit megacity,
+  with cybernetic arm augmentations and a retractable plasma blade.
+  Explore different armor styles, silhouettes, and color treatments.
+style:
+  visual_style: concept art painterly style with loose brushwork
+  palette:
+    - neon cyan
+    - hot magenta
+    - deep charcoal
+    - chrome silver
+  mood: gritty futuristic
+  typography: annotation labels
+constraints:
+  avoid: anime style, cartoonish proportions, photorealistic rendering

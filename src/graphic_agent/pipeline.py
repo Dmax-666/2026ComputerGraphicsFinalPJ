@@ -9,6 +9,8 @@ from graphic_agent.agents.style_director import StyleDirector
 from graphic_agent.registry import get_renderer
 from graphic_agent.schemas import (
     AssetSpec,
+    ContextMemory,
+    CostSummary,
     GeneratedAsset,
     PipelineResult,
     ScenarioConfig,
@@ -43,7 +45,24 @@ class GraphicAgentPipeline:
             {"assets": [spec.model_dump(mode="json") for spec in specs]},
         )
 
+        context_memory = ContextMemory()
+        cost_summary = CostSummary()
         generated_assets = self._generate_all(specs, style_guide, round_index=1)
+        cost_summary.total_image_generations += len(generated_assets)
+        cost_summary.total_generation_calls += len(generated_assets)
+        for asset in generated_assets:
+            cost_summary.per_asset_calls[asset.spec_id] = (
+                cost_summary.per_asset_calls.get(asset.spec_id, 0) + 1
+            )
+
+        # Populate reference image paths into context memory after initial generation.
+        for asset in generated_assets:
+            spec = next((s for s in specs if s.id == asset.spec_id), None)
+            if spec and spec.type == "character_reference":
+                role = spec.metadata.get("role", spec.id)
+                context_memory.reference_image_paths[role] = asset.path
+                style_guide.reference_assets[role] = asset.path
+
         final_composition = None
         final_report = None
         final_decision = None
@@ -68,29 +87,53 @@ class GraphicAgentPipeline:
                 final_report,
                 self.scenario,
                 round_index=round_index,
+                specs=specs,
             )
             self.storage.write_json(f"reports/critique_round_{round_index}.json", final_report)
             self.storage.write_json(f"reports/revision_round_{round_index}.json", final_decision)
 
+            # Accumulate revision lessons into context memory.
+            for issue in final_report.issues:
+                context_memory.revision_lessons.append(
+                    f"Round {round_index}: [{issue.severity}] {issue.category} - "
+                    f"{issue.recommendation}"
+                )
             if final_decision.action != "retry_assets":
                 break
             retry_ids = set(final_decision.retry_asset_ids)
             if not retry_ids:
                 break
-            regenerated = self._generate_all(
+            retry_specs = self._apply_prompt_rewrites(
                 [spec for spec in specs if spec.id in retry_ids],
+                final_decision.prompt_rewrites,
+            )
+            regenerated = self._generate_all(
+                retry_specs,
                 style_guide,
                 round_index=round_index + 1,
             )
+            cost_summary.total_retry_calls += len(regenerated)
+            cost_summary.total_image_generations += len(regenerated)
+            cost_summary.total_generation_calls += len(regenerated)
+            for asset in regenerated:
+                cost_summary.per_asset_calls[asset.spec_id] = (
+                    cost_summary.per_asset_calls.get(asset.spec_id, 0) + 1
+                )
             generated_assets = self._replace_assets(generated_assets, regenerated)
 
         if final_composition is None or final_report is None or final_decision is None:
             raise RuntimeError("Pipeline ended before producing a composition and critique report.")
 
+        cost_summary.total_rounds = rounds_completed
+        self.storage.write_json("reports/context_memory.json", context_memory)
+        self.storage.write_json("reports/cost_summary.json", cost_summary)
+
         result = PipelineResult(
             scenario=self.scenario.name,
             task=task,
             style_guide=style_guide,
+            context_memory=context_memory,
+            cost_summary=cost_summary,
             planned_assets=specs,
             generated_assets=generated_assets,
             composition=final_composition,
@@ -113,6 +156,22 @@ class GraphicAgentPipeline:
             self.image_generator.generate(spec, style_guide, self.storage.assets_dir, round_index)
             for spec in specs
         ]
+
+    @staticmethod
+    def _apply_prompt_rewrites(
+        specs: list[AssetSpec],
+        rewrites: dict[str, str],
+    ) -> list[AssetSpec]:
+        """Return copies of specs with prompts replaced by critique-informed rewrites."""
+        if not rewrites:
+            return specs
+        result: list[AssetSpec] = []
+        for spec in specs:
+            if spec.id in rewrites:
+                result.append(spec.model_copy(update={"prompt": rewrites[spec.id]}))
+            else:
+                result.append(spec)
+        return result
 
     def _replace_assets(
         self,

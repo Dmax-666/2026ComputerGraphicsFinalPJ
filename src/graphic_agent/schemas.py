@@ -3,7 +3,16 @@
 from pathlib import Path
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+
+SUPPORTED_PROVIDERS = {
+    "mock",
+    "openai_compatible",
+    "google",
+    "dashscope",
+    "deepseek",
+    "anthropic",
+}
 
 
 class ModelSpec(BaseModel):
@@ -12,6 +21,40 @@ class ModelSpec(BaseModel):
     provider: str = "mock"
     model: str = "mock"
     parameters: dict[str, Any] = Field(default_factory=dict)
+
+    @field_validator("provider")
+    @classmethod
+    def validate_provider(cls, value: str) -> str:
+        if value not in SUPPORTED_PROVIDERS:
+            available = ", ".join(sorted(SUPPORTED_PROVIDERS))
+            raise ValueError(f"Unknown provider '{value}'. Available providers: {available}")
+        return value
+
+    @field_validator("model")
+    @classmethod
+    def validate_model_version(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError("ModelSpec requires a non-empty model version.")
+        return value
+
+
+class ProviderProfile(BaseModel):
+    """Provider and model-role settings for one API usage profile."""
+
+    model_config = ConfigDict(extra="allow")
+
+    name: str
+    description: str = ""
+    env: dict[str, str] = Field(default_factory=dict)
+    models: dict[str, ModelSpec] = Field(default_factory=dict)
+    pricing: dict[str, Any] = Field(default_factory=dict)
+    caveats: list[str] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def validate_model_roles(self) -> "ProviderProfile":
+        if not self.models:
+            raise ValueError("ProviderProfile requires at least one model role mapping.")
+        return self
 
 
 class RenderConfig(BaseModel):
@@ -83,6 +126,33 @@ class StyleGuide(BaseModel):
     typography: str = "clear sans-serif labels"
     negative_prompt: str = ""
     notes: list[str] = Field(default_factory=list)
+    reference_assets: dict[str, str] = Field(default_factory=dict)
+    """Mapping of role (e.g. 'protagonist') -> asset path for character /
+    style reference images.  Populated after reference assets are generated
+    so downstream panels can use them for consistency."""
+
+
+class ContextMemory(BaseModel):
+    """Shared mutable context that accumulates across the pipeline run.
+
+    Acts as a blackboard: agents and evaluators can read from it, and the
+    pipeline updates it after each revision round.  This lets downstream
+    asset generation benefit from lessons learned earlier in the loop.
+    """
+
+    style_patches: list[str] = Field(default_factory=list)
+    """Incremental style corrections discovered during revision rounds,
+    e.g. 'character hair should be blue, not purple'."""
+    character_descriptions: dict[str, str] = Field(default_factory=dict)
+    """Canonical text descriptions of key characters, updated as the
+    pipeline refines its understanding of visual identity."""
+    reference_image_paths: dict[str, str] = Field(default_factory=dict)
+    """Paths to generated reference images keyed by role name."""
+    revision_lessons: list[str] = Field(default_factory=list)
+    """High-level lessons from past revision rounds that should inform
+    all future asset generation (e.g. 'avoid cluttered backgrounds')."""
+    extra: dict[str, Any] = Field(default_factory=dict)
+    """Scenario-specific memory entries not covered above."""
 
 
 class AssetSpec(BaseModel):
@@ -97,6 +167,12 @@ class AssetSpec(BaseModel):
     prompt: str
     order: int = 0
     size: tuple[int, int] = (768, 768)
+    difficulty_estimate: float = 0.5
+    """Estimated generation difficulty from 0 (trivial) to 1 (very hard).
+    Used by adaptive reasoning to allocate retry budget per asset."""
+    depends_on: list[str] = Field(default_factory=list)
+    """IDs of assets that must be generated before this one.
+    Used to build a dependency DAG for parallel generation."""
     metadata: dict[str, Any] = Field(default_factory=dict)
 
     @field_validator("size", mode="before")
@@ -155,6 +231,34 @@ class RevisionDecision(BaseModel):
     action: Literal["accept", "retry_assets", "stop"]
     rationale: str
     retry_asset_ids: list[str] = Field(default_factory=list)
+    prompt_rewrites: dict[str, str] = Field(default_factory=dict)
+    """Mapping of asset_id -> rewritten prompt for the next retry round.
+    Based on critique recommendations to improve generation quality."""
+    reasoning_trace: list[str] = Field(default_factory=list)
+    """Step-by-step reasoning that led to this decision.
+    Captures why specific assets were retried and what the controller
+    expects to improve on the next round."""
+
+
+
+class CostSummary(BaseModel):
+    """Tracks compute cost across the pipeline run.
+
+    Mock providers populate generation counts; real providers should add
+    token counts and API cost estimates so adaptive reasoning can measure
+    whether difficulty-aware budgeting actually saves resources.
+    """
+
+    total_rounds: int = 0
+    total_generation_calls: int = 0
+    total_retry_calls: int = 0
+    total_prompt_tokens: int = 0
+    total_completion_tokens: int = 0
+    total_image_generations: int = 0
+    total_vision_calls: int = 0
+    estimated_cost_usd: float = 0.0
+    per_asset_calls: dict[str, int] = Field(default_factory=dict)
+    """How many generation attempts each asset required (asset_id -> count)."""
 
 
 class PipelineResult(BaseModel):
@@ -163,6 +267,8 @@ class PipelineResult(BaseModel):
     scenario: str
     task: VisualTask
     style_guide: StyleGuide
+    context_memory: ContextMemory = Field(default_factory=ContextMemory)
+    cost_summary: CostSummary = Field(default_factory=CostSummary)
     planned_assets: list[AssetSpec]
     generated_assets: list[GeneratedAsset]
     composition: CompositionSpec

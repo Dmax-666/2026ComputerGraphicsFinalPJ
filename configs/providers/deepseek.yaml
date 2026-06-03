@@ -1,0 +1,22 @@
+name: deepseek
+description: DeepSeek text-only profile for low-cost planning and prompt rewriting.
+
+env:
+  api_key: DEEPSEEK_API_KEY
+
+pricing:
+  source_checked_at: "2026-06-03"
+  source_url: "https://api-docs.deepseek.com/quick_start/pricing"
+  notes: "Text-only profile; image generation must come from another provider."
+
+models:
+  planner:
+    provider: deepseek
+    model: deepseek-v4-flash
+  prompt_rewrite:
+    provider: deepseek
+    model: deepseek-v4-flash
+
+caveats:
+  - "Do not use deprecated deepseek-chat or deepseek-reasoner as long-term IDs."
+  - "This profile cannot generate images by itself."

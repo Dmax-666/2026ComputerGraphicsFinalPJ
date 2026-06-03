@@ -45,6 +45,8 @@ evaluators:
   - style_consistency
   - asset_completeness
   - category_coverage
+  - image_size
+  - file_sanity
 
 outputs:
   save_intermediate: true

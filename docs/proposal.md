@@ -39,7 +39,15 @@ Paper2Poster、PosterForest 等工作关注论文到海报的内容筛选和版�
 - 游戏素材需要成套资产、风格统一、类别覆盖和可直接进入原型流程。
 - 多场景视觉生成需要工具编排，而不是一个固定模板。
 
-商业工具通常重视最终效果，但很少开放中间表示、审稿过程和可插拔 agent loop。Graphic Agent 的价值在于开源、配置化、可解释和可扩展。
+商业工具通常重视最终效果，但很少开放中间表示、审稿过程和可插拔 agent loop。
+
+与最新研究的区分：
+
+- VisionCreator（2026）将 Understanding/Thinking/Planning/Creation 统一到端到端可训练模型中。其 thinking 和 planning 发生在模型权重内部，不可审计。Graphic Agent 的每一步（plan、style guide、asset spec、critique report、prompt rewrite、revision decision、cost summary）都输出结构化 JSON，全程可解释。
+- CREA（NeurIPS 2025）使用 Creative Director + Art Critic 多 agent 协作做创意图像编辑。其 agent 角色是固定的。Graphic Agent 通过 YAML 配置组合 agent、evaluator 和 renderer，支持不同场景复用同一框架。
+- 两者都不提供成本追踪和自适应推理的透明记录。Graphic Agent 的 CostSummary 和 reasoning_trace 让用户可以复盘每轮 revision 的决策逻辑和资源消耗。
+
+Graphic Agent 的核心差异点：可解释的结构化中间产物，和透明的、可审计的 revision loop。
 
 ## 4. 核心研究问题
 

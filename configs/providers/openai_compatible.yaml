@@ -5,13 +5,28 @@ env:
   api_key: OPENAI_API_KEY
   base_url: OPENAI_BASE_URL
 
+pricing:
+  source_checked_at: "2026-06-03"
+  source_url: "https://developers.openai.com/api/docs/pricing"
+  estimated_all_demo_usd:
+    image_medium: 1.28
+    image_high: 4.91
+    image_mini_medium: 0.31
+
 models:
   planner:
     provider: openai_compatible
-    model: gpt-5
+    model: gpt-5.4-mini
   critic:
     provider: openai_compatible
-    model: gpt-5-v
+    model: gpt-5.4
   image:
     provider: openai_compatible
     model: gpt-image-2
+    parameters:
+      size: 1024x1024
+      quality: medium
+
+caveats:
+  - "ChatGPT subscription access is separate from OpenAI API billing."
+  - "Use mock as the default path; real API calls are optional demo enhancements."

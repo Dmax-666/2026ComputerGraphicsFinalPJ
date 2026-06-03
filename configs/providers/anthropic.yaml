@@ -1,0 +1,22 @@
+name: anthropic
+description: Anthropic text and vision profile for planner or critic experiments.
+
+env:
+  api_key: ANTHROPIC_API_KEY
+
+pricing:
+  source_checked_at: "2026-06-03"
+  source_url: "https://platform.claude.com/docs/en/about-claude/pricing"
+  notes: "Text and vision profile; image generation must come from another provider."
+
+models:
+  planner:
+    provider: anthropic
+    model: claude-haiku-4.5
+  critic:
+    provider: anthropic
+    model: claude-sonnet-4.5
+
+caveats:
+  - "Optional text or vision critic alternative."
+  - "Do not use as the only profile for image-generation demos."

@@ -1,6 +1,10 @@
 name: mock
 description: Offline provider for tests and demos.
 
+pricing:
+  source_checked_at: "2026-06-03"
+  notes: "Offline mock provider; no API cost."
+
 models:
   planner:
     provider: mock
@@ -11,3 +15,7 @@ models:
   image:
     provider: mock
     model: mock-image-generator
+
+caveats:
+  - "Generates deterministic placeholder images only."
+  - "Use this profile for tests and no-key demos."

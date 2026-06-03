@@ -3,7 +3,7 @@
 from pathlib import Path
 from typing import Any
 
-from graphic_agent.schemas import ScenarioConfig, VisualTask
+from graphic_agent.schemas import ProviderProfile, ScenarioConfig, VisualTask
 
 
 def _load_yaml_library():
@@ -34,6 +34,18 @@ def load_scenario(path: Path | str) -> ScenarioConfig:
     """Load and validate a scenario config."""
 
     return ScenarioConfig(**load_yaml(path))
+
+
+def load_provider_profile(path: Path | str) -> ProviderProfile:
+    """Load and validate a provider profile config."""
+
+    return ProviderProfile(**load_yaml(path))
+
+
+def resolve_provider_profile(name: str, providers_dir: Path | str) -> ProviderProfile:
+    """Load a provider profile by name from a provider profiles directory."""
+
+    return load_provider_profile(Path(providers_dir) / f"{name}.yaml")
 
 
 def load_task(path: Path | str) -> VisualTask:

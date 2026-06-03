@@ -1,5 +1,5 @@
-name: story_comic
-description: Generate a one-page comic from a short story.
+name: concept_art_board
+description: Generate a concept art exploration board with multiple design variations for a single subject.
 workflow: visual_composition
 
 models:
@@ -22,29 +22,26 @@ agents:
 
 assets:
   types:
-    - character_reference
-    - panel
-    - speech_bubble
-  default_panel_count: 4
-  panel_count_range: [4, 8]
+    - concept_variation
+  variations_per_subject: 4
+  subjects:
+    - character
+    - environment
 
 render:
-  type: comic_page
-  page_size: [1600, 2400]
-  margin: 80
+  type: asset_sheet
+  page_size: [2000, 1200]
+  margin: 64
   gutter: 32
-  background: "#f8f3e8"
-  text_rendering: postprocess
+  background: "#1a1a2e"
 
 revision:
-  max_rounds: 3
-  retry_budget_per_asset: 2
-  quality_threshold: 0.75
+  max_rounds: 2
+  retry_budget_per_asset: 1
+  quality_threshold: 0.7
 
 evaluators:
-  - narrative_consistency
-  - character_consistency
-  - text_layout_quality
+  - style_consistency
   - image_size
   - file_sanity
 

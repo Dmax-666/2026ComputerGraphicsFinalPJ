@@ -1,0 +1,30 @@
+name: google
+description: Google Gemini and Imagen profile for lower-cost real-provider demos.
+
+env:
+  api_key: GOOGLE_API_KEY
+
+pricing:
+  source_checked_at: "2026-06-03"
+  source_url: "https://ai.google.dev/gemini-api/docs/pricing"
+  estimated_all_demo_usd:
+    imagen_fast: 0.49
+    imagen_standard: 0.95
+
+models:
+  planner:
+    provider: google
+    model: gemini-2.5-flash
+  critic:
+    provider: google
+    model: gemini-2.5-flash
+  image:
+    provider: google
+    model: imagen-4-fast
+    parameters:
+      size: 1024x1024
+      quality: fast
+
+caveats:
+  - "Good low-cost image generation fallback for demo drafts."
+  - "Provider integration should remain optional and opt-in."

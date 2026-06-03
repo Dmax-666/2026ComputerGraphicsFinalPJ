@@ -74,24 +74,36 @@ VisualTask + ScenarioConfig
 
 修订控制器根据审稿结果决定接受、重试部分资产或停止。
 
+### ContextMemory
+
+跨轮次共享的可变上下文，作为黑板（blackboard）模式运行。包含 style patches、character descriptions、reference image paths 和 revision lessons。Pipeline 在每轮 revision 后更新它，后续 asset 生成可以从中受益。
+
+### CostSummary
+
+追踪整个 pipeline 运行的计算成本。记录总轮数、总生成调用次数、重试次数、每个 asset 的生成次数。Mock 阶段用简单计数，真实模型接入后可填充 token 数和 API 成本估算。
+
 ## 4. Agentic Loop
 
 当前 pipeline 使用以下循环：
 
 ```text
-plan assets
+plan assets (with depends_on DAG)
 generate assets
+populate context memory (reference images, etc.)
 render composition
-critique result
+critique result (via pluggable evaluators)
 if passed:
     accept
 elif budget remains:
-    retry failed assets
+    build prompt rewrites from critique recommendations
+    retry failed assets with rewritten prompts
+    accumulate revision lessons into context memory
 else:
     stop with best result
+save context_memory, cost_summary, reasoning_trace
 ```
 
-这和一次性生图的区别是：失败不再只能整体重试，而是可以定位到具体资产或具体质量指标。
+和一次性生图的区别：失败可定位到具体资产，重试时带着审稿反馈改写 prompt 而非碰运气，全程记录决策推理和成本。
 
 ## 5. 代码模块
 
@@ -112,16 +124,33 @@ src/graphic_agent/
 
 - `cli.py`：命令行入口。
 - `config.py`：加载 YAML。
-- `schemas.py`：定义结构化数据模型。
-- `pipeline.py`：串联完整工作流。
+- `schemas.py`：定义结构化数据模型，包括 `ContextMemory`、`CostSummary` 等运行时状态。
+- `pipeline.py`：串联完整工作流，维护 context memory 和 cost tracking。
 - `registry.py`：选择 renderer 等可插拔组件。
-- `agents/planner.py`：把任务拆成资产计划。
-- `agents/style_director.py`：生成统一风格记忆。
-- `agents/critic.py`：结构化审稿。
-- `agents/revision.py`：根据审稿结果决定下一步。
+- `agents/planner.py`：把任务拆成资产计划，支持 `depends_on` 依赖声明。
+- `agents/style_director.py`：生成统一风格记忆，包含 reference asset 路径。
+- `agents/critic.py`：通过 evaluator registry 动态组合审稿规则，不含场景硬编码。
+- `agents/revision.py`：根据审稿结果决定重试，生成 prompt rewrites 和 reasoning trace。
 - `tools/image_gen.py`：图像生成工具，当前为 mock provider。
 - `renderers/`：最终图像合成。
-- `evaluators/`：未来用于更细粒度质量指标。
+- `evaluators/`：可插拔质量评估器，通过 registry 注册，由场景 YAML 声明启用。
+
+### Evaluator 架构
+
+Evaluator 遵循统一协议（`Evaluator` protocol），每个 evaluator 接收 scenario、specs、generated assets 和 composition，返回 `list[CritiqueIssue]`。Critic 只负责汇总，不包含场景特定逻辑。
+
+当前注册的 evaluator：
+
+- `asset_completeness`：检查每个计划资产是否已生成且文件存在（baseline，自动启用）。
+- `image_size`：检查生成图片尺寸是否匹配 AssetSpec 声明。
+- `file_sanity`：检测异常小的图像文件。
+- `style_consistency`：风格一致性（当前 mock，未来接 VLM）。
+- `category_coverage`：检查资产类别覆盖（game_assets 场景）。
+- `narrative_consistency`：检查漫画 panel 数量是否满足要求。
+- `character_consistency`：角色跨格一致性（当前 mock，未来接 VLM）。
+- `text_layout_quality`：文字排版质量（当前 mock，未来接 OCR/VLM）。
+
+新增 evaluator 只需实现协议并在 registry 中注册，然后在场景 YAML 的 `evaluators` 列表中引用。
 
 ## 6. 配置边界
 

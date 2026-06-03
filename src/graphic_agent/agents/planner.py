@@ -48,6 +48,7 @@ class Planner:
                 ),
                 order=0,
                 size=(768, 768),
+                depends_on=[],
             )
         ]
 
@@ -89,6 +90,7 @@ class Planner:
                     ),
                     order=index + 1,
                     size=(900, 700),
+                    depends_on=["character_reference_robot"],
                     metadata={"dialogue": dialogue},
                 )
             )
@@ -137,20 +139,37 @@ class Planner:
         style_guide: StyleGuide,
     ) -> list[AssetSpec]:
         asset_types = scenario.assets.get("types", ["visual_asset"])
+        subjects = [str(s) for s in scenario.assets.get("subjects", ["default"])]
+        variations = int(scenario.assets.get("variations_per_subject", 1))
         prompt_base = self._style_prompt(task, style_guide)
-        return [
-            AssetSpec(
-                id=f"asset_{index + 1}",
-                type=str(asset_type),
-                category="generic",
-                title=f"{asset_type} {index + 1}",
-                description=f"Generic visual asset for {scenario.name}.",
-                purpose="Support the configured visual composition workflow.",
-                prompt=f"{prompt_base}. {task.prompt}. Asset type: {asset_type}.",
-                order=index + 1,
-            )
-            for index, asset_type in enumerate(asset_types)
-        ]
+
+        assets: list[AssetSpec] = []
+        order = 0
+        for subject in subjects:
+            for var_index in range(variations):
+                order += 1
+                asset_type = asset_types[0] if asset_types else "visual_asset"
+                title = f"{subject.replace(chr(95), chr(32)).title()} Variation {var_index + 1}"
+                assets.append(
+                    AssetSpec(
+                        id=f"{subject}_{var_index + 1}",
+                        type=str(asset_type),
+                        category=subject,
+                        title=title,
+                        description=(
+                            f"Design variation {var_index + 1} for {subject} in {scenario.name}."
+                        ),
+                        purpose="Explore different design directions within a unified style.",
+                        prompt=(
+                            f"{prompt_base}. {task.prompt}. "
+                            f"Subject: {subject}. Variation {var_index + 1}/{variations}. "
+                            "Explore a distinct design direction while maintaining style "
+                            "consistency."
+                        ),
+                        order=order,
+                    )
+                )
+        return assets
 
     def _style_prompt(self, task: VisualTask, style_guide: StyleGuide) -> str:
         palette = ", ".join(style_guide.palette)

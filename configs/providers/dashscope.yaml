@@ -1,0 +1,28 @@
+name: dashscope
+description: Alibaba Cloud Model Studio profile for Qwen text, vision, and image models.
+
+env:
+  api_key: DASHSCOPE_API_KEY
+
+pricing:
+  source_checked_at: "2026-06-03"
+  source_url: "https://www.alibabacloud.com/help/en/model-studio/models"
+  estimated_all_demo_usd:
+    qwen_image_plus: 0.70
+
+models:
+  planner:
+    provider: dashscope
+    model: qwen-plus-2025-12-01
+  critic:
+    provider: dashscope
+    model: qwen-vl-plus-2025-08-15
+  image:
+    provider: dashscope
+    model: qwen-image-plus
+    parameters:
+      size: 1024x1024
+
+caveats:
+  - "Useful when domestic API access is more convenient."
+  - "Refresh pricing before final presentation."
