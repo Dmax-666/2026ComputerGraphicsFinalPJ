@@ -18,8 +18,18 @@ def test_missing_real_provider_api_key_is_reported_without_secret_values() -> No
     status = validate_provider_environment(profile, environ={})
 
     assert not status.ready
-    assert status.required_env == ["OPENAI_API_KEY", "OPENAI_BASE_URL"]
-    assert status.missing_env == ["OPENAI_API_KEY", "OPENAI_BASE_URL"]
+    assert status.required_env == [
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "OPENAI_TEXT_API_KEY",
+        "OPENAI_TEXT_BASE_URL",
+    ]
+    assert status.missing_env == [
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "OPENAI_TEXT_API_KEY",
+        "OPENAI_TEXT_BASE_URL",
+    ]
     assert "sk-" not in status.model_dump_json()
 
 
@@ -31,13 +41,17 @@ def test_ready_provider_environment_does_not_echo_secret_values() -> None:
         environ={
             "OPENAI_API_KEY": "sk-test-secret",
             "OPENAI_BASE_URL": "https://example.test/v1",
+            "OPENAI_TEXT_API_KEY": "sk-test-text-secret",
+            "OPENAI_TEXT_BASE_URL": "https://text.example.test/v1",
         },
     )
 
     assert status.ready
     assert status.missing_env == []
     assert "sk-test-secret" not in status.model_dump_json()
+    assert "sk-test-text-secret" not in status.model_dump_json()
     assert "https://example.test/v1" not in status.model_dump_json()
+    assert "https://text.example.test/v1" not in status.model_dump_json()
 
 
 def test_mock_provider_environment_is_ready_without_keys() -> None:

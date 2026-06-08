@@ -97,6 +97,18 @@ Example:
 env:
   api_key: OPENAI_API_KEY
   base_url: OPENAI_BASE_URL
+  text_api_key: OPENAI_TEXT_API_KEY
+  text_base_url: OPENAI_TEXT_BASE_URL
+```
+
+When image and text models come from different gateways, keep both sets of
+environment variables configured:
+
+```bash
+OPENAI_API_KEY=<image-api-key>
+OPENAI_BASE_URL=https://api.aipaibox.com/v1
+OPENAI_TEXT_API_KEY=<text-api-key>
+OPENAI_TEXT_BASE_URL=https://aigw.sotatts.online/v1
 ```
 
 Use `validate_provider_environment` before a real-provider run. It reports which environment variables are required or missing, but never returns their values.
@@ -146,6 +158,36 @@ The estimate reports planner, critic, image generation, and retry-buffer compone
 ## Actual Usage Reports
 
 Real providers should attach usage metadata to generated assets or role-call results using the `ProviderUsage` shape. The pipeline merges this into `CostSummary`, so reports stay provider-neutral.
+
+## Two-API Agent Flow
+
+Real-provider runs now use the text gateway for the agent reasoning stages and
+the image gateway for image generation:
+
+```text
+Text API: create StyleGuide
+Text API: plan structured AssetSpec objects
+Text API: refine image prompts
+Image API: generate assets
+Local renderer: compose final.png
+Text/Vision API: critique the final composition
+Text API: decide accept / retry / stop and rewrite retry prompts
+```
+
+If the critic model supports image input, `LLMCritic` sends the composed
+`final.png` as a data URL. If the gateway rejects image messages, it falls back
+to text-only critique using the local report and structured asset metadata; if
+that also fails, the local evaluator report remains the fallback.
+
+Real runs write extra audit reports:
+
+```text
+reports/style_generation.json
+reports/planning.json
+reports/prompt_refinement.json
+reports/critic_llm_round_<n>.json
+reports/revision_llm_round_<n>.json
+```
 
 For image generation, `GeneratedAsset.metadata.provider_usage` may include:
 

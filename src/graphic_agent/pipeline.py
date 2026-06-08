@@ -3,10 +3,17 @@
 from pathlib import Path
 
 from graphic_agent.agents.critic import VisionCritic
+from graphic_agent.agents.llm_agents import (
+    LLMCritic,
+    LLMPlanner,
+    LLMRevisionController,
+    LLMStyleDirector,
+)
 from graphic_agent.agents.planner import Planner
+from graphic_agent.agents.prompt_refiner import LLMPromptRefiner, NoOpPromptRefiner
 from graphic_agent.agents.revision import RevisionController
 from graphic_agent.agents.style_director import StyleDirector
-from graphic_agent.costing import record_generated_assets
+from graphic_agent.costing import record_generated_assets, record_provider_usage
 from graphic_agent.registry import get_renderer
 from graphic_agent.schemas import (
     AssetSpec,
@@ -19,7 +26,10 @@ from graphic_agent.schemas import (
     VisualTask,
 )
 from graphic_agent.tools.image_gen import MockImageGenerator
-from graphic_agent.tools.openai_compatible import build_openai_compatible_image_generator
+from graphic_agent.tools.openai_compatible import (
+    build_openai_compatible_image_generator,
+    build_openai_compatible_text_generator,
+)
 from graphic_agent.tools.storage import RunStorage
 
 
@@ -32,15 +42,24 @@ class GraphicAgentPipeline:
         output_dir: Path | str,
         provider_profile: ProviderProfile | None = None,
         image_generator=None,
+        prompt_refiner=None,
     ) -> None:
         self.scenario = scenario
         self.provider_profile = provider_profile
         self.storage = RunStorage(output_dir)
-        self.style_director = StyleDirector()
-        self.planner = Planner()
+        enable_real_text = image_generator is None
+        self.style_director = self._build_style_director(provider_profile, enable_real_text)
+        self.planner = self._build_planner(provider_profile, enable_real_text)
+        self.prompt_refiner = prompt_refiner or self._build_prompt_refiner(
+            provider_profile,
+            enable_real_text=enable_real_text,
+        )
         self.image_generator = image_generator or self._build_image_generator(provider_profile)
-        self.critic = VisionCritic()
-        self.revision_controller = RevisionController()
+        self.critic = self._build_critic(provider_profile, enable_real_text)
+        self.revision_controller = self._build_revision_controller(
+            provider_profile,
+            enable_real_text,
+        )
         self.renderer = get_renderer(scenario.render.type)
 
     def _build_image_generator(self, provider_profile: ProviderProfile | None):
@@ -48,20 +67,84 @@ class GraphicAgentPipeline:
             return build_openai_compatible_image_generator(provider_profile)
         return MockImageGenerator()
 
+    def _build_style_director(
+        self,
+        provider_profile: ProviderProfile | None,
+        enable_real_text: bool,
+    ):
+        if enable_real_text and provider_profile and provider_profile.name == "openai_compatible":
+            text_generator = build_openai_compatible_text_generator(provider_profile, "planner")
+            return LLMStyleDirector(text_generator)
+        return StyleDirector()
+
+    def _build_planner(
+        self,
+        provider_profile: ProviderProfile | None,
+        enable_real_text: bool,
+    ):
+        if enable_real_text and provider_profile and provider_profile.name == "openai_compatible":
+            text_generator = build_openai_compatible_text_generator(provider_profile, "planner")
+            return LLMPlanner(text_generator)
+        return Planner()
+
+    def _build_prompt_refiner(
+        self,
+        provider_profile: ProviderProfile | None,
+        *,
+        enable_real_text: bool,
+    ):
+        if enable_real_text and provider_profile and provider_profile.name == "openai_compatible":
+            text_generator = build_openai_compatible_text_generator(provider_profile, "planner")
+            return LLMPromptRefiner(text_generator)
+        return NoOpPromptRefiner()
+
+    def _build_critic(
+        self,
+        provider_profile: ProviderProfile | None,
+        enable_real_text: bool,
+    ):
+        if enable_real_text and provider_profile and provider_profile.name == "openai_compatible":
+            text_generator = build_openai_compatible_text_generator(provider_profile, "critic")
+            return LLMCritic(text_generator)
+        return VisionCritic()
+
+    def _build_revision_controller(
+        self,
+        provider_profile: ProviderProfile | None,
+        enable_real_text: bool,
+    ):
+        if enable_real_text and provider_profile and provider_profile.name == "openai_compatible":
+            text_generator = build_openai_compatible_text_generator(provider_profile, "planner")
+            return LLMRevisionController(text_generator)
+        return RevisionController()
+
     def run(self, task: VisualTask) -> PipelineResult:
         self.storage.prepare()
         self.storage.write_json("reports/task.json", task)
 
+        context_memory = ContextMemory()
+        cost_summary = CostSummary()
         style_guide = self.style_director.create_style_guide(task, self.scenario)
-        specs = self.planner.plan(task, self.scenario, style_guide)
+        self._record_agent_stage("reports/style_generation.json", self.style_director, cost_summary)
         self.storage.write_json("reports/style_guide.json", style_guide)
+
+        specs = self.planner.plan(task, self.scenario, style_guide)
+        self._record_agent_stage("reports/planning.json", self.planner, cost_summary)
+
+        specs, prompt_refinement_report, prompt_refinement_usage = self.prompt_refiner.refine(
+            task=task,
+            scenario=self.scenario,
+            style_guide=style_guide,
+            specs=specs,
+        )
+        for usage in prompt_refinement_usage:
+            record_provider_usage(cost_summary, usage)
+        self.storage.write_json("reports/prompt_refinement.json", prompt_refinement_report)
         self.storage.write_json(
             "reports/plan.json",
             {"assets": [spec.model_dump(mode="json") for spec in specs]},
         )
 
-        context_memory = ContextMemory()
-        cost_summary = CostSummary()
         generated_assets = self._generate_all(specs, style_guide, round_index=1)
         record_generated_assets(cost_summary, generated_assets, is_retry=False)
 
@@ -93,11 +176,21 @@ class GraphicAgentPipeline:
                 generated_assets=generated_assets,
                 composition=final_composition,
             )
+            self._record_agent_stage(
+                f"reports/critic_llm_round_{round_index}.json",
+                self.critic,
+                cost_summary,
+            )
             final_decision = self.revision_controller.decide(
                 final_report,
                 self.scenario,
                 round_index=round_index,
                 specs=specs,
+            )
+            self._record_agent_stage(
+                f"reports/revision_llm_round_{round_index}.json",
+                self.revision_controller,
+                cost_summary,
             )
             self.storage.write_json(f"reports/critique_round_{round_index}.json", final_report)
             self.storage.write_json(f"reports/revision_round_{round_index}.json", final_decision)
@@ -187,3 +280,16 @@ class GraphicAgentPipeline:
         existing_ids = {asset.spec_id for asset in existing}
         merged.extend(asset for asset in regenerated if asset.spec_id not in existing_ids)
         return merged
+
+    def _record_agent_stage(
+        self,
+        relative_report_path: str,
+        agent,
+        cost_summary: CostSummary,
+    ) -> None:
+        report = getattr(agent, "last_report", None)
+        usage_records = getattr(agent, "last_usage", [])
+        if report is not None:
+            self.storage.write_json(relative_report_path, report)
+        for usage in usage_records:
+            record_provider_usage(cost_summary, usage)

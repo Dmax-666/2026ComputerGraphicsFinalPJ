@@ -70,6 +70,8 @@ def test_provider_check_reports_missing_env_without_secret_values() -> None:
     assert "Missing Env" in result.stdout
     assert "OPENAI_API_KEY" in result.stdout
     assert "OPENAI_BASE_URL" in result.stdout
+    assert "OPENAI_TEXT_API_KEY" in result.stdout
+    assert "OPENAI_TEXT_BASE_URL" in result.stdout
     assert "sk-" not in result.stdout
 
 
@@ -136,6 +138,7 @@ def test_demo_readiness_does_not_run_real_provider_when_env_missing(tmp_path: Pa
     assert result.exit_code == 1
     assert "missing environment" in result.stdout.lower()
     assert "OPENAI_API_KEY" in result.stdout
+    assert "OPENAI_TEXT_API_KEY" in result.stdout
     assert not (tmp_path / "real/reports/result.json").exists()
 
 
