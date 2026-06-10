@@ -1,0 +1,84 @@
+{
+  "score": 0.78,
+  "passed": false,
+  "summary": "Strong overall concept board with cohesive cyberpunk mood, consistent palette, and clear separation between character and environment explorations. The board fits the task reasonably well, but it is not a true multi-variation board for a single subject as specified; it mixes two subjects and shows only three character concepts and four environment concepts in the visible composition. Several panels also read more like polished poster sheets than loose exploration thumbnails, and annotation text is largely too small to be functionally readable at board scale.",
+  "issues": [
+    {
+      "asset_id": "character_3",
+      "severity": "high",
+      "category": "task_fit",
+      "message": "This panel is labeled and rendered as Character Variation 3, but Character Variation 1 is not visibly present in the board, breaking the required four-variation exploration set for the character subject.",
+      "recommendation": "Retry or fix composition mapping so all four character variations are visibly included and correctly ordered."
+    },
+    {
+      "asset_id": "character_1",
+      "severity": "high",
+      "category": "composition",
+      "message": "The expected Character Variation 1 asset is not visibly present; the top-left visible panel appears to show Variation 4 content instead, indicating likely placement or labeling mismatch.",
+      "recommendation": "Retry composition/export with corrected asset placement and verify labels match the intended asset IDs before finalizing."
+    },
+    {
+      "asset_id": "all",
+      "severity": "high",
+      "category": "task_fit",
+      "message": "The scenario calls for multiple design variations for a single subject, but the final board mixes character and environment subjects, reducing focus and weakening compliance with the brief.",
+      "recommendation": "Revise the final composition to focus on one subject per board, or explicitly separate into two boards: one for character variations and one for environment variations."
+    },
+    {
+      "asset_id": "all",
+      "severity": "medium",
+      "category": "story_coherence",
+      "message": "The worldbuilding is coherent, but the board lacks a strong narrative throughline connecting the character sheets and environment sheets beyond palette and genre cues.",
+      "recommendation": "Add clearer cross-references, shared motifs, or a dedicated hero/world relationship panel to strengthen story coherence."
+    },
+    {
+      "asset_id": "character_2",
+      "severity": "medium",
+      "category": "variation_strength",
+      "message": "This variation is visually close to the other character sheets in pose, styling, and presentation, so the exploration breadth feels narrower than requested.",
+      "recommendation": "Retry with a more distinct silhouette, armor distribution, stance, and material treatment to better differentiate the concept direction."
+    },
+    {
+      "asset_id": "character_4",
+      "severity": "medium",
+      "category": "variation_strength",
+      "message": "The lean/agile direction is present, but it still overlaps heavily with the other character concepts in palette, posture, and weapon emphasis, limiting exploratory diversity.",
+      "recommendation": "Push stronger contrast in silhouette and functional design, such as lighter armor coverage, different mobility gear, or alternate blade deployment."
+    },
+    {
+      "asset_id": "all",
+      "severity": "medium",
+      "category": "readability",
+      "message": "Most annotation labels and technical callouts are too small to read at final board scale, undermining the stated design-sheet clarity.",
+      "recommendation": "Increase panel scale, reduce the number of panels per page, or add enlarged callout crops so annotations remain legible in the final composition."
+    },
+    {
+      "asset_id": "all",
+      "severity": "low",
+      "category": "visual_consistency",
+      "message": "Style and color palette are highly consistent, but the assets trend toward polished presentation boards rather than loose concept exploration, slightly missing the requested exploratory feel.",
+      "recommendation": "If retried, loosen rendering, simplify presentation polish, and emphasize rough ideation marks or silhouette studies."
+    },
+    {
+      "asset_id": "environment_1",
+      "severity": "low",
+      "category": "asset_consistency",
+      "message": "This environment sheet effectively matches the character world, but it reads as a hero illustration with supporting callouts rather than a broader environment variation study.",
+      "recommendation": "For a retry, broaden the environmental ideation with more architectural alternates, plan views, or composition thumbnails."
+    },
+    {
+      "asset_id": "environment_4",
+      "severity": "low",
+      "category": "asset_consistency",
+      "message": "The urban canyon direction is strong, but it overlaps compositionally with the other environment sheets through similar vertical framing and neon signage treatment.",
+      "recommendation": "Differentiate the variation further through unique district identity, larger structural contrast, or alternate camera perspective."
+    }
+  ],
+  "evaluator_names": [
+    "asset_completeness",
+    "style_consistency",
+    "image_size",
+    "file_sanity",
+    "llm_vision_critic"
+  ]
+}

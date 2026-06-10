@@ -1,0 +1,19 @@
+{
+  "title": "Moonlit Forest RPG Asset Pack",
+  "prompt": "A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.",
+  "style": {
+    "visual_style": "hand-painted 2D game art",
+    "palette": [
+      "moonlit violet",
+      "moss green",
+      "warm lantern gold"
+    ],
+    "mood": "whimsical, readable, family friendly"
+  },
+  "constraints": {
+    "camera": "orthographic or three-quarter game view",
+    "asset_pack_size": "small prototype",
+    "avoid": "gritty realism"
+  },
+  "metadata": {}
+}

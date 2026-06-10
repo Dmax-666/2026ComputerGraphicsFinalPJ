@@ -1,0 +1,38 @@
+{
+  "enabled": true,
+  "provider_profile": "openai_compatible",
+  "provider": "openai_compatible",
+  "model": "gpt-5.4-mini",
+  "assets": [
+    {
+      "id": "character_reference_robot",
+      "status": "refined",
+      "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Character reference sheet for the main character in: A small delivery robot searches for a lost kitten on a rainy neon night.",
+      "refined_prompt": "Warm cinematic comic illustration character reference sheet, consistent design for the main delivery robot and the lost kitten companion; gentle, hopeful, slightly mysterious mood; amber, cobalt blue, and rainy gray palette; clean readable turnaround-style layout with front, side, and back views of the robot, plus small expression and pose callouts; clear silhouettes, simple shapes, defined materials, and consistent proportions; rain-soaked neon-night story context implied through subtle background accents; legible post-processed labels in English; keep the design friendly and non-horror, with reliable comic styling and strong character consistency across panels."
+    },
+    {
+      "id": "panel_1",
+      "status": "refined",
+      "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 1/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Establish the setting, weather, and protagonist goal.. Keep character designs consistent.",
+      "refined_prompt": "Warm cinematic comic illustration, panel 1 of 4; gentle, hopeful, slightly mysterious mood; amber, cobalt blue, and rainy gray palette; clear opening establishing shot of a rainy neon city street at night, reflective wet pavement, glowing storefront signs, soft rain, and a small delivery robot as the clear focal point; the robot looks up and scans the street for a lost kitten, conveying the goal of the search; readable composition, strong silhouette, medium-wide framing, cinematic lighting, subtle motion from rain and reflections, English dialogue label: 'Where did the kitten go?'; keep the robot design consistent with the reference sheet; avoid photorealistic horror."
+    },
+    {
+      "id": "panel_2",
+      "status": "refined",
+      "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 2/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Show the protagonist discovering a clue or obstacle.. Keep character designs consistent.",
+      "refined_prompt": "Warm cinematic comic illustration, panel 2 of 4; gentle, hopeful, slightly mysterious mood; amber, cobalt blue, and rainy gray palette; the small delivery robot discovers a tiny pawprint clue on a rain-slick sidewalk near a neon-lit alley or puddle, with a clear visual cue guiding the search forward; composition should emphasize the clue and the robot's reaction, with strong readability, crisp comic shapes, and balanced negative space; rainy night atmosphere, glowing reflections, soft rim light, English dialogue label: 'A tiny pawprint!'; keep character designs consistent with the reference sheet; avoid photorealistic horror."
+    },
+    {
+      "id": "panel_3",
+      "status": "refined",
+      "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 3/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Increase emotional stakes with a larger dramatic composition.. Keep character designs consistent.",
+      "refined_prompt": "Warm cinematic comic illustration, panel 3 of 4; gentle, hopeful, slightly mysterious mood with slightly heightened tension; amber, cobalt blue, and rainy gray palette; larger dramatic composition showing the small delivery robot moving through a narrow neon alley or under a glowing awning, following the trail through heavier rain and deeper shadows; include emotional urgency without darkness becoming frightening, with clear motion, dynamic angle, and the robot reaching forward as it calls out; strong silhouette, cinematic perspective, reflective surfaces, English dialogue label: 'Hold on, I am coming.'; keep the robot design consistent with the reference sheet; avoid photorealistic horror."
+    },
+    {
+      "id": "panel_4",
+      "status": "refined",
+      "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 4/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Resolve the search with a warm emotional payoff.. Keep character designs consistent.",
+      "refined_prompt": "Warm cinematic comic illustration, panel 4 of 4; gentle, hopeful, slightly mysterious mood with a warm emotional payoff; amber, cobalt blue, and rainy gray palette with slightly brighter amber highlights; final resolution scene where the small delivery robot finds the lost kitten and gently reunites with it under a sheltered neon glow, with the rain softening in the background; clear affectionate body language, cozy composition, readable expressions, and a satisfying ending that feels tender and hopeful; cinematic comic lighting, crisp silhouettes, English dialogue label: 'Found you.'; keep character designs consistent with the reference sheet; avoid photorealistic horror."
+    }
+  ]
+}

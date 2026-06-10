@@ -1,0 +1,42 @@
+{
+  "enabled": true,
+  "stage": "style_director",
+  "fallback_style_guide": {
+    "name": "Moonlit Forest RPG Asset Pack Style Guide",
+    "visual_style": "hand-painted 2D game art",
+    "palette": [
+      "moonlit violet",
+      "moss green",
+      "warm lantern gold"
+    ],
+    "mood": "whimsical, readable, family friendly",
+    "typography": "legible post-processed labels",
+    "negative_prompt": "gritty realism",
+    "notes": [
+      "Scenario: game_assets",
+      "Keep style consistent across all generated assets.",
+      "Prefer clear silhouettes and readable compositions."
+    ],
+    "reference_assets": {}
+  },
+  "status": "llm_generated",
+  "provider_profile": "openai_compatible",
+  "provider": "openai_compatible",
+  "model": "gpt-5.4-mini",
+  "style_guide": {
+    "name": "Moonlit Forest RPG Asset Pack Style Guide",
+    "visual_style": "hand-painted 2D game art, orthographic or subtle three-quarter game view",
+    "palette": [
+      "moonlit violet",
+      "moss green",
+      "warm lantern gold"
+    ],
+    "mood": "whimsical, readable, family friendly",
+    "typography": "legible post-processed labels, clean sans-serif, high contrast",
+    "negative_prompt": "gritty realism, photorealism, harsh shadows, noisy detail, cluttered compositions",
+    "notes": [
+      "Keep all assets cohesive for a small prototype. Use clear silhouettes, simple readable shapes, and consistent moonlit forest village motifs with animal companions."
+    ],
+    "reference_assets": {}
+  }
+}

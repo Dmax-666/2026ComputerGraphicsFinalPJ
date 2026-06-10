@@ -1,0 +1,92 @@
+{
+  "score": 0.63,
+  "passed": false,
+  "summary": "The pack is visually appealing and broadly cohesive in palette and fantasy tone, but it does not fully fit the requested production-ready 2D game asset brief. Several assets drift into polished illustration/chibi key-art rather than readable orthographic-style game assets, one prop asset clearly fails prompt intent, and category consistency is uneven between environment, prop, icon, and UI treatments. Retry is recommended for the most off-spec assets.",
+  "issues": [
+    {
+      "asset_id": "characters_1",
+      "severity": "medium",
+      "category": "task_fit",
+      "message": "Character reads as a soft storybook illustration with heavy vignette and painterly glow rather than a clean game-ready asset with clear transparent-background-friendly separation.",
+      "recommendation": "Retry with stricter isolated asset framing, flatter background treatment or transparent background, reduced vignette, and stronger silhouette readability."
+    },
+    {
+      "asset_id": "characters_2",
+      "severity": "medium",
+      "category": "asset_consistency",
+      "message": "Character style is more chibi and icon-like than characters_1, creating inconsistency in proportions and rendering approach across the character set.",
+      "recommendation": "Retry to align body proportions, facial treatment, and rendering density with the other character asset or revise both characters toward one unified style target."
+    },
+    {
+      "asset_id": "environments_1",
+      "severity": "low",
+      "category": "task_fit",
+      "message": "Cottage asset is attractive and readable but presented like a polished isometric illustration rather than a neutral, reusable environment asset with cleaner scene isolation.",
+      "recommendation": "Acceptable if the pack allows illustrative assets; otherwise retry with simpler ground treatment and cleaner cutout-friendly presentation."
+    },
+    {
+      "asset_id": "environments_2",
+      "severity": "medium",
+      "category": "asset_consistency",
+      "message": "Ancient tree scene is much more like a full background illustration than the cottage asset, with deeper scene depth, stronger atmosphere, and more cinematic composition.",
+      "recommendation": "Retry to simplify into a more modular environment asset or rebalance both environment pieces to the same level of scene complexity and camera treatment."
+    },
+    {
+      "asset_id": "props_1",
+      "severity": "high",
+      "category": "story_coherence",
+      "message": "The 'basket of mushrooms' appears to contain two childlike human figures rather than mushrooms, which is a direct prompt failure and breaks pack coherence.",
+      "recommendation": "Retry immediately with explicit emphasis on mushrooms only, no characters, no faces, and clear prop-only composition."
+    },
+    {
+      "asset_id": "props_1",
+      "severity": "medium",
+      "category": "asset_consistency",
+      "message": "Lantern and basket are oversized and staged like a vignette illustration rather than a small prop set for reusable scene dressing.",
+      "recommendation": "Retry with neutral scale, cleaner spacing, and less atmospheric backdrop so the props read as modular game assets."
+    },
+    {
+      "asset_id": "props_2",
+      "severity": "low",
+      "category": "visual_defect",
+      "message": "Signboard is readable, but the hanging sign panel feels under-defined and slightly empty relative to the rendered post and lantern.",
+      "recommendation": "Consider a light revision to improve sign readability and balance detail density across the object."
+    },
+    {
+      "asset_id": "icons_1",
+      "severity": "medium",
+      "category": "task_fit",
+      "message": "Icons are rendered with soft glow and painterly shading that may reduce small-size UI readability, and the acorn currency set includes coin pile presentation closer to item art than icon design.",
+      "recommendation": "Retry with crisper edges, reduced bloom, flatter values, and more standardized icon silhouettes."
+    },
+    {
+      "asset_id": "icons_2",
+      "severity": "medium",
+      "category": "asset_consistency",
+      "message": "This set contains four illustrated symbols arranged like mini props, while icons_1 contains two larger economy icons; the icon system lacks consistent count, scale, and visual language.",
+      "recommendation": "Retry both icon sheets or this asset to enforce a unified icon grid, equal scale, consistent stroke/contrast, and matching semantic grouping."
+    },
+    {
+      "asset_id": "ui_elements_1",
+      "severity": "low",
+      "category": "task_fit",
+      "message": "Dialogue frame is attractive and mostly on-brief, but decorative density around corners may compete with text readability in actual UI use.",
+      "recommendation": "Minor revision only: simplify corner ornamentation and ensure inner text area margins are generous."
+    },
+    {
+      "asset_id": "ui_elements_2",
+      "severity": "medium",
+      "category": "asset_consistency",
+      "message": "Health bar and button set is well executed but uses a denser, more ornamental UI language than the dialogue box, making the UI set feel partially mismatched.",
+      "recommendation": "Revise to better match ui_elements_1 in motif density, border thickness, and component proportions."
+    }
+  ],
+  "evaluator_names": [
+    "asset_completeness",
+    "style_consistency",
+    "category_coverage",
+    "image_size",
+    "file_sanity",
+    "llm_vision_critic"
+  ]
+}

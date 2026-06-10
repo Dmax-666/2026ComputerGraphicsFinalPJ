@@ -1,0 +1,807 @@
+{
+  "scenario": "game_assets",
+  "task": {
+    "title": "Moonlit Forest RPG Asset Pack",
+    "prompt": "A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.",
+    "style": {
+      "visual_style": "hand-painted 2D game art",
+      "palette": [
+        "moonlit violet",
+        "moss green",
+        "warm lantern gold"
+      ],
+      "mood": "whimsical, readable, family friendly"
+    },
+    "constraints": {
+      "camera": "orthographic or three-quarter game view",
+      "asset_pack_size": "small prototype",
+      "avoid": "gritty realism"
+    },
+    "metadata": {}
+  },
+  "style_guide": {
+    "name": "Moonlit Forest RPG Asset Pack Style Guide",
+    "visual_style": "hand-painted 2D game art",
+    "palette": [
+      "moonlit violet",
+      "moss green",
+      "warm lantern gold"
+    ],
+    "mood": "whimsical, readable, family friendly",
+    "typography": "legible post-processed labels",
+    "negative_prompt": "gritty realism",
+    "notes": [
+      "Scenario: game_assets",
+      "Keep style consistent across all generated assets.",
+      "Prefer clear silhouettes and readable compositions."
+    ],
+    "reference_assets": {}
+  },
+  "context_memory": {
+    "style_patches": [],
+    "character_descriptions": {},
+    "reference_image_paths": {},
+    "revision_lessons": [],
+    "extra": {}
+  },
+  "cost_summary": {
+    "total_rounds": 1,
+    "total_generation_calls": 10,
+    "total_retry_calls": 0,
+    "total_prompt_tokens": 1939,
+    "total_completion_tokens": 997,
+    "total_image_generations": 10,
+    "total_vision_calls": 0,
+    "estimated_cost_usd": 0.532,
+    "per_asset_calls": {
+      "characters_1": 1,
+      "characters_2": 1,
+      "environments_1": 1,
+      "environments_2": 1,
+      "props_1": 1,
+      "props_2": 1,
+      "icons_1": 1,
+      "icons_2": 1,
+      "ui_elements_1": 1,
+      "ui_elements_2": 1
+    },
+    "provider_usage": [
+      {
+        "role": "planner",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-5.4-mini",
+        "prompt_tokens": 1939,
+        "completion_tokens": 997,
+        "image_generations": 0,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.002
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      }
+    ],
+    "provider_failures": []
+  },
+  "planned_assets": [
+    {
+      "id": "characters_1",
+      "type": "game_asset",
+      "category": "characters",
+      "title": "Characters 1",
+      "description": "A production-ready 2D characters asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear character-focused composition. Design a readable isolated character asset with strong silhouette, gentle expression, simple layered clothing, and subtle forest-inspired details. Use moonlit violet, moss green, and warm lantern gold accents. Orthographic or slight three-quarter game view, clean edges, transparent-background friendly, high readability, no gritty realism.",
+      "order": 1,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: characters. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "characters_2",
+      "type": "game_asset",
+      "category": "characters",
+      "title": "Characters 2",
+      "description": "A production-ready 2D characters asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear character-focused composition. Design a readable isolated character asset with strong silhouette, gentle expression, simple layered clothing, and subtle forest-inspired details. Use moonlit violet, moss green, and warm lantern gold accents. Orthographic or slight three-quarter game view, clean edges, transparent-background friendly, high readability, no gritty realism.",
+      "order": 2,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: characters. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environments_1",
+      "type": "game_asset",
+      "category": "environments",
+      "title": "Environments 1",
+      "description": "A production-ready 2D environments asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear environment-focused composition. Create an isolated environment asset showing a small readable forest village element such as a cottage, lantern-lit path, treehouse, or shrine, with layered shapes and clear depth. Use moonlit violet, moss green, and warm lantern gold lighting. Orthographic or slight three-quarter game view, transparent-background friendly, crisp readable forms, no gritty realism.",
+      "order": 3,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: environments. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environments_2",
+      "type": "game_asset",
+      "category": "environments",
+      "title": "Environments 2",
+      "description": "A production-ready 2D environments asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear environment-focused composition. Create an isolated environment asset showing a small readable forest village element such as a cottage, lantern-lit path, treehouse, or shrine, with layered shapes and clear depth. Use moonlit violet, moss green, and warm lantern gold lighting. Orthographic or slight three-quarter game view, transparent-background friendly, crisp readable forms, no gritty realism.",
+      "order": 4,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: environments. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "props_1",
+      "type": "game_asset",
+      "category": "props",
+      "title": "Props 1",
+      "description": "A production-ready 2D props asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear prop-focused composition. Design a single isolated prop asset such as a lantern, basket, signpost, mushroom stool, or potion bottle, rendered with clean silhouette and decorative forest motifs. Use moonlit violet, moss green, and warm lantern gold accents. Orthographic or slight three-quarter game view, transparent-background friendly, highly readable, no gritty realism.",
+      "order": 5,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: props. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "props_2",
+      "type": "game_asset",
+      "category": "props",
+      "title": "Props 2",
+      "description": "A production-ready 2D props asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear prop-focused composition. Design a single isolated prop asset such as a lantern, basket, signpost, mushroom stool, or potion bottle, rendered with clean silhouette and decorative forest motifs. Use moonlit violet, moss green, and warm lantern gold accents. Orthographic or slight three-quarter game view, transparent-background friendly, highly readable, no gritty realism.",
+      "order": 6,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: props. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "icons_1",
+      "type": "game_asset",
+      "category": "icons",
+      "title": "Icons 1",
+      "description": "A production-ready 2D icons asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game art icon for a cozy moonlit forest village RPG, family friendly and whimsical. Create a single isolated icon with bold readable silhouette, simple shapes, and small decorative details, suitable for UI use. Use moonlit violet, moss green, and warm lantern gold palette, centered composition, orthographic view, transparent-background friendly, crisp edges, no gritty realism.",
+      "order": 7,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: icons. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "icons_2",
+      "type": "game_asset",
+      "category": "icons",
+      "title": "Icons 2",
+      "description": "A production-ready 2D icons asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game art icon for a cozy moonlit forest village RPG, family friendly and whimsical. Create a single isolated icon with bold readable silhouette, simple shapes, and small decorative details, suitable for UI use. Use moonlit violet, moss green, and warm lantern gold palette, centered composition, orthographic view, transparent-background friendly, crisp edges, no gritty realism.",
+      "order": 8,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: icons. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ui_elements_1",
+      "type": "game_asset",
+      "category": "ui_elements",
+      "title": "Ui Elements 1",
+      "description": "A production-ready 2D ui_elements asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game UI element set for a cozy moonlit forest village RPG, family friendly and whimsical. Design isolated interface pieces with elegant readable shapes, including a frame, button, panel edge, and small decorative accents inspired by forest leaves, stars, and lanterns. Use moonlit violet, moss green, and warm lantern gold. Clean orthographic layout, transparent-background friendly, legible post-processed labels if any, no gritty realism.",
+      "order": 9,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: ui_elements. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ui_elements_2",
+      "type": "game_asset",
+      "category": "ui_elements",
+      "title": "Ui Elements 2",
+      "description": "A production-ready 2D ui_elements asset for the requested game world.",
+      "purpose": "Populate a coherent prototype asset pack.",
+      "prompt": "Hand-painted 2D game UI element set for a cozy moonlit forest village RPG, family friendly and whimsical. Design isolated interface pieces with elegant readable shapes, including a frame, button, panel edge, and small decorative accents inspired by forest leaves, stars, and lanterns. Use moonlit violet, moss green, and warm lantern gold. Clean orthographic layout, transparent-background friendly, legible post-processed labels if any, no gritty realism.",
+      "order": 10,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "hand-painted 2D game art; mood: whimsical, readable, family friendly; palette: moonlit violet, moss green, warm lantern gold. Task title: Moonlit Forest RPG Asset Pack. Avoid: gritty realism.. Isolated 2D game asset. Category: ui_elements. Design document: A cozy 2D fantasy RPG set in a moonlit forest village with animal companions.. Transparent-background friendly composition.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    }
+  ],
+  "generated_assets": [
+    {
+      "spec_id": "characters_1",
+      "path": "outputs\\game_assets_two_api\\assets\\001_characters_1_r1_openai.png",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear character-focused composition. Design a readable isolated character asset with strong silhouette, gentle expression, simple layered clothing, and subtle forest-inspired details. Use moonlit violet, moss green, and warm lantern gold accents. Orthographic or slight three-quarter game view, clean edges, transparent-background friendly, high readability, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "characters_2",
+      "path": "outputs\\game_assets_two_api\\assets\\002_characters_2_r1_openai.png",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear character-focused composition. Design a readable isolated character asset with strong silhouette, gentle expression, simple layered clothing, and subtle forest-inspired details. Use moonlit violet, moss green, and warm lantern gold accents. Orthographic or slight three-quarter game view, clean edges, transparent-background friendly, high readability, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "environments_1",
+      "path": "outputs\\game_assets_two_api\\assets\\003_environments_1_r1_openai.png",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear environment-focused composition. Create an isolated environment asset showing a small readable forest village element such as a cottage, lantern-lit path, treehouse, or shrine, with layered shapes and clear depth. Use moonlit violet, moss green, and warm lantern gold lighting. Orthographic or slight three-quarter game view, transparent-background friendly, crisp readable forms, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "environments_2",
+      "path": "outputs\\game_assets_two_api\\assets\\004_environments_2_r1_openai.png",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear environment-focused composition. Create an isolated environment asset showing a small readable forest village element such as a cottage, lantern-lit path, treehouse, or shrine, with layered shapes and clear depth. Use moonlit violet, moss green, and warm lantern gold lighting. Orthographic or slight three-quarter game view, transparent-background friendly, crisp readable forms, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "props_1",
+      "path": "outputs\\game_assets_two_api\\assets\\005_props_1_r1_openai.png",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear prop-focused composition. Design a single isolated prop asset such as a lantern, basket, signpost, mushroom stool, or potion bottle, rendered with clean silhouette and decorative forest motifs. Use moonlit violet, moss green, and warm lantern gold accents. Orthographic or slight three-quarter game view, transparent-background friendly, highly readable, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "props_2",
+      "path": "outputs\\game_assets_two_api\\assets\\006_props_2_r1_openai.png",
+      "prompt": "Hand-painted 2D game art for a cozy moonlit forest village RPG, family friendly and whimsical, with a clear prop-focused composition. Design a single isolated prop asset such as a lantern, basket, signpost, mushroom stool, or potion bottle, rendered with clean silhouette and decorative forest motifs. Use moonlit violet, moss green, and warm lantern gold accents. Orthographic or slight three-quarter game view, transparent-background friendly, highly readable, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "icons_1",
+      "path": "outputs\\game_assets_two_api\\assets\\007_icons_1_r1_openai.png",
+      "prompt": "Hand-painted 2D game art icon for a cozy moonlit forest village RPG, family friendly and whimsical. Create a single isolated icon with bold readable silhouette, simple shapes, and small decorative details, suitable for UI use. Use moonlit violet, moss green, and warm lantern gold palette, centered composition, orthographic view, transparent-background friendly, crisp edges, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "icons_2",
+      "path": "outputs\\game_assets_two_api\\assets\\008_icons_2_r1_openai.png",
+      "prompt": "Hand-painted 2D game art icon for a cozy moonlit forest village RPG, family friendly and whimsical. Create a single isolated icon with bold readable silhouette, simple shapes, and small decorative details, suitable for UI use. Use moonlit violet, moss green, and warm lantern gold palette, centered composition, orthographic view, transparent-background friendly, crisp edges, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "ui_elements_1",
+      "path": "outputs\\game_assets_two_api\\assets\\009_ui_elements_1_r1_openai.png",
+      "prompt": "Hand-painted 2D game UI element set for a cozy moonlit forest village RPG, family friendly and whimsical. Design isolated interface pieces with elegant readable shapes, including a frame, button, panel edge, and small decorative accents inspired by forest leaves, stars, and lanterns. Use moonlit violet, moss green, and warm lantern gold. Clean orthographic layout, transparent-background friendly, legible post-processed labels if any, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "ui_elements_2",
+      "path": "outputs\\game_assets_two_api\\assets\\010_ui_elements_2_r1_openai.png",
+      "prompt": "Hand-painted 2D game UI element set for a cozy moonlit forest village RPG, family friendly and whimsical. Design isolated interface pieces with elegant readable shapes, including a frame, button, panel edge, and small decorative accents inspired by forest leaves, stars, and lanterns. Use moonlit violet, moss green, and warm lantern gold. Clean orthographic layout, transparent-background friendly, legible post-processed labels if any, no gritty realism.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    }
+  ],
+  "composition": {
+    "type": "asset_sheet",
+    "page_size": [
+      1800,
+      1600
+    ],
+    "output_path": "outputs\\game_assets_two_api\\final.png",
+    "layout": [
+      {
+        "asset_id": "characters_1",
+        "box": [
+          72,
+          130,
+          465,
+          577
+        ],
+        "type": "game_asset"
+      },
+      {
+        "asset_id": "characters_2",
+        "box": [
+          493,
+          130,
+          886,
+          577
+        ],
+        "type": "game_asset"
+      },
+      {
+        "asset_id": "environments_1",
+        "box": [
+          914,
+          130,
+          1307,
+          577
+        ],
+        "type": "game_asset"
+      },
+      {
+        "asset_id": "environments_2",
+        "box": [
+          1335,
+          130,
+          1728,
+          577
+        ],
+        "type": "game_asset"
+      },
+      {
+        "asset_id": "props_1",
+        "box": [
+          72,
+          605,
+          465,
+          1052
+        ],
+        "type": "game_asset"
+      },
+      {
+        "asset_id": "props_2",
+        "box": [
+          493,
+          605,
+          886,
+          1052
+        ],
+        "type": "game_asset"
+      },
+      {
+        "asset_id": "icons_1",
+        "box": [
+          914,
+          605,
+          1307,
+          1052
+        ],
+        "type": "game_asset"
+      },
+      {
+        "asset_id": "icons_2",
+        "box": [
+          1335,
+          605,
+          1728,
+          1052
+        ],
+        "type": "game_asset"
+      },
+      {
+        "asset_id": "ui_elements_1",
+        "box": [
+          72,
+          1080,
+          465,
+          1527
+        ],
+        "type": "game_asset"
+      },
+      {
+        "asset_id": "ui_elements_2",
+        "box": [
+          493,
+          1080,
+          886,
+          1527
+        ],
+        "type": "game_asset"
+      }
+    ],
+    "metadata": {
+      "asset_count": 10
+    }
+  },
+  "critique": {
+    "score": 1.0,
+    "passed": true,
+    "summary": "All evaluators passed.",
+    "issues": [],
+    "evaluator_names": [
+      "asset_completeness",
+      "style_consistency",
+      "category_coverage",
+      "image_size",
+      "file_sanity"
+    ]
+  },
+  "revision": {
+    "action": "accept",
+    "rationale": "Score 1.0 passed threshold 0.8.",
+    "retry_asset_ids": [],
+    "prompt_rewrites": {},
+    "reasoning_trace": [
+      "Score 1.0 >= threshold 0.8.",
+      "No high-severity issues found.",
+      "Accepting result."
+    ]
+  },
+  "output_dir": "outputs\\game_assets_two_api",
+  "final_image": "outputs\\game_assets_two_api\\final.png",
+  "rounds_completed": 1
+}

@@ -1,0 +1,35 @@
+{
+  "action": "retry_assets",
+  "rationale": "Round 2 critique is still below threshold (0.63 < 0.8). Several assets need prompt tightening for production-ready 2D game asset readability and consistency, with one clear prompt failure in props_1. Retrying the flagged assets is warranted within budget.",
+  "retry_asset_ids": [
+    "characters_1",
+    "characters_2",
+    "environments_1",
+    "environments_2",
+    "props_1",
+    "props_2",
+    "icons_1",
+    "icons_2",
+    "ui_elements_1",
+    "ui_elements_2"
+  ],
+  "prompt_rewrites": {
+    "characters_1": "Hand-painted 2D game asset, isolated character sheet style, orthographic or subtle three-quarter view, flat or transparent-background-friendly presentation, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Cozy forest villager standing beside a small rabbit companion, full body, clean silhouette, simplified readable shapes, even lighting, minimal or no vignette, no painterly glow, no cinematic background, no clutter, no photorealism, no gritty realism, no harsh shadows.",
+    "characters_2": "Hand-painted 2D game asset, isolated character sheet style, orthographic or subtle three-quarter view, flat or transparent-background-friendly presentation, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Gentle moonlit forest herbalist standing with an owl companion, full body, clean silhouette, simplified readable shapes, even lighting, consistent proportions with characters_1, minimal or no vignette, no painterly glow, no cinematic background, no clutter, no photorealism, no gritty realism, no harsh shadows.",
+    "environments_1": "Hand-painted 2D environment asset, isolated modular scene piece, orthographic or subtle three-quarter view, cleaner cutout-friendly presentation, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Cozy forest village cottage exterior with mossy roof, lanterns, wooden details, and small plants, readable architecture, simple ground treatment, reduced atmospheric depth, no cinematic framing, no clutter, no photorealism, no gritty realism.",
+    "environments_2": "Hand-painted 2D environment asset, isolated modular scene piece, orthographic or subtle three-quarter view, consistent with environments_1 in complexity and camera treatment, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Moonlit forest clearing with ancient tree centerpiece, simplified layered shapes, readable layout, reduced atmosphere, cleaner scene isolation, no cinematic background illustration feel, no clutter, no photorealism, no gritty realism.",
+    "props_1": "Hand-painted 2D prop asset, isolated small-object composition, transparent-background-friendly, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. A warm lantern next to a basket filled only with mushrooms, no people, no faces, no childlike figures, no characters, no body parts, clear prop-only presentation, compact scale, clean spacing, crisp silhouettes, no vignette, no atmospheric backdrop, no clutter.",
+    "props_2": "Hand-painted 2D prop asset, isolated small-object composition, transparent-background-friendly, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Wooden signpost with a clearly defined hanging herb bundle and legible sign panel, balanced detail density, compact scale, clean spacing, crisp silhouettes, no vignette, no atmospheric backdrop, no clutter.",
+    "icons_1": "Hand-painted 2D icon asset, orthographic view, standardized icon grid, crisp edges, flat or lightly shaded values, high contrast for small-size UI readability, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Moon charm and acorn currency icons, consistent scale and silhouette language, no bloom, no glow, no painterly blur, no item-art staging, no clutter.",
+    "icons_2": "Hand-painted 2D icon asset, orthographic view, standardized icon grid, crisp edges, flat or lightly shaded values, high contrast for small-size UI readability, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Healing herb and trail marker icons, same scale and visual language as icons_1, consistent stroke density and spacing, no bloom, no glow, no painterly blur, no prop-like staging, no clutter.",
+    "ui_elements_1": "Hand-painted 2D UI element, orthographic view, dialogue frame with subtle leaf and vine motifs, generous inner text margins, simplified corner ornamentation, balanced border thickness, high contrast, clean readable open space, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette, transparent-background-friendly, no clutter.",
+    "ui_elements_2": "Hand-painted 2D UI element set, orthographic view, health bar and menu buttons designed to match ui_elements_1 in motif density, border thickness, and component proportions, generous label space, high contrast, clean readable layout, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette, transparent-background-friendly, no clutter."
+  },
+  "reasoning_trace": [
+    "Round 2 score 0.63 below threshold 0.8.",
+    "Retry selected rather than accept because multiple medium/high issues remain and revision budget allows another pass.",
+    "Priority fix: props_1 prompt failure—explicitly forbid human/child figures and require mushrooms only.",
+    "Consistency fix: unify character proportions, environment scene complexity, icon treatment, and UI ornament density.",
+    "Readability fix: emphasize isolated, cutout-friendly, transparent-background-friendly asset presentation across categories."
+  ]
+}

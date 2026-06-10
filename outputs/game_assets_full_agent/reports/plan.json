@@ -1,0 +1,284 @@
+{
+  "assets": [
+    {
+      "id": "characters_1",
+      "type": "game_asset",
+      "category": "characters",
+      "title": "Moonlit Forest Villager with Rabbit Companion",
+      "description": "A production-ready hand-painted 2D character asset showing a cozy forest villager and small rabbit companion in a readable game-friendly pose.",
+      "purpose": "Populate the prototype with a friendly protagonist asset for the moonlit forest village setting.",
+      "prompt": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A cozy forest villager character standing beside a small rabbit companion, clear readable silhouette, simple shapes, gentle expression, full-body character presentation, centered composition with clean separation from background, moonlit forest village motifs, high clarity for game asset use, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 1,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "camera": "orthographic or subtle three-quarter game view",
+        "original_prompt": "hand-painted 2D game art, orthographic or subtle three-quarter game view; whimsical, readable, family friendly; palette of moonlit violet, moss green, warm lantern gold. A cozy forest villager character with a rabbit companion, clear silhouette, simple readable shapes, moonlit forest village motifs, isolated transparent-background friendly composition, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "characters_2",
+      "type": "game_asset",
+      "category": "characters",
+      "title": "Moonlit Forest Herbalist with Owl Companion",
+      "description": "A production-ready hand-painted 2D character asset featuring a gentle herbalist and owl companion suitable for a fantasy RPG prototype.",
+      "purpose": "Add a second distinct character for gameplay variety and world cohesion.",
+      "prompt": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A gentle moonlit forest herbalist character standing with an owl companion, clear readable silhouette, simple shapes, practical village fantasy clothing with herb pouches and soft natural details, full-body character presentation, centered composition with clean separation from background, high clarity for game asset use, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 2,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "camera": "orthographic or subtle three-quarter game view",
+        "original_prompt": "hand-painted 2D game art, orthographic or subtle three-quarter game view; whimsical, readable, family friendly; palette of moonlit violet, moss green, warm lantern gold. A moonlit forest herbalist character with an owl companion, clear silhouette, simple readable shapes, village fantasy attire, isolated transparent-background friendly composition, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environments_1",
+      "type": "game_asset",
+      "category": "environments",
+      "title": "Moonlit Forest Village Cottage Exterior",
+      "description": "A production-ready hand-painted 2D environment asset depicting a cozy cottage in the moonlit forest village.",
+      "purpose": "Provide the main village setting backdrop for the prototype asset pack.",
+      "prompt": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A cozy forest village cottage exterior with a mossy roof, glowing lanterns, wooden details, and small plants around the base, readable architecture, clear focal point, balanced composition, game-ready environment asset, isolated scene-friendly presentation, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 3,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "camera": "orthographic or subtle three-quarter game view",
+        "original_prompt": "hand-painted 2D game art, orthographic or subtle three-quarter game view; whimsical, readable, family friendly; palette of moonlit violet, moss green, warm lantern gold. Cozy moonlit forest village cottage exterior with glowing lanterns, mossy roof, readable architecture, simple shapes, isolated game asset composition, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environments_2",
+      "type": "game_asset",
+      "category": "environments",
+      "title": "Moonlit Forest Clearing with Ancient Tree",
+      "description": "A production-ready hand-painted 2D environment asset showing a luminous forest clearing with an ancient tree centerpiece.",
+      "purpose": "Provide a secondary environment scene for exploration and storytelling.",
+      "prompt": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A moonlit forest clearing centered on an ancient tree with softly glowing foliage and subtle magical ambience, readable layout, clear focal point, simple layered shapes, game-ready environment asset, isolated scene-friendly presentation, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 4,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "camera": "orthographic or subtle three-quarter game view",
+        "original_prompt": "hand-painted 2D game art, orthographic or subtle three-quarter game view; whimsical, readable, family friendly; palette of moonlit violet, moss green, warm lantern gold. A moonlit forest clearing with an ancient tree, soft glowing foliage, readable layout, simple shapes, isolated game asset composition, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "props_1",
+      "type": "game_asset",
+      "category": "props",
+      "title": "Lantern and Mushroom Basket Prop Set",
+      "description": "A production-ready hand-painted 2D prop asset featuring a lantern and basket of mushrooms for forest village scenes.",
+      "purpose": "Support scene dressing and interactive object variety.",
+      "prompt": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A prop set featuring a warm lantern and a basket of mushrooms, clear silhouettes, simple readable shapes, cozy forest village fantasy styling, small-object composition with clean spacing, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 5,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "camera": "orthographic or subtle three-quarter game view",
+        "original_prompt": "hand-painted 2D game art, orthographic or subtle three-quarter game view; whimsical, readable, family friendly; palette of moonlit violet, moss green, warm lantern gold. A prop set with a warm lantern and a basket of mushrooms, clear silhouette, simple readable shapes, cozy forest village fantasy, isolated transparent-background friendly composition, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "props_2",
+      "type": "game_asset",
+      "category": "props",
+      "title": "Wooden Signpost and Hanging Herb Bundle",
+      "description": "A production-ready hand-painted 2D prop asset for village navigation and environmental storytelling.",
+      "purpose": "Add a second prop to reinforce the forest village aesthetic.",
+      "prompt": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A wooden signpost with a hanging herb bundle, clear silhouette, simple readable shapes, subtle carved details, forest village motif, small-object composition with clean spacing, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 6,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "camera": "orthographic or subtle three-quarter game view",
+        "original_prompt": "hand-painted 2D game art, orthographic or subtle three-quarter game view; whimsical, readable, family friendly; palette of moonlit violet, moss green, warm lantern gold. A wooden signpost with a hanging herb bundle, clear silhouette, simple readable shapes, moonlit forest village motif, isolated transparent-background friendly composition, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "icons_1",
+      "type": "game_asset",
+      "category": "icons",
+      "title": "Moon Charm and Acorn Currency Icons",
+      "description": "A production-ready hand-painted 2D icon asset set with moon charm and acorn currency symbols.",
+      "purpose": "Provide readable UI-relevant economy and magical interaction icons.",
+      "prompt": "Hand-painted 2D game art, orthographic view, readable icon design, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Small icon set featuring a moon charm and acorn currency symbols, clean silhouettes, high contrast, centered icon composition, crisp edges for UI readability, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 7,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "camera": "orthographic",
+        "original_prompt": "hand-painted 2D game art, orthographic view, readable icon design, whimsical, family friendly, palette of moonlit violet, moss green, warm lantern gold. Small icon set featuring a moon charm and acorn currency symbols, clean silhouettes, high contrast, isolated on transparent-friendly background, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "icons_2",
+      "type": "game_asset",
+      "category": "icons",
+      "title": "Healing Herb and Trail Marker Icons",
+      "description": "A production-ready hand-painted 2D icon asset set with healing herb and trail marker symbols for gameplay clarity.",
+      "purpose": "Support inventory, navigation, and quest readability in the prototype.",
+      "prompt": "Hand-painted 2D game art, orthographic view, readable icon design, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Small icon set featuring healing herbs and a trail marker symbol, clean silhouettes, high contrast, centered icon composition, crisp edges for UI readability, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 8,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "camera": "orthographic",
+        "original_prompt": "hand-painted 2D game art, orthographic view, readable icon design, whimsical, family friendly, palette of moonlit violet, moss green, warm lantern gold. Small icon set featuring healing herbs and a trail marker symbol, clean silhouettes, high contrast, isolated on transparent-friendly background, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ui_elements_1",
+      "type": "game_asset",
+      "category": "ui_elements",
+      "title": "Woodland Dialogue Box Frame",
+      "description": "A production-ready hand-painted 2D UI asset for dialogue windows with an organic forest-inspired frame.",
+      "purpose": "Provide a core UI element for conversations and narrative delivery.",
+      "prompt": "Hand-painted 2D game art UI element, orthographic view, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. A woodland dialogue box frame with subtle leaf and vine motifs, clear open space for text, legible post-processed labels, clean sans-serif styling, high contrast, balanced UI layout, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 9,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "typography": "legible post-processed labels, clean sans-serif, high contrast",
+        "original_prompt": "hand-painted 2D game art UI element, orthographic, clean sans-serif label space, high contrast, whimsical, readable, family friendly, palette of moonlit violet, moss green, warm lantern gold. A woodland dialogue box frame with subtle leaf and vine motifs, legible post-processed labels, clean layout, isolated transparent-friendly composition, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ui_elements_2",
+      "type": "game_asset",
+      "category": "ui_elements",
+      "title": "Health Bar and Menu Button Set",
+      "description": "A production-ready hand-painted 2D UI asset set containing a health bar and matching menu buttons.",
+      "purpose": "Complete the prototype UI kit with essential gameplay interface components.",
+      "prompt": "Hand-painted 2D game art UI element set, orthographic view, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. A health bar and matching menu button set with soft forest-inspired styling, clear open space for labels, legible post-processed labels, clean sans-serif styling, high contrast, balanced UI layout, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+      "order": 10,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "style": "hand-painted 2D game art",
+        "palette": [
+          "moonlit violet",
+          "moss green",
+          "warm lantern gold"
+        ],
+        "mood": "whimsical, readable, family friendly",
+        "typography": "legible post-processed labels, clean sans-serif, high contrast",
+        "original_prompt": "hand-painted 2D game art UI element, orthographic, clean sans-serif label space, high contrast, whimsical, readable, family friendly, palette of moonlit violet, moss green, warm lantern gold. A health bar and matching menu button set with soft forest styling, legible post-processed labels, clean layout, isolated transparent-friendly composition, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    }
+  ]
+}

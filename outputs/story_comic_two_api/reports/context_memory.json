@@ -1,0 +1,9 @@
+{
+  "style_patches": [],
+  "character_descriptions": {},
+  "reference_image_paths": {
+    "character_reference_robot": "outputs\\story_comic_two_api\\assets\\000_character_reference_robot_r1_openai.png"
+  },
+  "revision_lessons": [],
+  "extra": {}
+}

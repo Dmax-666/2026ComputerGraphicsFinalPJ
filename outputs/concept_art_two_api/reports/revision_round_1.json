@@ -1,0 +1,11 @@
+{
+  "action": "accept",
+  "rationale": "Score 1.0 passed threshold 0.7.",
+  "retry_asset_ids": [],
+  "prompt_rewrites": {},
+  "reasoning_trace": [
+    "Score 1.0 >= threshold 0.7.",
+    "No high-severity issues found.",
+    "Accepting result."
+  ]
+}

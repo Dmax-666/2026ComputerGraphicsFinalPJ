@@ -1,0 +1,14 @@
+{
+  "score": 1.0,
+  "passed": true,
+  "summary": "All evaluators passed.",
+  "issues": [],
+  "evaluator_names": [
+    "asset_completeness",
+    "narrative_consistency",
+    "character_consistency",
+    "text_layout_quality",
+    "image_size",
+    "file_sanity"
+  ]
+}

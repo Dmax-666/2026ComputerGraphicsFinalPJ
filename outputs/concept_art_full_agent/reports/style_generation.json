@@ -1,0 +1,48 @@
+{
+  "enabled": true,
+  "stage": "style_director",
+  "fallback_style_guide": {
+    "name": "Cyberpunk Hero Concept Exploration Style Guide",
+    "visual_style": "concept art painterly style with loose brushwork",
+    "palette": [
+      "neon cyan",
+      "hot magenta",
+      "deep charcoal",
+      "chrome silver"
+    ],
+    "mood": "gritty futuristic",
+    "typography": "annotation labels",
+    "negative_prompt": "anime style, cartoonish proportions, photorealistic rendering",
+    "notes": [
+      "Scenario: concept_art_board",
+      "Keep style consistent across all generated assets.",
+      "Prefer clear silhouettes and readable compositions."
+    ],
+    "reference_assets": {}
+  },
+  "status": "llm_generated",
+  "provider_profile": "openai_compatible",
+  "provider": "openai_compatible",
+  "model": "gpt-5.4-mini",
+  "style_guide": {
+    "name": "Cyberpunk Hero Concept Exploration Style Guide",
+    "visual_style": "concept art painterly style with loose brushwork, clear silhouettes, readable design sheets",
+    "palette": [
+      "neon cyan",
+      "hot magenta",
+      "deep charcoal",
+      "chrome silver"
+    ],
+    "mood": "gritty futuristic, neon-soaked, high-contrast",
+    "typography": "annotation labels, clean technical callouts",
+    "negative_prompt": "anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts",
+    "notes": [
+      "Concept art exploration board for a female cyberpunk street samurai.",
+      "Show 4 distinct variations with different armor shapes, silhouettes, and color accents.",
+      "Keep cybernetic arm and retractable plasma blade as key identifiers.",
+      "Use a dark megacity backdrop with strong neon rim lighting.",
+      "Maintain consistent style across character and environment studies."
+    ],
+    "reference_assets": {}
+  }
+}

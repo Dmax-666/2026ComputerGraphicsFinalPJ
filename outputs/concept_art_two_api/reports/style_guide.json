@@ -1,0 +1,19 @@
+{
+  "name": "Cyberpunk Hero Concept Exploration Style Guide",
+  "visual_style": "concept art painterly style with loose brushwork",
+  "palette": [
+    "neon cyan",
+    "hot magenta",
+    "deep charcoal",
+    "chrome silver"
+  ],
+  "mood": "gritty futuristic",
+  "typography": "annotation labels",
+  "negative_prompt": "anime style, cartoonish proportions, photorealistic rendering",
+  "notes": [
+    "Scenario: concept_art_board",
+    "Keep style consistent across all generated assets.",
+    "Prefer clear silhouettes and readable compositions."
+  ],
+  "reference_assets": {}
+}

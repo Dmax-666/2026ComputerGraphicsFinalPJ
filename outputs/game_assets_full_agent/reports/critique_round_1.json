@@ -1,0 +1,71 @@
+{
+  "score": 0.71,
+  "passed": false,
+  "summary": "Cohesive moonlit fantasy direction and full category coverage, but the pack is not fully production-ready. Several assets drift toward polished illustration rather than game-ready 2D asset readability, one prop asset is materially off-prompt, icon presentation is inconsistent, and UI text contains obvious gibberish that should be retried. Overall style and palette are mostly consistent, but asset consistency and task fit are uneven.",
+  "issues": [
+    {
+      "asset_id": "props_1",
+      "severity": "high",
+      "category": "task_fit",
+      "message": "The 'mushroom basket' is rendered as a sleeping child/figure in a basket rather than a basket of mushrooms. This is a direct prompt miss and changes the prop's gameplay meaning.",
+      "recommendation": "Retry with stricter prompting for two separate props only: a lantern and a clearly visible basket filled with mushrooms, with no characters or dolls."
+    },
+    {
+      "asset_id": "ui_elements_1",
+      "severity": "high",
+      "category": "visual_defect",
+      "message": "Dialogue box buttons contain garbled unreadable text ('Paan', 'Caraet' or similar), which is unsuitable for production UI.",
+      "recommendation": "Retry with blank button labels or clean post-processed placeholder text added outside generation. Avoid relying on image model text rendering."
+    },
+    {
+      "asset_id": "ui_elements_2",
+      "severity": "high",
+      "category": "visual_defect",
+      "message": "Menu labels contain inconsistent and partially distorted text; although some are legible, typography quality is not production-safe for UI assets.",
+      "recommendation": "Retry with empty label areas only, then add final text in post. Keep button shapes and decoration, but remove generated lettering."
+    },
+    {
+      "asset_id": "icons_2",
+      "severity": "medium",
+      "category": "asset_consistency",
+      "message": "This icon sheet uses a visible checker/transparent-style background and a denser multi-icon arrangement, which does not match the cleaner isolated presentation of the other icon asset.",
+      "recommendation": "Retry with the same centered, isolated icon treatment as icons_1 and without any checkerboard or faux transparency background."
+    },
+    {
+      "asset_id": "characters_2",
+      "severity": "medium",
+      "category": "style_consistency",
+      "message": "The herbalist is more detailed and painterly-realized than the villager, reducing pack consistency in shape language and game-readability.",
+      "recommendation": "Consider a retry or revision toward simpler silhouettes, larger readable forms, and reduced rendering detail to better match characters_1."
+    },
+    {
+      "asset_id": "environments_2",
+      "severity": "medium",
+      "category": "task_fit",
+      "message": "The clearing scene reads as a full illustration/background vignette rather than a reusable environment asset with clear modular readability.",
+      "recommendation": "Retry with simpler planes, less atmospheric detail, and a more game-asset-oriented composition focused on the ancient tree as the main reusable element."
+    },
+    {
+      "asset_id": "environments_1",
+      "severity": "low",
+      "category": "task_fit",
+      "message": "The cottage is attractive but rendered like a polished key illustration, with heavy ambience and vignette reducing neutral asset usability.",
+      "recommendation": "Optional retry for flatter lighting, cleaner silhouette separation, and less scene-like framing if the asset is intended for direct in-game placement."
+    },
+    {
+      "asset_id": "characters_1",
+      "severity": "low",
+      "category": "style_consistency",
+      "message": "The villager has a chibi-like proportion and very simple cartoon finish, which creates a noticeable proportion mismatch with the more naturalized herbalist.",
+      "recommendation": "Either simplify characters_2 to match this style or regenerate characters_1 with slightly less exaggerated proportions for better character set cohesion."
+    }
+  ],
+  "evaluator_names": [
+    "asset_completeness",
+    "style_consistency",
+    "category_coverage",
+    "image_size",
+    "file_sanity",
+    "llm_vision_critic"
+  ]
+}

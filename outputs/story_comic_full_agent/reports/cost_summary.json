@@ -1,0 +1,185 @@
+{
+  "total_rounds": 2,
+  "total_generation_calls": 9,
+  "total_retry_calls": 4,
+  "total_prompt_tokens": 18968,
+  "total_completion_tokens": 4258,
+  "total_image_generations": 9,
+  "total_vision_calls": 0,
+  "estimated_cost_usd": 0.491,
+  "per_asset_calls": {
+    "character_reference_robot": 1,
+    "panel_1": 2,
+    "panel_2": 2,
+    "panel_3": 2,
+    "panel_4": 2
+  },
+  "provider_usage": [
+    {
+      "role": "planner",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-5.4-mini",
+      "prompt_tokens": 574,
+      "completion_tokens": 137,
+      "image_generations": 0,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.002
+    },
+    {
+      "role": "planner",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-5.4-mini",
+      "prompt_tokens": 2129,
+      "completion_tokens": 1147,
+      "image_generations": 0,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.002
+    },
+    {
+      "role": "planner",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-5.4-mini",
+      "prompt_tokens": 2010,
+      "completion_tokens": 815,
+      "image_generations": 0,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.002
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "critic",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-5.4",
+      "prompt_tokens": 6431,
+      "completion_tokens": 976,
+      "image_generations": 0,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.004
+    },
+    {
+      "role": "planner",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-5.4-mini",
+      "prompt_tokens": 5119,
+      "completion_tokens": 1087,
+      "image_generations": 0,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.002
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "planner",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-5.4-mini",
+      "prompt_tokens": 2705,
+      "completion_tokens": 96,
+      "image_generations": 0,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.002
+    }
+  ],
+  "provider_failures": []
+}

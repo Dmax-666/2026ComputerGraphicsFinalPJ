@@ -1,0 +1,18 @@
+{
+  "name": "Robot and the Lost Cat Style Guide",
+  "visual_style": "warm cinematic comic illustration",
+  "palette": [
+    "amber",
+    "cobalt blue",
+    "rainy gray"
+  ],
+  "mood": "gentle, hopeful, slightly mysterious",
+  "typography": "legible post-processed labels",
+  "negative_prompt": "photorealistic horror",
+  "notes": [
+    "Scenario: story_comic",
+    "Keep style consistent across all generated assets.",
+    "Prefer clear silhouettes and readable compositions."
+  ],
+  "reference_assets": {}
+}

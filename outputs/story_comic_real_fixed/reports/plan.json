@@ -1,0 +1,105 @@
+{
+  "assets": [
+    {
+      "id": "character_reference_robot",
+      "type": "character_reference",
+      "category": "character",
+      "title": "Main Character Reference",
+      "description": "A consistent reference sheet for the protagonist and companion.",
+      "purpose": "Maintain cross-panel character consistency.",
+      "prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Character reference sheet for the main character in: A small delivery robot searches for a lost kitten on a rainy neon night.",
+      "order": 0,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {}
+    },
+    {
+      "id": "panel_1",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 1: Opening",
+      "description": "Establish the setting, weather, and protagonist goal.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 1/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Establish the setting, weather, and protagonist goal.. Keep character designs consistent.",
+      "order": 1,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "dialogue": "Where did the kitten go?"
+      }
+    },
+    {
+      "id": "panel_2",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 2: Clue",
+      "description": "Show the protagonist discovering a clue or obstacle.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 2/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Show the protagonist discovering a clue or obstacle.. Keep character designs consistent.",
+      "order": 2,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "dialogue": "A tiny pawprint!"
+      }
+    },
+    {
+      "id": "panel_3",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 3: Tension",
+      "description": "Increase emotional stakes with a larger dramatic composition.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 3/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Increase emotional stakes with a larger dramatic composition.. Keep character designs consistent.",
+      "order": 3,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "dialogue": "Hold on, I am coming."
+      }
+    },
+    {
+      "id": "panel_4",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 4: Resolution",
+      "description": "Resolve the search with a warm emotional payoff.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 4/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Resolve the search with a warm emotional payoff.. Keep character designs consistent.",
+      "order": 4,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "dialogue": "Found you."
+      }
+    }
+  ]
+}

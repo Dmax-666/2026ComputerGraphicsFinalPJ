@@ -1,0 +1,12 @@
+{
+  "score": 1.0,
+  "passed": true,
+  "summary": "All evaluators passed.",
+  "issues": [],
+  "evaluator_names": [
+    "asset_completeness",
+    "style_consistency",
+    "image_size",
+    "file_sanity"
+  ]
+}

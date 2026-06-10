@@ -1,0 +1,172 @@
+{
+  "assets": [
+    {
+      "id": "character_1",
+      "type": "concept_variation",
+      "category": "character",
+      "title": "Character Variation 1",
+      "description": "Design variation 1 for a cyberpunk street samurai character, emphasizing one distinct armor and silhouette direction.",
+      "purpose": "Explore a first concept direction within the unified cyberpunk style for the hero.",
+      "prompt": "Concept art exploration sheet of a female cyberpunk street samurai mercenary in a neon-lit megacity, presented in painterly concept art with loose brushwork and readable design-sheet clarity. Emphasize a distinct armor silhouette: sleek segmented street armor with asymmetrical shoulder plating, cybernetic arm augmentations, and a retractable plasma blade as a key focal element. High-contrast gritty futuristic mood, neon-soaked lighting, dark megacity backdrop, strong cyan and magenta rim light, chrome silver highlights over deep charcoal base. Clear annotation labels and technical callouts. Variation 1/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts.",
+      "order": 1,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "original_prompt": "Concept art painterly style with loose brushwork, clear silhouettes, readable design sheet; gritty futuristic, neon-soaked, high-contrast; palette neon cyan, hot magenta, deep charcoal, chrome silver. Cyberpunk Hero Concept Exploration. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts. Female cyberpunk street samurai mercenary in a neon-lit megacity with cybernetic arm augmentations and a retractable plasma blade. Explore a distinct armor style, silhouette, and color treatment. Variation 1/4. Include annotation labels and technical callouts.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "character_2",
+      "type": "concept_variation",
+      "category": "character",
+      "title": "Character Variation 2",
+      "description": "Design variation 2 for a cyberpunk street samurai character, emphasizing an alternate armor and silhouette direction.",
+      "purpose": "Explore a second concept direction within the unified cyberpunk style for the hero.",
+      "prompt": "Concept art exploration sheet of a female cyberpunk street samurai mercenary in a neon-lit megacity, rendered in painterly concept art with loose brushwork and clean, readable silhouettes. Explore an alternate design direction with layered tactical armor, a sharper angular silhouette, exposed cybernetic arm augmentations, and a retractable plasma blade integrated into the pose. High-contrast gritty futuristic mood, neon cyan and hot magenta lighting against deep charcoal tones with chrome silver details. Include annotation labels and technical callouts. Variation 2/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts.",
+      "order": 2,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "original_prompt": "Concept art painterly style with loose brushwork, clear silhouettes, readable design sheet; gritty futuristic, neon-soaked, high-contrast; palette neon cyan, hot magenta, deep charcoal, chrome silver. Cyberpunk Hero Concept Exploration. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts. Female cyberpunk street samurai mercenary in a neon-lit megacity with cybernetic arm augmentations and a retractable plasma blade. Explore a distinct armor style, silhouette, and color treatment. Variation 2/4. Include annotation labels and technical callouts.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "character_3",
+      "type": "concept_variation",
+      "category": "character",
+      "title": "Character Variation 3",
+      "description": "Design variation 3 for a cyberpunk street samurai character, emphasizing a bolder or heavier armor direction.",
+      "purpose": "Explore a third concept direction within the unified cyberpunk style for the hero.",
+      "prompt": "Concept art exploration sheet of a female cyberpunk street samurai mercenary in a neon-lit megacity, painted in loose-brush concept art with strong shape language and readable design-sheet composition. Push a heavier armored direction with reinforced plating, bulkier cybernetic arm augmentations, a commanding silhouette, and a retractable plasma blade as the signature weapon. Use gritty futuristic high-contrast lighting, neon cyan and hot magenta accents, deep charcoal shadows, and chrome silver surfaces. Add annotation labels and technical callouts. Variation 3/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts.",
+      "order": 3,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "original_prompt": "Concept art painterly style with loose brushwork, clear silhouettes, readable design sheet; gritty futuristic, neon-soaked, high-contrast; palette neon cyan, hot magenta, deep charcoal, chrome silver. Cyberpunk Hero Concept Exploration. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts. Female cyberpunk street samurai mercenary in a neon-lit megacity with cybernetic arm augmentations and a retractable plasma blade. Explore a distinct armor style, silhouette, and color treatment. Variation 3/4. Include annotation labels and technical callouts.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "character_4",
+      "type": "concept_variation",
+      "category": "character",
+      "title": "Character Variation 4",
+      "description": "Design variation 4 for a cyberpunk street samurai character, emphasizing a leaner or more agile silhouette direction.",
+      "purpose": "Explore a fourth concept direction within the unified cyberpunk style for the hero.",
+      "prompt": "Concept art exploration sheet of a female cyberpunk street samurai mercenary in a neon-lit megacity, in painterly concept art with loose brushwork and crisp silhouette readability. Explore a lean, agile design with minimal but advanced armor, streamlined cybernetic arm augmentations, and a retractable plasma blade emphasized in the composition. Maintain a gritty futuristic mood with neon cyan and hot magenta rim lighting, deep charcoal clothing and environment, and chrome silver mechanical accents. Include annotation labels and technical callouts. Variation 4/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts.",
+      "order": 4,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "original_prompt": "Concept art painterly style with loose brushwork, clear silhouettes, readable design sheet; gritty futuristic, neon-soaked, high-contrast; palette neon cyan, hot magenta, deep charcoal, chrome silver. Cyberpunk Hero Concept Exploration. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts. Female cyberpunk street samurai mercenary in a neon-lit megacity with cybernetic arm augmentations and a retractable plasma blade. Explore a distinct armor style, silhouette, and color treatment. Variation 4/4. Include annotation labels and technical callouts.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environment_1",
+      "type": "concept_variation",
+      "category": "environment",
+      "title": "Environment Variation 1",
+      "description": "Design variation 1 for a neon-lit megacity environment supporting the cyberpunk hero concept.",
+      "purpose": "Explore a first environment direction that matches the character's world and mood.",
+      "prompt": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, rendered in painterly concept art with loose brushwork and readable design-sheet clarity. Show dense vertical architecture, layered street-level depth, glowing signage, wet reflective surfaces, and strong cyan and magenta neon accents against deep charcoal structures with chrome silver details. Gritty futuristic, high-contrast mood, clear spatial composition, and annotation labels with technical callouts. Variation 1/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts.",
+      "order": 5,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "original_prompt": "Concept art painterly style with loose brushwork, clear silhouettes, readable design sheet; gritty futuristic, neon-soaked, high-contrast; palette neon cyan, hot magenta, deep charcoal, chrome silver. Cyberpunk Hero Concept Exploration. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts. Neon-lit megacity environment for a female cyberpunk street samurai mercenary. Explore distinct architectural forms, street-level depth, signage, and color accents. Variation 1/4. Include annotation labels and technical callouts.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environment_2",
+      "type": "concept_variation",
+      "category": "environment",
+      "title": "Environment Variation 2",
+      "description": "Design variation 2 for a neon-lit megacity environment supporting the cyberpunk hero concept.",
+      "purpose": "Explore a second environment direction that matches the character's world and mood.",
+      "prompt": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, painted in loose-brush concept art with strong silhouettes and clear design readability. Explore a different urban direction with elevated walkways, stacked signage, narrow alleys, dense building massing, and atmospheric depth. Use a gritty futuristic palette of neon cyan, hot magenta, deep charcoal, and chrome silver with high-contrast lighting and wet reflective streets. Include annotation labels and technical callouts. Variation 2/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts.",
+      "order": 6,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "original_prompt": "Concept art painterly style with loose brushwork, clear silhouettes, readable design sheet; gritty futuristic, neon-soaked, high-contrast; palette neon cyan, hot magenta, deep charcoal, chrome silver. Cyberpunk Hero Concept Exploration. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts. Neon-lit megacity environment for a female cyberpunk street samurai mercenary. Explore distinct architectural forms, street-level depth, signage, and color accents. Variation 2/4. Include annotation labels and technical callouts.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environment_3",
+      "type": "concept_variation",
+      "category": "environment",
+      "title": "Environment Variation 3",
+      "description": "Design variation 3 for a neon-lit megacity environment supporting the cyberpunk hero concept.",
+      "purpose": "Explore a third environment direction that matches the character's world and mood.",
+      "prompt": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, in painterly concept art with loose brushwork and readable composition. Emphasize industrial district architecture, heavy structural forms, illuminated signage, transit elements, and layered street depth. Maintain a gritty futuristic atmosphere with neon cyan and hot magenta lighting over deep charcoal shadows and chrome silver highlights. Add annotation labels and technical callouts. Variation 3/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts.",
+      "order": 7,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "original_prompt": "Concept art painterly style with loose brushwork, clear silhouettes, readable design sheet; gritty futuristic, neon-soaked, high-contrast; palette neon cyan, hot magenta, deep charcoal, chrome silver. Cyberpunk Hero Concept Exploration. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts. Neon-lit megacity environment for a female cyberpunk street samurai mercenary. Explore distinct architectural forms, street-level depth, signage, and color accents. Variation 3/4. Include annotation labels and technical callouts.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environment_4",
+      "type": "concept_variation",
+      "category": "environment",
+      "title": "Environment Variation 4",
+      "description": "Design variation 4 for a neon-lit megacity environment supporting the cyberpunk hero concept.",
+      "purpose": "Explore a fourth environment direction that matches the character's world and mood.",
+      "prompt": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, rendered in painterly concept art with loose brushwork and clear silhouette-driven composition. Explore a more claustrophobic urban canyon with towering skyscrapers, holographic signage, rain-slick pavement, and strong depth cues. Use high-contrast gritty futuristic lighting, neon cyan and hot magenta accents, deep charcoal environment masses, and chrome silver reflections. Include annotation labels and technical callouts. Variation 4/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts.",
+      "order": 8,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "original_prompt": "Concept art painterly style with loose brushwork, clear silhouettes, readable design sheet; gritty futuristic, neon-soaked, high-contrast; palette neon cyan, hot magenta, deep charcoal, chrome silver. Cyberpunk Hero Concept Exploration. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts. Neon-lit megacity environment for a female cyberpunk street samurai mercenary. Explore distinct architectural forms, street-level depth, signage, and color accents. Variation 4/4. Include annotation labels and technical callouts.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    }
+  ]
+}

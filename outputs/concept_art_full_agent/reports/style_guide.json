@@ -1,0 +1,21 @@
+{
+  "name": "Cyberpunk Hero Concept Exploration Style Guide",
+  "visual_style": "concept art painterly style with loose brushwork, clear silhouettes, readable design sheets",
+  "palette": [
+    "neon cyan",
+    "hot magenta",
+    "deep charcoal",
+    "chrome silver"
+  ],
+  "mood": "gritty futuristic, neon-soaked, high-contrast",
+  "typography": "annotation labels, clean technical callouts",
+  "negative_prompt": "anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, cluttered layouts",
+  "notes": [
+    "Concept art exploration board for a female cyberpunk street samurai.",
+    "Show 4 distinct variations with different armor shapes, silhouettes, and color accents.",
+    "Keep cybernetic arm and retractable plasma blade as key identifiers.",
+    "Use a dark megacity backdrop with strong neon rim lighting.",
+    "Maintain consistent style across character and environment studies."
+  ],
+  "reference_assets": {}
+}

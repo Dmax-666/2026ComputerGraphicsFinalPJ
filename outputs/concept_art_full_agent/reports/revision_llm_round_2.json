@@ -1,0 +1,30 @@
+{
+  "enabled": true,
+  "stage": "revision_controller",
+  "fallback_decision": {
+    "action": "stop",
+    "rationale": "Revision budget exhausted; returning best available result.",
+    "retry_asset_ids": [],
+    "prompt_rewrites": {},
+    "reasoning_trace": [
+      "Round 2 >= max_rounds 2.",
+      "Score 0.78 did not reach threshold.",
+      "Budget exhausted, stopping."
+    ]
+  },
+  "status": "llm_decided",
+  "provider_profile": "openai_compatible",
+  "provider": "openai_compatible",
+  "model": "gpt-5.4-mini",
+  "decision": {
+    "action": "stop",
+    "rationale": "Revision budget exhausted; returning best available result.",
+    "retry_asset_ids": [],
+    "prompt_rewrites": {},
+    "reasoning_trace": [
+      "Round 2 >= max_rounds 2.",
+      "Score 0.78 did not reach threshold.",
+      "Budget exhausted, stopping."
+    ]
+  }
+}

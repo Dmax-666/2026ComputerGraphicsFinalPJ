@@ -1,0 +1,29 @@
+{
+  "action": "retry_assets",
+  "rationale": "Round 3 still has several medium-severity cohesion and task-fit issues, but the overall pack passed quality threshold and should not be globally rejected. Use the remaining revision budget selectively on the assets that most affect consistency and usability, while leaving low-severity items for postprocess or acceptance.",
+  "retry_asset_ids": [
+    "characters_2",
+    "environments_1",
+    "environments_2",
+    "props_2",
+    "icons_2",
+    "ui_elements_2",
+    "ui_elements_1"
+  ],
+  "prompt_rewrites": {
+    "characters_2": "Simpler hand-painted 2D game art with slightly chibi-proportioned readability, softer detailing, and silhouette language closer to the villager character; moonlit violet, moss green, warm lantern gold; herbalist with owl companion; transparent-background friendly; avoid over-polished rendering, excessive micro-detail, and dramatic lighting.",
+    "environments_1": "Make the cottage exterior strongly moonlit and violet-toned, with cooler shadows and reduced golden dominance while preserving warm lantern accents; hand-painted 2D game art, readable architecture, game-ready isolated environment asset, no bright daytime/storybook sunlight, no clutter.",
+    "environments_2": "Recompose as a wider, reusable forest environment backdrop with a navigable ground plane and less diorama/island presentation; keep the ancient tree focal point but make the scene feel usable for gameplay and exploration, not like a floating decorative vignette.",
+    "props_2": "Remove any embedded text or labels; keep it as a wooden signpost with a clearly separate hanging herb bundle and subtle carved symbolic wayfinding; transparent-background friendly, small-object prop composition, no shop-sign look.",
+    "icons_2": "Reduce to a flatter, simpler UI icon abstraction with stronger silhouette reduction and equal-weight pairing of the herb and trail-marker symbols; crisp readability, compact icon scale, no prop-like scene detail.",
+    "ui_elements_2": "Shift the UI styling toward calmer moonlit violet, moss green, and lantern-gold balance with less dominant red; keep the health bar and buttons soft, cohesive, and fantasy-UI readable, with clean sans-serif label space.",
+    "ui_elements_1": "Provide a wider horizontal dialogue frame layout better suited to standard in-game text presentation; keep woodland leaf/vine motifs, open text area, transparent background friendly, and balanced proportions."
+  },
+  "reasoning_trace": [
+    "Overall score is above threshold, so the pack can be accepted if no selective retries are warranted.",
+    "Critique identified multiple medium issues that affect pack cohesion and game usability.",
+    "Selected retries focus on assets with the largest impact on style consistency, task fit, and story coherence.",
+    "Low-severity issues on characters_1 and minor UI tone drift can be deferred to postprocess or left as-is to preserve revision budget.",
+    "Prompt rewrites preserve the original fantasy woodland direction while tightening composition, palette, and asset-role clarity."
+  ]
+}

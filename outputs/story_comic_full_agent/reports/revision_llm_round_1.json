@@ -1,0 +1,62 @@
+{
+  "enabled": true,
+  "stage": "revision_controller",
+  "fallback_decision": {
+    "action": "retry_assets",
+    "rationale": "Retry assets with prompt rewrites based on critique feedback.",
+    "retry_asset_ids": [
+      "final_composition",
+      "panel_1",
+      "panel_2",
+      "panel_3",
+      "panel_4"
+    ],
+    "prompt_rewrites": {
+      "panel_1": "Warm cinematic comic illustration with clean linework, soft shading, expressive faces, and strong readable composition. Comic panel 1 of 4 for 'Robot and the Lost Cat'. Establish a rainy neon city at night with wet pavement, glowing signage reflections, and cobalt-blue shadows. Show a small delivery robot in the foreground scanning the street with a concerned but determined posture, realizing the kitten is missing. Make the setting vivid and atmospheric, with amber highlights and rainy gray tones, while keeping the panel uncluttered and easy to read. Include one clear speech bubble in legible English: 'Where did the kitten go?' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels. [Revision note: Retry panel with stricter prompt emphasis on minimal readable signage and only one intentional text element: the speech bubble.]",
+      "panel_2": "Warm cinematic comic illustration with clean linework, soft shading, and clear visual storytelling. Comic panel 2 of 4 for 'Robot and the Lost Cat'. Show the small delivery robot crouching low beside a rain-slick sidewalk, spotting a tiny pawprint trail leading toward a neon-lit alley. Emphasize discovery and direction with a clear foreground clue, reflective puddles, and subtle motion leading the eye forward. Use amber accents against cobalt blue and rainy gray surroundings, with a gentle, hopeful, slightly mysterious mood. Include one clear speech bubble in legible English: 'A tiny pawprint!' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels. [Revision note: Retry panel 2 with explicit instruction to avoid any panel numbering, posters with readable text, or incidental typography inside the artwork.] [Revision note: Simplify the scene so the pawprints and robot gesture dominate the composition.]",
+      "panel_3": "Warm cinematic comic illustration with clean linework, soft shading, expressive silhouettes, and cinematic lighting. Comic panel 3 of 4 for 'Robot and the Lost Cat'. Show the small delivery robot moving deeper into a narrow neon alley in the rain, reaching carefully toward a shadowy sheltered nook where the kitten might be hiding. Create a more dramatic composition with strong angles, wet reflections, and a sense of tension that remains kind and hopeful rather than scary. Keep the robot design consistent and recognizable. Use amber highlights, cobalt blue shadows, and rainy gray atmosphere. Include one clear speech bubble in legible English: 'Hold on, I am coming.' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels. [Revision note: Retry panel 3 using the character reference more strictly, with the kitten kept tiny, simplified, and visually matched to the rest of the comic.] [Revision note: Regenerate panel 3 with explicit suppression of all incidental readable text except the speech bubble.]",
+      "panel_4": "Warm cinematic comic illustration with clean linework, soft shading, and a heartfelt final composition. Comic panel 4 of 4 for 'Robot and the Lost Cat'. Show the small delivery robot gently finding the kitten safely sheltered under a glowing awning or in a cozy nook, with a warm reunion in the rainy neon night. Emphasize relief, kindness, and a hopeful ending, with amber light softening the cobalt blue and rainy gray environment. Keep the robot and kitten designs consistent and clearly recognizable. Include one clear speech bubble in legible English: 'Found you.' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels. [Revision note: Retry panel 4 with only the dialogue bubble retained and all other readable text removed from the image area.] [Revision note: Regenerate panel 4 with stronger adherence to the character reference sheet and simplified kitten features.] [Revision note: Use cleaner staging focused on robot and kitten interaction, with background text minimized or removed.]"
+    },
+    "reasoning_trace": [
+      "Score 0.63 below threshold. 11 issue(s) found.",
+      "[medium] asset 'panel_1': The robot design is broadly consistent with the later panels, but the panel contains extra environmental signage text and poster text that compete with the intended single speech bubble and add unrequested narrative noise.",
+      "[high] asset 'panel_2': The panel includes intrusive generated overlay text ('2/4') and additional poster/sign text that were not part of the requested comic dialogue. This breaks immersion and looks like accidental in-image text generation.",
+      "[medium] asset 'panel_2': The pawprint clue reads clearly, but the abundance of extra signs and posters makes the visual beat less focused than requested.",
+      "[high] asset 'panel_3': The kitten appears in a semi-realistic style and scale that does not match the implied simple, tiny, reference-consistent kitten design. The robot also appears slightly more detailed and differently branded than in prior panels.",
+      "[high] asset 'panel_3': The panel contains accidental overlay text ('3/4') and multiple unrequested environmental text elements. These artifacts make the panel feel like an unclean generation rather than a finished comic panel.",
+      "[high] asset 'panel_4': The resolution panel includes multiple extra caption-like text elements inside the artwork ('Robot and the Lost Cat 4/4', 'Kindness finds the way home.', and other sign text) beyond the requested single speech bubble. This violates the prompt and makes the panel look cluttered.",
+      "[high] asset 'panel_4': The kitten design changes noticeably in realism, fur detail, and facial treatment relative to earlier glimpses and the requested simple reference-driven continuity.",
+      "[medium] asset 'panel_4': The emotional resolution is clear, but the extra embedded text cards and signage distract from the reunion beat and over-explain the ending.",
+      "[high] asset 'final_composition': The page composition wastes large amounts of panel space with oversized blank gray/white margins around each inserted image. The artwork does not fill the comic frames, making the final page feel unfinished and poorly assembled.",
+      "[high] asset 'final_composition': Dialogue is duplicated: speech bubbles already exist inside the images, while separate empty-looking caption boxes beneath each panel repeat the same lines in tiny text. This is redundant and visually awkward.",
+      "[medium] asset 'final_composition': The top page title is very small and visually detached, while the overall page does not read like a polished comic layout despite the correct 4-panel structure.",
+      "Retrying assets: ['final_composition', 'panel_1', 'panel_2', 'panel_3', 'panel_4']"
+    ]
+  },
+  "status": "llm_decided",
+  "provider_profile": "openai_compatible",
+  "provider": "openai_compatible",
+  "model": "gpt-5.4-mini",
+  "decision": {
+    "action": "retry_assets",
+    "rationale": "The critique score is below threshold and the failure modes are actionable: remove incidental readable text, improve panel composition/cropping, and tighten character consistency—especially the kitten—across panels. These issues affect both visual quality and prompt adherence, so a targeted retry is warranted.",
+    "retry_asset_ids": [
+      "panel_1",
+      "panel_2",
+      "panel_3",
+      "panel_4"
+    ],
+    "prompt_rewrites": {
+      "panel_1": "Warm cinematic comic illustration with clean linework, soft shading, expressive faces, and strong readable composition. Comic panel 1 of 4 for 'Robot and the Lost Cat'. Establish a rainy neon city at night with wet pavement, glowing signage reflections, and cobalt-blue shadows. Show a small delivery robot in the foreground scanning the street with a concerned but determined posture, realizing the kitten is missing. Make the setting vivid and atmospheric, with amber highlights and rainy gray tones, while keeping the panel uncluttered and easy to read. Include one clear speech bubble in legible English: 'Where did the kitten go?' Avoid any incidental readable text, panel numbers, posters, captions, logos, signage text, or typography other than the single speech bubble. Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels.",
+      "panel_2": "Warm cinematic comic illustration with clean linework, soft shading, and clear visual storytelling. Comic panel 2 of 4 for 'Robot and the Lost Cat'. Show the small delivery robot crouching low beside a rain-slick sidewalk, spotting a tiny pawprint trail leading toward a neon-lit alley. Emphasize discovery and direction with a clear foreground clue, reflective puddles, and subtle motion leading the eye forward. Use amber accents against cobalt blue and rainy gray surroundings, with a gentle, hopeful, slightly mysterious mood. Include one clear speech bubble in legible English: 'A tiny pawprint!' Avoid any incidental readable text, panel numbers, posters, captions, logos, signage text, or typography other than the single speech bubble. Keep the pawprints and robot gesture as the dominant focus. Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels.",
+      "panel_3": "Warm cinematic comic illustration with clean linework, soft shading, expressive silhouettes, and cinematic lighting. Comic panel 3 of 4 for 'Robot and the Lost Cat'. Show the small delivery robot moving deeper into a narrow neon alley in the rain, reaching carefully toward a shadowy sheltered nook where the kitten might be hiding. Create a more dramatic composition with strong angles, wet reflections, and a sense of tension that remains kind and hopeful rather than scary. Keep the robot design consistent and recognizable. The kitten must remain tiny, simplified, cute, and strictly reference-consistent in scale, shape, face, and tail; avoid semi-realistic or highly detailed fur rendering. Use amber highlights, cobalt blue shadows, and rainy gray atmosphere. Include one clear speech bubble in legible English: 'Hold on, I am coming.' Avoid any incidental readable text, panel numbers, posters, captions, logos, signage text, or typography other than the single speech bubble. Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels.",
+      "panel_4": "Warm cinematic comic illustration with clean linework, soft shading, and a heartfelt final composition. Comic panel 4 of 4 for 'Robot and the Lost Cat'. Show the small delivery robot gently finding the kitten safely sheltered under a glowing awning or in a cozy nook, with a warm reunion in the rainy neon night. Emphasize relief, kindness, and a hopeful ending, with amber light softening the cobalt blue and rainy gray environment. Keep the robot and kitten designs consistent and clearly recognizable. The kitten must stay tiny, simplified, cute, and reference-consistent, without sudden realism changes or extra fur detail. Include one clear speech bubble in legible English: 'Found you.' Avoid any incidental readable text, panel numbers, title cards, captions, logos, signage text, or typography other than the single speech bubble. Use cleaner staging focused on robot and kitten interaction, with background text minimized or removed. Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels."
+    },
+    "reasoning_trace": [
+      "Score 0.63 below threshold 0.75.",
+      "Issues are concentrated in incidental text generation, character consistency (especially kitten), and page assembly/layout.",
+      "Retrying all affected panels plus final composition is appropriate within revision budget.",
+      "Rewrites explicitly suppress panel numbers, captions, signage text, and duplicate dialogue while preserving the intended story beats."
+    ]
+  }
+}

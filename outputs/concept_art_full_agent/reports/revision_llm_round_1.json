@@ -1,0 +1,65 @@
+{
+  "enabled": true,
+  "stage": "revision_controller",
+  "fallback_decision": {
+    "action": "retry_assets",
+    "rationale": "Retry assets with prompt rewrites based on critique feedback.",
+    "retry_asset_ids": [
+      "character_2",
+      "character_3",
+      "composition",
+      "environment_1",
+      "environment_2",
+      "environment_4"
+    ],
+    "prompt_rewrites": {
+      "environment_4": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, rendered in painterly concept art with loose brushwork and clear silhouette-driven composition. Explore a more claustrophobic urban canyon with towering skyscrapers, holographic signage, rain-slick pavement, and strong depth cues. Use high-contrast gritty futuristic lighting, neon cyan and hot magenta accents, deep charcoal environment masses, and chrome silver reflections. Include annotation labels and technical callouts. Variation 4/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Retry with a clearer unique spatial premise, such as stronger holographic canyon density, transit infrastructure, market compression, or a more extreme vertical perspective.]",
+      "character_2": "Concept art exploration sheet of a female cyberpunk street samurai mercenary in a neon-lit megacity, rendered in painterly concept art with loose brushwork and clean, readable silhouettes. Explore an alternate design direction with layered tactical armor, a sharper angular silhouette, exposed cybernetic arm augmentations, and a retractable plasma blade integrated into the pose. High-contrast gritty futuristic mood, neon cyan and hot magenta lighting against deep charcoal tones with chrome silver details. Include annotation labels and technical callouts. Variation 2/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Retry with a more distinct silhouette break: different shoulder architecture, leg armor proportions, headgear, or a stronger tactical layering concept.]",
+      "character_3": "Concept art exploration sheet of a female cyberpunk street samurai mercenary in a neon-lit megacity, painted in loose-brush concept art with strong shape language and readable design-sheet composition. Push a heavier armored direction with reinforced plating, bulkier cybernetic arm augmentations, a commanding silhouette, and a retractable plasma blade as the signature weapon. Use gritty futuristic high-contrast lighting, neon cyan and hot magenta accents, deep charcoal shadows, and chrome silver surfaces. Add annotation labels and technical callouts. Variation 3/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Retry with visibly heavier torso and limb plating, broader mass distribution, and a more imposing stance to better separate this variation from the others.]",
+      "environment_1": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, rendered in painterly concept art with loose brushwork and readable design-sheet clarity. Show dense vertical architecture, layered street-level depth, glowing signage, wet reflective surfaces, and strong cyan and magenta neon accents against deep charcoal structures with chrome silver details. Gritty futuristic, high-contrast mood, clear spatial composition, and annotation labels with technical callouts. Variation 1/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Refine contrast separation between foreground, midground, and signage elements; simplify supporting panels if re-rendering.]",
+      "environment_2": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, painted in loose-brush concept art with strong silhouettes and clear design readability. Explore a different urban direction with elevated walkways, stacked signage, narrow alleys, dense building massing, and atmospheric depth. Use a gritty futuristic palette of neon cyan, hot magenta, deep charcoal, and chrome silver with high-contrast lighting and wet reflective streets. Include annotation labels and technical callouts. Variation 2/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Keep if budget is tight, but a retry could push a more distinct urban layout language such as elevated transit emphasis, tighter alley compression, or broader plaza staging.]"
+    },
+    "reasoning_trace": [
+      "Score 0.74 below threshold. 8 issue(s) found.",
+      "[high] asset 'composition': The final board does not cleanly satisfy the stated scenario of exploring multiple design variations for a single subject; it combines character and environment subjects in one board.",
+      "[high] asset 'composition': The final composition shows only 8 placed assets with an incomplete third row, leaving a large empty area and producing an imbalanced presentation. This weakens the intended exploration-board readability.",
+      "[medium] asset 'environment_4': Environment Variation 4 reads very similarly to the other neon alley/canyon variants and does not introduce a strongly differentiated world-design direction beyond mood continuity.",
+      "[medium] asset 'character_2': Character Variation 2 is solid, but its silhouette and armor language are not differentiated enough from Variations 1 and 3 to maximize exploratory value.",
+      "[medium] asset 'character_3': Character Variation 3 was intended to push a heavier armored direction, but the final result still sits fairly close to the other designs instead of clearly committing to bulk and mass.",
+      "[medium] asset 'composition': Annotation labels and technical callouts inside the individual sheets are too small to be usefully readable at final board scale, reducing the design-sheet clarity promised in the brief.",
+      "[low] asset 'environment_1': The environment sheet is visually dense and slightly muddy in the midtones, which softens architectural hierarchy and makes callouts compete with the main focal image.",
+      "[low] asset 'environment_2': Environment Variation 2 is appealing and on-brief, but it overlaps heavily with Variation 1 in lighting, signage treatment, and street-level framing.",
+      "Retrying assets: ['character_2', 'character_3', 'composition', 'environment_1', 'environment_2', 'environment_4']"
+    ]
+  },
+  "status": "llm_decided",
+  "provider_profile": "openai_compatible",
+  "provider": "openai_compatible",
+  "model": "gpt-5.4-mini",
+  "decision": {
+    "action": "retry_assets",
+    "rationale": "The critique score is below threshold and the board has clear task-fit and layout issues, plus a few under-differentiated variations. Retry the flagged assets within budget to improve subject separation, readability, and board balance.",
+    "retry_asset_ids": [
+      "character_2",
+      "character_3",
+      "environment_1",
+      "environment_2",
+      "environment_4"
+    ],
+    "prompt_rewrites": {
+      "character_2": "Concept art exploration sheet of a female cyberpunk street samurai mercenary in a neon-lit megacity, rendered in painterly concept art with loose brushwork and clean, readable silhouettes. Explore an alternate design direction with layered tactical armor, a sharper angular silhouette, exposed cybernetic arm augmentations, and a retractable plasma blade integrated into the pose. High-contrast gritty futuristic mood, neon cyan and hot magenta lighting against deep charcoal tones with chrome silver details. Include annotation labels and technical callouts. Variation 2/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Retry with a more distinct silhouette break: different shoulder architecture, leg armor proportions, headgear, or a stronger tactical layering concept.]",
+      "character_3": "Concept art exploration sheet of a female cyberpunk street samurai mercenary in a neon-lit megacity, painted in loose-brush concept art with strong shape language and readable design-sheet composition. Push a heavier armored direction with reinforced plating, bulkier cybernetic arm augmentations, a commanding silhouette, and a retractable plasma blade as the signature weapon. Use gritty futuristic high-contrast lighting, neon cyan and hot magenta accents, deep charcoal shadows, and chrome silver surfaces. Add annotation labels and technical callouts. Variation 3/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Retry with visibly heavier torso and limb plating, broader mass distribution, and a more imposing stance to better separate this variation from the others.]",
+      "environment_1": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, rendered in painterly concept art with loose brushwork and readable design-sheet clarity. Show dense vertical architecture, layered street-level depth, glowing signage, wet reflective surfaces, and strong cyan and magenta neon accents against deep charcoal structures with chrome silver details. Gritty futuristic, high-contrast mood, clear spatial composition, and annotation labels with technical callouts. Variation 1/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Refine contrast separation between foreground, midground, and signage elements; simplify supporting panels if re-rendering.]",
+      "environment_2": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, painted in loose-brush concept art with strong silhouettes and clear design readability. Explore a different urban direction with elevated walkways, stacked signage, narrow alleys, dense building massing, and atmospheric depth. Use a gritty futuristic palette of neon cyan, hot magenta, deep charcoal, and chrome silver with high-contrast lighting and wet reflective streets. Include annotation labels and technical callouts. Variation 2/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Keep if budget is tight, but a retry could push a more distinct urban layout language such as elevated transit emphasis, tighter alley compression, or broader plaza staging.]",
+      "environment_4": "Concept art environment exploration sheet for a neon-lit megacity supporting a female cyberpunk street samurai mercenary, rendered in painterly concept art with loose brushwork and clear silhouette-driven composition. Explore a more claustrophobic urban canyon with towering skyscrapers, holographic signage, rain-slick pavement, and strong depth cues. Use high-contrast gritty futuristic lighting, neon cyan and hot magenta accents, deep charcoal environment masses, and chrome silver reflections. Include annotation labels and technical callouts. Variation 4/4. Avoid anime style, cartoonish proportions, photorealistic rendering, overly polished 3D, blurry anatomy, and cluttered layouts. [Revision note: Retry with a clearer unique spatial premise, such as stronger holographic canyon density, transit infrastructure, market compression, or a more extreme vertical perspective.]"
+    },
+    "reasoning_trace": [
+      "Score 0.74 below threshold; revision budget allows targeted retries.",
+      "High-severity issue on composition/task_fit: board mixes character and environment subjects despite the scenario requiring a single-subject exploration board.",
+      "High-severity issue on composition/layout: only 8 placed assets with an incomplete third row and a large empty area.",
+      "Medium-severity issues on character_2, character_3, and environment_4 indicate under-differentiated variations.",
+      "Readability concern on composition suggests larger placements or a better grid.",
+      "Selected retries stay within the per-asset retry budget of 1 and focus on the highest-impact fixes."
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "stage": "planner",
+  "fallback_asset_count": 10,
+  "status": "llm_generated",
+  "provider_profile": "openai_compatible",
+  "provider": "openai_compatible",
+  "model": "gpt-5.4-mini",
+  "asset_count": 10
+}

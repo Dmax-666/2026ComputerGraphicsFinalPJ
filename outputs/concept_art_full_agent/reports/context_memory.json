@@ -1,0 +1,26 @@
+{
+  "style_patches": [],
+  "character_descriptions": {},
+  "reference_image_paths": {},
+  "revision_lessons": [
+    "Round 1: [high] task_fit - Retry or revise the final composition into separate boards per subject, or change the scenario/output spec to explicitly allow multi-subject exploration boards.",
+    "Round 1: [high] layout - Re-layout the board to use the page area more efficiently, ideally grouping all 4 character variations together and all 4 environment variations together with balanced spacing or a 4x2 grid.",
+    "Round 1: [medium] story_coherence - Retry with a clearer unique spatial premise, such as stronger holographic canyon density, transit infrastructure, market compression, or a more extreme vertical perspective.",
+    "Round 1: [medium] asset_consistency - Retry with a more distinct silhouette break: different shoulder architecture, leg armor proportions, headgear, or a stronger tactical layering concept.",
+    "Round 1: [medium] asset_consistency - Retry with visibly heavier torso and limb plating, broader mass distribution, and a more imposing stance to better separate this variation from the others.",
+    "Round 1: [medium] readability - Increase asset display size, reduce number of assets per page, or add zoomed inset crops so callouts remain legible in the final board.",
+    "Round 1: [low] visual_defect - Refine contrast separation between foreground, midground, and signage elements; simplify supporting panels if re-rendering.",
+    "Round 1: [low] asset_consistency - Keep if budget is tight, but a retry could push a more distinct urban layout language such as elevated transit emphasis, tighter alley compression, or broader plaza staging.",
+    "Round 2: [high] task_fit - Retry or fix composition mapping so all four character variations are visibly included and correctly ordered.",
+    "Round 2: [high] composition - Retry composition/export with corrected asset placement and verify labels match the intended asset IDs before finalizing.",
+    "Round 2: [high] task_fit - Revise the final composition to focus on one subject per board, or explicitly separate into two boards: one for character variations and one for environment variations.",
+    "Round 2: [medium] story_coherence - Add clearer cross-references, shared motifs, or a dedicated hero/world relationship panel to strengthen story coherence.",
+    "Round 2: [medium] variation_strength - Retry with a more distinct silhouette, armor distribution, stance, and material treatment to better differentiate the concept direction.",
+    "Round 2: [medium] variation_strength - Push stronger contrast in silhouette and functional design, such as lighter armor coverage, different mobility gear, or alternate blade deployment.",
+    "Round 2: [medium] readability - Increase panel scale, reduce the number of panels per page, or add enlarged callout crops so annotations remain legible in the final composition.",
+    "Round 2: [low] visual_consistency - If retried, loosen rendering, simplify presentation polish, and emphasize rough ideation marks or silhouette studies.",
+    "Round 2: [low] asset_consistency - For a retry, broaden the environmental ideation with more architectural alternates, plan views, or composition thumbnails.",
+    "Round 2: [low] asset_consistency - Differentiate the variation further through unique district identity, larger structural contrast, or alternate camera perspective."
+  ],
+  "extra": {}
+}

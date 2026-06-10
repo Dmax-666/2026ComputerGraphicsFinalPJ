@@ -1,0 +1,30 @@
+{
+  "action": "retry_assets",
+  "rationale": "Score 0.71 is below the 0.8 threshold. High-severity failures affect task fit and UI legibility, so a targeted retry is warranted within budget.",
+  "retry_asset_ids": [
+    "props_1",
+    "ui_elements_1",
+    "ui_elements_2",
+    "icons_2",
+    "characters_2",
+    "environments_2",
+    "characters_1",
+    "environments_1"
+  ],
+  "prompt_rewrites": {
+    "props_1": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. Two separate props only: a warm lantern, and a clearly visible basket filled with mushrooms. Clear silhouettes, simple readable shapes, cozy forest village fantasy styling, small-object composition with clean spacing, transparent background friendly, no characters, no dolls, no sleeping figure, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+    "ui_elements_1": "Hand-painted 2D game art UI element, orthographic view, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Woodland dialogue box frame with subtle leaf and vine motifs, clear open space for text, blank button areas with no generated lettering, high contrast, balanced UI layout, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+    "ui_elements_2": "Hand-painted 2D game art UI element set, orthographic view, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. A health bar and matching menu button set with soft forest-inspired styling, empty label areas only, no generated text, clean sans-serif label space to be added in post, high contrast, balanced UI layout, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+    "icons_2": "Hand-painted 2D game art, orthographic view, readable icon design, whimsical and family friendly, moonlit violet, moss green, and warm lantern gold palette. Small icon set featuring healing herbs and a trail marker symbol, clean centered isolated icon treatment matching icons_1, single or paired icons with generous spacing, no checkerboard background, no faux transparency grid, crisp edges for UI readability, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+    "characters_2": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A gentle moonlit forest herbalist character standing with an owl companion, simplified silhouette, larger readable forms, reduced painterly detail, practical village fantasy clothing with herb pouches and soft natural details, full-body character presentation, centered composition, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+    "environments_2": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A moonlit forest clearing centered on an ancient tree, simpler layered planes, less atmospheric haze, clearer ground and canopy separation, game-asset-oriented composition focused on the ancient tree as the main reusable element, isolated scene-friendly presentation, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+    "characters_1": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A cozy forest villager character standing beside a small rabbit companion, slightly less exaggerated proportions, clear readable silhouette, simple shapes, gentle expression, full-body character presentation, centered composition, transparent background friendly, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter.",
+    "environments_1": "Hand-painted 2D game art, orthographic or subtle three-quarter game view, whimsical and family friendly, moonlit violet and moss green with warm lantern gold accents. A cozy forest village cottage exterior with a mossy roof, glowing lanterns, wooden details, and small plants around the base, flatter lighting, cleaner silhouette separation, less scene-like framing, game-ready environment asset, isolated presentation, no gritty realism, no photorealism, no harsh shadows, no noisy detail, no clutter."
+  },
+  "reasoning_trace": [
+    "Score 0.71 below threshold 0.8; retry budget remains available.",
+    "High-severity issues require retry: off-prompt prop content and unreadable UI text.",
+    "Medium/low issues can be bundled into the same retry to improve pack consistency under the round budget.",
+    "Prompts were rewritten to remove text-rendering dependence, enforce isolated icon/UI treatments, and simplify asset readability."
+  ]
+}

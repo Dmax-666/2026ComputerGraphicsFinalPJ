@@ -1,0 +1,19 @@
+{
+  "title": "Robot and the Lost Cat",
+  "prompt": "A small delivery robot searches for a lost kitten on a rainy neon night.",
+  "style": {
+    "visual_style": "warm cinematic comic illustration",
+    "palette": [
+      "amber",
+      "cobalt blue",
+      "rainy gray"
+    ],
+    "mood": "gentle, hopeful, slightly mysterious"
+  },
+  "constraints": {
+    "panel_count": 4,
+    "language": "English",
+    "avoid": "photorealistic horror"
+  },
+  "metadata": {}
+}

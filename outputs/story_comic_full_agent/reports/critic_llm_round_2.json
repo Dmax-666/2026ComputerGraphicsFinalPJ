@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "stage": "critic",
+  "local_report": {
+    "score": 1.0,
+    "passed": true,
+    "summary": "All evaluators passed.",
+    "issues": [],
+    "evaluator_names": [
+      "asset_completeness",
+      "narrative_consistency",
+      "character_consistency",
+      "text_layout_quality",
+      "image_size",
+      "file_sanity"
+    ]
+  },
+  "vision_error": "1 validation error for CritiqueIssue\nseverity\n  Input should be 'low', 'medium' or 'high' [type=literal_error, input_value='major', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/literal_error",
+  "status": "fallback",
+  "reason": "1 validation error for CritiqueIssue\nseverity\n  Input should be 'low', 'medium' or 'high' [type=literal_error, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/literal_error"
+}

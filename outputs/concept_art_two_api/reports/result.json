@@ -1,0 +1,669 @@
+{
+  "scenario": "concept_art_board",
+  "task": {
+    "title": "Cyberpunk Hero Concept Exploration",
+    "prompt": "Design exploration for a cyberpunk street samurai character. The character is a female mercenary in a neon-lit megacity, with cybernetic arm augmentations and a retractable plasma blade. Explore different armor styles, silhouettes, and color treatments.\n",
+    "style": {
+      "visual_style": "concept art painterly style with loose brushwork",
+      "palette": [
+        "neon cyan",
+        "hot magenta",
+        "deep charcoal",
+        "chrome silver"
+      ],
+      "mood": "gritty futuristic",
+      "typography": "annotation labels"
+    },
+    "constraints": {
+      "avoid": "anime style, cartoonish proportions, photorealistic rendering"
+    },
+    "metadata": {}
+  },
+  "style_guide": {
+    "name": "Cyberpunk Hero Concept Exploration Style Guide",
+    "visual_style": "concept art painterly style with loose brushwork",
+    "palette": [
+      "neon cyan",
+      "hot magenta",
+      "deep charcoal",
+      "chrome silver"
+    ],
+    "mood": "gritty futuristic",
+    "typography": "annotation labels",
+    "negative_prompt": "anime style, cartoonish proportions, photorealistic rendering",
+    "notes": [
+      "Scenario: concept_art_board",
+      "Keep style consistent across all generated assets.",
+      "Prefer clear silhouettes and readable compositions."
+    ],
+    "reference_assets": {}
+  },
+  "context_memory": {
+    "style_patches": [],
+    "character_descriptions": {},
+    "reference_image_paths": {},
+    "revision_lessons": [],
+    "extra": {}
+  },
+  "cost_summary": {
+    "total_rounds": 1,
+    "total_generation_calls": 8,
+    "total_retry_calls": 0,
+    "total_prompt_tokens": 1983,
+    "total_completion_tokens": 1149,
+    "total_image_generations": 8,
+    "total_vision_calls": 0,
+    "estimated_cost_usd": 0.426,
+    "per_asset_calls": {
+      "character_1": 1,
+      "character_2": 1,
+      "character_3": 1,
+      "character_4": 1,
+      "environment_1": 1,
+      "environment_2": 1,
+      "environment_3": 1,
+      "environment_4": 1
+    },
+    "provider_usage": [
+      {
+        "role": "planner",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-5.4-mini",
+        "prompt_tokens": 1983,
+        "completion_tokens": 1149,
+        "image_generations": 0,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.002
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      }
+    ],
+    "provider_failures": []
+  },
+  "planned_assets": [
+    {
+      "id": "character_1",
+      "type": "concept_variation",
+      "category": "character",
+      "title": "Character Variation 1",
+      "description": "Design variation 1 for character in concept_art_board.",
+      "purpose": "Explore different design directions within a unified style.",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Female cyberpunk street samurai mercenary in a neon-lit megacity, full-body character design, clear readable silhouette, cybernetic arm augmentations, retractable plasma blade, exploration of armor design, proportions, and color treatment. Variation 1/4: sleek lightweight armor with layered tactical plates, asymmetrical pauldrons, agile silhouette, neon cyan edge lighting with chrome silver mechanical accents, deep charcoal base, hot magenta highlights. Clean neutral concept-art background, annotation labels and callout notes, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "order": 1,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "concept art painterly style with loose brushwork; mood: gritty futuristic; palette: neon cyan, hot magenta, deep charcoal, chrome silver. Task title: Cyberpunk Hero Concept Exploration. Avoid: anime style, cartoonish proportions, photorealistic rendering.. Design exploration for a cyberpunk street samurai character. The character is a female mercenary in a neon-lit megacity, with cybernetic arm augmentations and a retractable plasma blade. Explore different armor styles, silhouettes, and color treatments.\n. Subject: character. Variation 1/4. Explore a distinct design direction while maintaining style consistency.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "character_2",
+      "type": "concept_variation",
+      "category": "character",
+      "title": "Character Variation 2",
+      "description": "Design variation 2 for character in concept_art_board.",
+      "purpose": "Explore different design directions within a unified style.",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Female cyberpunk street samurai mercenary in a neon-lit megacity, full-body character design, clear readable silhouette, cybernetic arm augmentations, retractable plasma blade, exploration of armor design, proportions, and color treatment. Variation 2/4: heavier armored silhouette with reinforced chest plating, segmented forearm cybernetics, protective waist guards, more imposing stance, deep charcoal armor with hot magenta core glow and neon cyan interface details, chrome silver joints and blade housing. Clean neutral concept-art background, annotation labels and callout notes, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "order": 2,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "concept art painterly style with loose brushwork; mood: gritty futuristic; palette: neon cyan, hot magenta, deep charcoal, chrome silver. Task title: Cyberpunk Hero Concept Exploration. Avoid: anime style, cartoonish proportions, photorealistic rendering.. Design exploration for a cyberpunk street samurai character. The character is a female mercenary in a neon-lit megacity, with cybernetic arm augmentations and a retractable plasma blade. Explore different armor styles, silhouettes, and color treatments.\n. Subject: character. Variation 2/4. Explore a distinct design direction while maintaining style consistency.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "character_3",
+      "type": "concept_variation",
+      "category": "character",
+      "title": "Character Variation 3",
+      "description": "Design variation 3 for character in concept_art_board.",
+      "purpose": "Explore different design directions within a unified style.",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Female cyberpunk street samurai mercenary in a neon-lit megacity, full-body character design, clear readable silhouette, cybernetic arm augmentations, retractable plasma blade, exploration of armor design, proportions, and color treatment. Variation 3/4: stealth-focused street armor with hooded collar, compact shoulder profile, wrapped tactical layers, visible cybernetic arm augmentation design, dynamic ready pose, deep charcoal and chrome silver palette with restrained neon cyan accents and selective hot magenta energy details. Clean neutral concept-art background, annotation labels and callout notes, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "order": 3,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "concept art painterly style with loose brushwork; mood: gritty futuristic; palette: neon cyan, hot magenta, deep charcoal, chrome silver. Task title: Cyberpunk Hero Concept Exploration. Avoid: anime style, cartoonish proportions, photorealistic rendering.. Design exploration for a cyberpunk street samurai character. The character is a female mercenary in a neon-lit megacity, with cybernetic arm augmentations and a retractable plasma blade. Explore different armor styles, silhouettes, and color treatments.\n. Subject: character. Variation 3/4. Explore a distinct design direction while maintaining style consistency.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "character_4",
+      "type": "concept_variation",
+      "category": "character",
+      "title": "Character Variation 4",
+      "description": "Design variation 4 for character in concept_art_board.",
+      "purpose": "Explore different design directions within a unified style.",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Female cyberpunk street samurai mercenary in a neon-lit megacity, full-body character design, clear readable silhouette, cybernetic arm augmentations, retractable plasma blade, exploration of armor design, proportions, and color treatment. Variation 4/4: more avant-garde silhouette with angular armor fins, articulated shoulder frames, exposed mechanical forearm components, dramatic plasma blade integration, bold high-contrast treatment using hot magenta as an accent against deep charcoal and chrome silver, neon cyan rim light. Clean neutral concept-art background, annotation labels and callout notes, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "order": 4,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "concept art painterly style with loose brushwork; mood: gritty futuristic; palette: neon cyan, hot magenta, deep charcoal, chrome silver. Task title: Cyberpunk Hero Concept Exploration. Avoid: anime style, cartoonish proportions, photorealistic rendering.. Design exploration for a cyberpunk street samurai character. The character is a female mercenary in a neon-lit megacity, with cybernetic arm augmentations and a retractable plasma blade. Explore different armor styles, silhouettes, and color treatments.\n. Subject: character. Variation 4/4. Explore a distinct design direction while maintaining style consistency.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environment_1",
+      "type": "concept_variation",
+      "category": "environment",
+      "title": "Environment Variation 1",
+      "description": "Design variation 1 for environment in concept_art_board.",
+      "purpose": "Explore different design directions within a unified style.",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Neon-lit megacity environment for a cyberpunk street samurai, atmospheric urban concept art with clear spatial depth and strong composition. Variation 1/4: narrow rain-slick alleyway with stacked signage, dense electrical conduits, steam vents, holographic advertisements, neon cyan and hot magenta reflections on deep charcoal surfaces, chrome silver infrastructure details. Include annotation labels and callout notes for materials and lighting, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "order": 5,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "concept art painterly style with loose brushwork; mood: gritty futuristic; palette: neon cyan, hot magenta, deep charcoal, chrome silver. Task title: Cyberpunk Hero Concept Exploration. Avoid: anime style, cartoonish proportions, photorealistic rendering.. Design exploration for a cyberpunk street samurai character. The character is a female mercenary in a neon-lit megacity, with cybernetic arm augmentations and a retractable plasma blade. Explore different armor styles, silhouettes, and color treatments.\n. Subject: environment. Variation 1/4. Explore a distinct design direction while maintaining style consistency.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environment_2",
+      "type": "concept_variation",
+      "category": "environment",
+      "title": "Environment Variation 2",
+      "description": "Design variation 2 for environment in concept_art_board.",
+      "purpose": "Explore different design directions within a unified style.",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Neon-lit megacity environment for a cyberpunk street samurai, atmospheric urban concept art with clear spatial depth and strong composition. Variation 2/4: elevated rooftop walkway above the city, layered skyline, distant towers, glowing transit lines, wind-swept vents, rain haze, neon cyan signage, hot magenta window glow, deep charcoal structures with chrome silver trim. Include annotation labels and callout notes for architecture and lighting, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "order": 6,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "concept art painterly style with loose brushwork; mood: gritty futuristic; palette: neon cyan, hot magenta, deep charcoal, chrome silver. Task title: Cyberpunk Hero Concept Exploration. Avoid: anime style, cartoonish proportions, photorealistic rendering.. Design exploration for a cyberpunk street samurai character. The character is a female mercenary in a neon-lit megacity, with cybernetic arm augmentations and a retractable plasma blade. Explore different armor styles, silhouettes, and color treatments.\n. Subject: environment. Variation 2/4. Explore a distinct design direction while maintaining style consistency.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environment_3",
+      "type": "concept_variation",
+      "category": "environment",
+      "title": "Environment Variation 3",
+      "description": "Design variation 3 for environment in concept_art_board.",
+      "purpose": "Explore different design directions within a unified style.",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Neon-lit megacity environment for a cyberpunk street samurai, atmospheric urban concept art with clear spatial depth and strong composition. Variation 3/4: crowded street market under looming megastructure overhangs, translucent tarps, improvised stalls, cables, steam, holographic wayfinding, neon cyan and hot magenta glow, deep charcoal ground plane with chrome silver mechanical details. Include annotation labels and callout notes for props and lighting, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "order": 7,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "concept art painterly style with loose brushwork; mood: gritty futuristic; palette: neon cyan, hot magenta, deep charcoal, chrome silver. Task title: Cyberpunk Hero Concept Exploration. Avoid: anime style, cartoonish proportions, photorealistic rendering.. Design exploration for a cyberpunk street samurai character. The character is a female mercenary in a neon-lit megacity, with cybernetic arm augmentations and a retractable plasma blade. Explore different armor styles, silhouettes, and color treatments.\n. Subject: environment. Variation 3/4. Explore a distinct design direction while maintaining style consistency.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "environment_4",
+      "type": "concept_variation",
+      "category": "environment",
+      "title": "Environment Variation 4",
+      "description": "Design variation 4 for environment in concept_art_board.",
+      "purpose": "Explore different design directions within a unified style.",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Neon-lit megacity environment for a cyberpunk street samurai, atmospheric urban concept art with clear spatial depth and strong composition. Variation 4/4: industrial megacity underpass with monolithic pillars, security drones implied by lighting, reflective puddles, layered signage, intense cyan and magenta neon cutting through deep charcoal shadows, chrome silver machinery and exposed pipes. Include annotation labels and callout notes for architecture and mood, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "order": 8,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "concept art painterly style with loose brushwork; mood: gritty futuristic; palette: neon cyan, hot magenta, deep charcoal, chrome silver. Task title: Cyberpunk Hero Concept Exploration. Avoid: anime style, cartoonish proportions, photorealistic rendering.. Design exploration for a cyberpunk street samurai character. The character is a female mercenary in a neon-lit megacity, with cybernetic arm augmentations and a retractable plasma blade. Explore different armor styles, silhouettes, and color treatments.\n. Subject: environment. Variation 4/4. Explore a distinct design direction while maintaining style consistency.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    }
+  ],
+  "generated_assets": [
+    {
+      "spec_id": "character_1",
+      "path": "outputs\\concept_art_two_api\\assets\\001_character_1_r1_openai.png",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Female cyberpunk street samurai mercenary in a neon-lit megacity, full-body character design, clear readable silhouette, cybernetic arm augmentations, retractable plasma blade, exploration of armor design, proportions, and color treatment. Variation 1/4: sleek lightweight armor with layered tactical plates, asymmetrical pauldrons, agile silhouette, neon cyan edge lighting with chrome silver mechanical accents, deep charcoal base, hot magenta highlights. Clean neutral concept-art background, annotation labels and callout notes, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "character_2",
+      "path": "outputs\\concept_art_two_api\\assets\\002_character_2_r1_openai.png",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Female cyberpunk street samurai mercenary in a neon-lit megacity, full-body character design, clear readable silhouette, cybernetic arm augmentations, retractable plasma blade, exploration of armor design, proportions, and color treatment. Variation 2/4: heavier armored silhouette with reinforced chest plating, segmented forearm cybernetics, protective waist guards, more imposing stance, deep charcoal armor with hot magenta core glow and neon cyan interface details, chrome silver joints and blade housing. Clean neutral concept-art background, annotation labels and callout notes, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "character_3",
+      "path": "outputs\\concept_art_two_api\\assets\\003_character_3_r1_openai.png",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Female cyberpunk street samurai mercenary in a neon-lit megacity, full-body character design, clear readable silhouette, cybernetic arm augmentations, retractable plasma blade, exploration of armor design, proportions, and color treatment. Variation 3/4: stealth-focused street armor with hooded collar, compact shoulder profile, wrapped tactical layers, visible cybernetic arm augmentation design, dynamic ready pose, deep charcoal and chrome silver palette with restrained neon cyan accents and selective hot magenta energy details. Clean neutral concept-art background, annotation labels and callout notes, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "character_4",
+      "path": "outputs\\concept_art_two_api\\assets\\004_character_4_r1_openai.png",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Female cyberpunk street samurai mercenary in a neon-lit megacity, full-body character design, clear readable silhouette, cybernetic arm augmentations, retractable plasma blade, exploration of armor design, proportions, and color treatment. Variation 4/4: more avant-garde silhouette with angular armor fins, articulated shoulder frames, exposed mechanical forearm components, dramatic plasma blade integration, bold high-contrast treatment using hot magenta as an accent against deep charcoal and chrome silver, neon cyan rim light. Clean neutral concept-art background, annotation labels and callout notes, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "environment_1",
+      "path": "outputs\\concept_art_two_api\\assets\\005_environment_1_r1_openai.png",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Neon-lit megacity environment for a cyberpunk street samurai, atmospheric urban concept art with clear spatial depth and strong composition. Variation 1/4: narrow rain-slick alleyway with stacked signage, dense electrical conduits, steam vents, holographic advertisements, neon cyan and hot magenta reflections on deep charcoal surfaces, chrome silver infrastructure details. Include annotation labels and callout notes for materials and lighting, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "environment_2",
+      "path": "outputs\\concept_art_two_api\\assets\\006_environment_2_r1_openai.png",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Neon-lit megacity environment for a cyberpunk street samurai, atmospheric urban concept art with clear spatial depth and strong composition. Variation 2/4: elevated rooftop walkway above the city, layered skyline, distant towers, glowing transit lines, wind-swept vents, rain haze, neon cyan signage, hot magenta window glow, deep charcoal structures with chrome silver trim. Include annotation labels and callout notes for architecture and lighting, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "environment_3",
+      "path": "outputs\\concept_art_two_api\\assets\\007_environment_3_r1_openai.png",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Neon-lit megacity environment for a cyberpunk street samurai, atmospheric urban concept art with clear spatial depth and strong composition. Variation 3/4: crowded street market under looming megastructure overhangs, translucent tarps, improvised stalls, cables, steam, holographic wayfinding, neon cyan and hot magenta glow, deep charcoal ground plane with chrome silver mechanical details. Include annotation labels and callout notes for props and lighting, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "environment_4",
+      "path": "outputs\\concept_art_two_api\\assets\\008_environment_4_r1_openai.png",
+      "prompt": "Concept art board, painterly style with loose brushwork, gritty futuristic mood. Neon-lit megacity environment for a cyberpunk street samurai, atmospheric urban concept art with clear spatial depth and strong composition. Variation 4/4: industrial megacity underpass with monolithic pillars, security drones implied by lighting, reflective puddles, layered signage, intense cyan and magenta neon cutting through deep charcoal shadows, chrome silver machinery and exposed pipes. Include annotation labels and callout notes for architecture and mood, high readability, unified visual style, not anime, not cartoonish, not photorealistic.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    }
+  ],
+  "composition": {
+    "type": "asset_sheet",
+    "page_size": [
+      2000,
+      1200
+    ],
+    "output_path": "outputs\\concept_art_two_api\\final.png",
+    "layout": [
+      {
+        "asset_id": "character_1",
+        "box": [
+          64,
+          130,
+          666,
+          444
+        ],
+        "type": "concept_variation"
+      },
+      {
+        "asset_id": "character_2",
+        "box": [
+          698,
+          130,
+          1300,
+          444
+        ],
+        "type": "concept_variation"
+      },
+      {
+        "asset_id": "character_3",
+        "box": [
+          1332,
+          130,
+          1934,
+          444
+        ],
+        "type": "concept_variation"
+      },
+      {
+        "asset_id": "character_4",
+        "box": [
+          64,
+          476,
+          666,
+          790
+        ],
+        "type": "concept_variation"
+      },
+      {
+        "asset_id": "environment_1",
+        "box": [
+          698,
+          476,
+          1300,
+          790
+        ],
+        "type": "concept_variation"
+      },
+      {
+        "asset_id": "environment_2",
+        "box": [
+          1332,
+          476,
+          1934,
+          790
+        ],
+        "type": "concept_variation"
+      },
+      {
+        "asset_id": "environment_3",
+        "box": [
+          64,
+          822,
+          666,
+          1136
+        ],
+        "type": "concept_variation"
+      },
+      {
+        "asset_id": "environment_4",
+        "box": [
+          698,
+          822,
+          1300,
+          1136
+        ],
+        "type": "concept_variation"
+      }
+    ],
+    "metadata": {
+      "asset_count": 8
+    }
+  },
+  "critique": {
+    "score": 1.0,
+    "passed": true,
+    "summary": "All evaluators passed.",
+    "issues": [],
+    "evaluator_names": [
+      "asset_completeness",
+      "style_consistency",
+      "image_size",
+      "file_sanity"
+    ]
+  },
+  "revision": {
+    "action": "accept",
+    "rationale": "Score 1.0 passed threshold 0.7.",
+    "retry_asset_ids": [],
+    "prompt_rewrites": {},
+    "reasoning_trace": [
+      "Score 1.0 >= threshold 0.7.",
+      "No high-severity issues found.",
+      "Accepting result."
+    ]
+  },
+  "output_dir": "outputs\\concept_art_two_api",
+  "final_image": "outputs\\concept_art_two_api\\final.png",
+  "rounds_completed": 1
+}

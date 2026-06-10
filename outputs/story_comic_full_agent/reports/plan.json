@@ -1,0 +1,136 @@
+{
+  "assets": [
+    {
+      "id": "character_reference_robot",
+      "type": "character_reference",
+      "category": "character",
+      "title": "Main Character Reference",
+      "description": "A consistent reference sheet for the delivery robot and lost kitten to ensure visual continuity across all panels.",
+      "purpose": "Maintain cross-panel character consistency.",
+      "prompt": "Warm cinematic comic illustration with clean linework, soft shading, and expressive character modeling. Create a clean character reference sheet for a story about a small delivery robot and a tiny lost kitten. Show the robot and kitten with consistent proportions, clear silhouette, and distinctive details that can be reproduced across panels: the robot is compact, friendly, and slightly rounded with visible delivery compartment accents; the kitten is very small, cute, and simple in shape with a recognizable face and tail. Present front, side, and 3/4 views or equivalent reference poses on a neutral or subtly tinted background. Use the palette amber, cobalt blue, and rainy gray with gentle, hopeful, slightly mysterious mood. Add simple labeled callouts if needed, with legible English text only. Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered layout.",
+      "order": 0,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "style": "warm cinematic comic illustration",
+        "language": "English",
+        "reference_role": "character continuity",
+        "reference_subjects": [
+          "delivery robot",
+          "kitten"
+        ],
+        "original_prompt": "Warm cinematic comic illustration with clean linework, soft shading, and expressive panels; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Create a character reference sheet for the story 'Robot and the Lost Cat' showing a small delivery robot and a tiny kitten with consistent proportions, silhouette, face details, and color accents. Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, cluttered panels.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "panel_1",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 1: Opening",
+      "description": "Establish the rainy neon city setting and the robot noticing the kitten is missing.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "Warm cinematic comic illustration with clean linework, soft shading, expressive faces, and strong readable composition. Comic panel 1 of 4 for 'Robot and the Lost Cat'. Establish a rainy neon city at night with wet pavement, glowing signage reflections, and cobalt-blue shadows. Show a small delivery robot in the foreground scanning the street with a concerned but determined posture, realizing the kitten is missing. Make the setting vivid and atmospheric, with amber highlights and rainy gray tones, while keeping the panel uncluttered and easy to read. Include one clear speech bubble in legible English: 'Where did the kitten go?' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels.",
+      "order": 1,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "dialogue": "Where did the kitten go?",
+        "panel_role": "opening",
+        "language": "English",
+        "original_prompt": "Warm cinematic comic illustration with clean linework, soft shading, and expressive panels; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Comic panel 1/4 for 'Robot and the Lost Cat'. Show a small delivery robot in a rainy neon street at night, looking concerned while scanning the area for a lost kitten. Establish the glowing city reflections, wet pavement, and the robot's search goal. Keep character designs consistent. English text only. Include a clear speech bubble: 'Where did the kitten go?' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, cluttered panels.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "panel_2",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 2: Clue",
+      "description": "Show the robot discovering a tiny pawprint clue on the wet ground.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "Warm cinematic comic illustration with clean linework, soft shading, and clear visual storytelling. Comic panel 2 of 4 for 'Robot and the Lost Cat'. Show the small delivery robot crouching low beside a rain-slick sidewalk, spotting a tiny pawprint trail leading toward a neon-lit alley. Emphasize discovery and direction with a clear foreground clue, reflective puddles, and subtle motion leading the eye forward. Use amber accents against cobalt blue and rainy gray surroundings, with a gentle, hopeful, slightly mysterious mood. Include one clear speech bubble in legible English: 'A tiny pawprint!' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels.",
+      "order": 2,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "dialogue": "A tiny pawprint!",
+        "panel_role": "clue",
+        "language": "English",
+        "original_prompt": "Warm cinematic comic illustration with clean linework, soft shading, and expressive panels; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Comic panel 2/4 for 'Robot and the Lost Cat'. Show the small delivery robot crouching near a rain-slick sidewalk, discovering a tiny pawprint leading between neon-lit alley reflections. Add a subtle sense of discovery and forward motion. Keep character designs consistent. English text only. Include a clear speech bubble: 'A tiny pawprint!' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, cluttered panels.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "panel_3",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 3: Tension",
+      "description": "Increase emotional stakes as the robot follows the trail through a more dramatic composition.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "Warm cinematic comic illustration with clean linework, soft shading, expressive silhouettes, and cinematic lighting. Comic panel 3 of 4 for 'Robot and the Lost Cat'. Show the small delivery robot moving deeper into a narrow neon alley in the rain, reaching carefully toward a shadowy sheltered nook where the kitten might be hiding. Create a more dramatic composition with strong angles, wet reflections, and a sense of tension that remains kind and hopeful rather than scary. Keep the robot design consistent and recognizable. Use amber highlights, cobalt blue shadows, and rainy gray atmosphere. Include one clear speech bubble in legible English: 'Hold on, I am coming.' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels.",
+      "order": 3,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "dialogue": "Hold on, I am coming.",
+        "panel_role": "tension",
+        "language": "English",
+        "original_prompt": "Warm cinematic comic illustration with clean linework, soft shading, and expressive panels; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Comic panel 3/4 for 'Robot and the Lost Cat'. Show the small delivery robot moving through a narrow neon alley in the rain, reaching out toward a shadowy nook where the kitten might be hiding. Make the composition more dramatic, with strong silhouettes and cinematic lighting, but still warm and hopeful. Keep character designs consistent. English text only. Include a clear speech bubble: 'Hold on, I am coming.' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, cluttered panels.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "panel_4",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 4: Resolution",
+      "description": "Resolve the search with the robot finding the kitten in a warm emotional reunion.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "Warm cinematic comic illustration with clean linework, soft shading, and a heartfelt final composition. Comic panel 4 of 4 for 'Robot and the Lost Cat'. Show the small delivery robot gently finding the kitten safely sheltered under a glowing awning or in a cozy nook, with a warm reunion in the rainy neon night. Emphasize relief, kindness, and a hopeful ending, with amber light softening the cobalt blue and rainy gray environment. Keep the robot and kitten designs consistent and clearly recognizable. Include one clear speech bubble in legible English: 'Found you.' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, and cluttered panels.",
+      "order": 4,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "difficulty_estimate": 0.5,
+        "dialogue": "Found you.",
+        "panel_role": "resolution",
+        "language": "English",
+        "original_prompt": "Warm cinematic comic illustration with clean linework, soft shading, and expressive panels; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Comic panel 4/4 for 'Robot and the Lost Cat'. Show the small delivery robot gently finding the kitten sheltered under a glowing awning or in a safe nook, with a warm reunion in the rainy neon night. Emphasize relief, kindness, and a hopeful ending. Keep character designs consistent. English text only. Include a clear speech bubble: 'Found you.' Avoid photorealistic horror, gore, grotesque faces, muddy anatomy, blurred text, cluttered panels.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    }
+  ]
+}

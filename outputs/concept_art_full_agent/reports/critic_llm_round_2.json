@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "stage": "critic",
+  "local_report": {
+    "score": 1.0,
+    "passed": true,
+    "summary": "All evaluators passed.",
+    "issues": [],
+    "evaluator_names": [
+      "asset_completeness",
+      "style_consistency",
+      "image_size",
+      "file_sanity"
+    ]
+  },
+  "status": "llm_vision_reviewed",
+  "provider_profile": "openai_compatible",
+  "provider": "openai_compatible",
+  "model": "gpt-5.4",
+  "llm_score": 0.78,
+  "llm_issue_count": 10
+}

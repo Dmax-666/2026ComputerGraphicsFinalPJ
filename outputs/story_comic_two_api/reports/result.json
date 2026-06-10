@@ -1,0 +1,469 @@
+{
+  "scenario": "story_comic",
+  "task": {
+    "title": "Robot and the Lost Cat",
+    "prompt": "A small delivery robot searches for a lost kitten on a rainy neon night.",
+    "style": {
+      "visual_style": "warm cinematic comic illustration",
+      "palette": [
+        "amber",
+        "cobalt blue",
+        "rainy gray"
+      ],
+      "mood": "gentle, hopeful, slightly mysterious"
+    },
+    "constraints": {
+      "panel_count": 4,
+      "language": "English",
+      "avoid": "photorealistic horror"
+    },
+    "metadata": {}
+  },
+  "style_guide": {
+    "name": "Robot and the Lost Cat Style Guide",
+    "visual_style": "warm cinematic comic illustration",
+    "palette": [
+      "amber",
+      "cobalt blue",
+      "rainy gray"
+    ],
+    "mood": "gentle, hopeful, slightly mysterious",
+    "typography": "legible post-processed labels",
+    "negative_prompt": "photorealistic horror",
+    "notes": [
+      "Scenario: story_comic",
+      "Keep style consistent across all generated assets.",
+      "Prefer clear silhouettes and readable compositions."
+    ],
+    "reference_assets": {
+      "character_reference_robot": "outputs\\story_comic_two_api\\assets\\000_character_reference_robot_r1_openai.png"
+    }
+  },
+  "context_memory": {
+    "style_patches": [],
+    "character_descriptions": {},
+    "reference_image_paths": {
+      "character_reference_robot": "outputs\\story_comic_two_api\\assets\\000_character_reference_robot_r1_openai.png"
+    },
+    "revision_lessons": [],
+    "extra": {}
+  },
+  "cost_summary": {
+    "total_rounds": 1,
+    "total_generation_calls": 5,
+    "total_retry_calls": 0,
+    "total_prompt_tokens": 1112,
+    "total_completion_tokens": 689,
+    "total_image_generations": 5,
+    "total_vision_calls": 0,
+    "estimated_cost_usd": 0.267,
+    "per_asset_calls": {
+      "character_reference_robot": 1,
+      "panel_1": 1,
+      "panel_2": 1,
+      "panel_3": 1,
+      "panel_4": 1
+    },
+    "provider_usage": [
+      {
+        "role": "planner",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-5.4-mini",
+        "prompt_tokens": 1112,
+        "completion_tokens": 689,
+        "image_generations": 0,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.002
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      },
+      {
+        "role": "image",
+        "provider_profile": "openai_compatible",
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "image_generations": 1,
+        "vision_calls": 0,
+        "estimated_cost_usd": 0.053
+      }
+    ],
+    "provider_failures": []
+  },
+  "planned_assets": [
+    {
+      "id": "character_reference_robot",
+      "type": "character_reference",
+      "category": "character",
+      "title": "Main Character Reference",
+      "description": "A consistent reference sheet for the protagonist and companion.",
+      "purpose": "Maintain cross-panel character consistency.",
+      "prompt": "Warm cinematic comic illustration character reference sheet, consistent design for the main delivery robot and the lost kitten companion; gentle, hopeful, slightly mysterious mood; amber, cobalt blue, and rainy gray palette; clean readable turnaround-style layout with front, side, and back views of the robot, plus small expression and pose callouts; clear silhouettes, simple shapes, defined materials, and consistent proportions; rain-soaked neon-night story context implied through subtle background accents; legible post-processed labels in English; keep the design friendly and non-horror, with reliable comic styling and strong character consistency across panels.",
+      "order": 0,
+      "size": [
+        768,
+        768
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [],
+      "metadata": {
+        "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Character reference sheet for the main character in: A small delivery robot searches for a lost kitten on a rainy neon night.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "panel_1",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 1: Opening",
+      "description": "Establish the setting, weather, and protagonist goal.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "Warm cinematic comic illustration, panel 1 of 4; gentle, hopeful, slightly mysterious mood; amber, cobalt blue, and rainy gray palette; clear opening establishing shot of a rainy neon city street at night, reflective wet pavement, glowing storefront signs, soft rain, and a small delivery robot as the clear focal point; the robot looks up and scans the street for a lost kitten, conveying the goal of the search; readable composition, strong silhouette, medium-wide framing, cinematic lighting, subtle motion from rain and reflections, English dialogue label: 'Where did the kitten go?'; keep the robot design consistent with the reference sheet; avoid photorealistic horror.",
+      "order": 1,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "dialogue": "Where did the kitten go?",
+        "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 1/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Establish the setting, weather, and protagonist goal.. Keep character designs consistent.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "panel_2",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 2: Clue",
+      "description": "Show the protagonist discovering a clue or obstacle.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "Warm cinematic comic illustration, panel 2 of 4; gentle, hopeful, slightly mysterious mood; amber, cobalt blue, and rainy gray palette; the small delivery robot discovers a tiny pawprint clue on a rain-slick sidewalk near a neon-lit alley or puddle, with a clear visual cue guiding the search forward; composition should emphasize the clue and the robot's reaction, with strong readability, crisp comic shapes, and balanced negative space; rainy night atmosphere, glowing reflections, soft rim light, English dialogue label: 'A tiny pawprint!'; keep character designs consistent with the reference sheet; avoid photorealistic horror.",
+      "order": 2,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "dialogue": "A tiny pawprint!",
+        "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 2/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Show the protagonist discovering a clue or obstacle.. Keep character designs consistent.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "panel_3",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 3: Tension",
+      "description": "Increase emotional stakes with a larger dramatic composition.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "Warm cinematic comic illustration, panel 3 of 4; gentle, hopeful, slightly mysterious mood with slightly heightened tension; amber, cobalt blue, and rainy gray palette; larger dramatic composition showing the small delivery robot moving through a narrow neon alley or under a glowing awning, following the trail through heavier rain and deeper shadows; include emotional urgency without darkness becoming frightening, with clear motion, dynamic angle, and the robot reaching forward as it calls out; strong silhouette, cinematic perspective, reflective surfaces, English dialogue label: 'Hold on, I am coming.'; keep the robot design consistent with the reference sheet; avoid photorealistic horror.",
+      "order": 3,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "dialogue": "Hold on, I am coming.",
+        "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 3/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Increase emotional stakes with a larger dramatic composition.. Keep character designs consistent.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "panel_4",
+      "type": "panel",
+      "category": "comic_panel",
+      "title": "Panel 4: Resolution",
+      "description": "Resolve the search with a warm emotional payoff.",
+      "purpose": "Tell one beat of the comic narrative.",
+      "prompt": "Warm cinematic comic illustration, panel 4 of 4; gentle, hopeful, slightly mysterious mood with a warm emotional payoff; amber, cobalt blue, and rainy gray palette with slightly brighter amber highlights; final resolution scene where the small delivery robot finds the lost kitten and gently reunites with it under a sheltered neon glow, with the rain softening in the background; clear affectionate body language, cozy composition, readable expressions, and a satisfying ending that feels tender and hopeful; cinematic comic lighting, crisp silhouettes, English dialogue label: 'Found you.'; keep character designs consistent with the reference sheet; avoid photorealistic horror.",
+      "order": 4,
+      "size": [
+        900,
+        700
+      ],
+      "difficulty_estimate": 0.5,
+      "depends_on": [
+        "character_reference_robot"
+      ],
+      "metadata": {
+        "dialogue": "Found you.",
+        "original_prompt": "warm cinematic comic illustration; mood: gentle, hopeful, slightly mysterious; palette: amber, cobalt blue, rainy gray. Task title: Robot and the Lost Cat. Avoid: photorealistic horror.. Comic panel 4/4. Story: A small delivery robot searches for a lost kitten on a rainy neon night.. Beat: Resolve the search with a warm emotional payoff.. Keep character designs consistent.",
+        "prompt_refined_by": "gpt-5.4-mini"
+      }
+    }
+  ],
+  "generated_assets": [
+    {
+      "spec_id": "character_reference_robot",
+      "path": "outputs\\story_comic_two_api\\assets\\000_character_reference_robot_r1_openai.png",
+      "prompt": "Warm cinematic comic illustration character reference sheet, consistent design for the main delivery robot and the lost kitten companion; gentle, hopeful, slightly mysterious mood; amber, cobalt blue, and rainy gray palette; clean readable turnaround-style layout with front, side, and back views of the robot, plus small expression and pose callouts; clear silhouettes, simple shapes, defined materials, and consistent proportions; rain-soaked neon-night story context implied through subtle background accents; legible post-processed labels in English; keep the design friendly and non-horror, with reliable comic styling and strong character consistency across panels.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          768,
+          768
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "panel_1",
+      "path": "outputs\\story_comic_two_api\\assets\\001_panel_1_r1_openai.png",
+      "prompt": "Warm cinematic comic illustration, panel 1 of 4; gentle, hopeful, slightly mysterious mood; amber, cobalt blue, and rainy gray palette; clear opening establishing shot of a rainy neon city street at night, reflective wet pavement, glowing storefront signs, soft rain, and a small delivery robot as the clear focal point; the robot looks up and scans the street for a lost kitten, conveying the goal of the search; readable composition, strong silhouette, medium-wide framing, cinematic lighting, subtle motion from rain and reflections, English dialogue label: 'Where did the kitten go?'; keep the robot design consistent with the reference sheet; avoid photorealistic horror.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          900,
+          700
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "panel_2",
+      "path": "outputs\\story_comic_two_api\\assets\\002_panel_2_r1_openai.png",
+      "prompt": "Warm cinematic comic illustration, panel 2 of 4; gentle, hopeful, slightly mysterious mood; amber, cobalt blue, and rainy gray palette; the small delivery robot discovers a tiny pawprint clue on a rain-slick sidewalk near a neon-lit alley or puddle, with a clear visual cue guiding the search forward; composition should emphasize the clue and the robot's reaction, with strong readability, crisp comic shapes, and balanced negative space; rainy night atmosphere, glowing reflections, soft rim light, English dialogue label: 'A tiny pawprint!'; keep character designs consistent with the reference sheet; avoid photorealistic horror.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          900,
+          700
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "panel_3",
+      "path": "outputs\\story_comic_two_api\\assets\\003_panel_3_r1_openai.png",
+      "prompt": "Warm cinematic comic illustration, panel 3 of 4; gentle, hopeful, slightly mysterious mood with slightly heightened tension; amber, cobalt blue, and rainy gray palette; larger dramatic composition showing the small delivery robot moving through a narrow neon alley or under a glowing awning, following the trail through heavier rain and deeper shadows; include emotional urgency without darkness becoming frightening, with clear motion, dynamic angle, and the robot reaching forward as it calls out; strong silhouette, cinematic perspective, reflective surfaces, English dialogue label: 'Hold on, I am coming.'; keep the robot design consistent with the reference sheet; avoid photorealistic horror.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          900,
+          700
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    },
+    {
+      "spec_id": "panel_4",
+      "path": "outputs\\story_comic_two_api\\assets\\004_panel_4_r1_openai.png",
+      "prompt": "Warm cinematic comic illustration, panel 4 of 4; gentle, hopeful, slightly mysterious mood with a warm emotional payoff; amber, cobalt blue, and rainy gray palette with slightly brighter amber highlights; final resolution scene where the small delivery robot finds the lost kitten and gently reunites with it under a sheltered neon glow, with the rain softening in the background; clear affectionate body language, cozy composition, readable expressions, and a satisfying ending that feels tender and hopeful; cinematic comic lighting, crisp silhouettes, English dialogue label: 'Found you.'; keep character designs consistent with the reference sheet; avoid photorealistic horror.",
+      "seed": 0,
+      "status": "generated",
+      "round_index": 1,
+      "metadata": {
+        "provider": "openai_compatible",
+        "model": "gpt-image-2",
+        "size": [
+          900,
+          700
+        ],
+        "provider_usage": {
+          "role": "image",
+          "provider_profile": "openai_compatible",
+          "provider": "openai_compatible",
+          "model": "gpt-image-2",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "image_generations": 1,
+          "vision_calls": 0,
+          "estimated_cost_usd": 0.053
+        }
+      }
+    }
+  ],
+  "composition": {
+    "type": "comic_page",
+    "page_size": [
+      1600,
+      2400
+    ],
+    "output_path": "outputs\\story_comic_two_api\\final.png",
+    "layout": [
+      {
+        "asset_id": "panel_1",
+        "box": [
+          80,
+          190,
+          784,
+          1239
+        ],
+        "type": "panel"
+      },
+      {
+        "asset_id": "panel_2",
+        "box": [
+          816,
+          190,
+          1520,
+          1239
+        ],
+        "type": "panel"
+      },
+      {
+        "asset_id": "panel_3",
+        "box": [
+          80,
+          1271,
+          784,
+          2320
+        ],
+        "type": "panel"
+      },
+      {
+        "asset_id": "panel_4",
+        "box": [
+          816,
+          1271,
+          1520,
+          2320
+        ],
+        "type": "panel"
+      }
+    ],
+    "metadata": {
+      "panel_count": 4
+    }
+  },
+  "critique": {
+    "score": 1.0,
+    "passed": true,
+    "summary": "All evaluators passed.",
+    "issues": [],
+    "evaluator_names": [
+      "asset_completeness",
+      "narrative_consistency",
+      "character_consistency",
+      "text_layout_quality",
+      "image_size",
+      "file_sanity"
+    ]
+  },
+  "revision": {
+    "action": "accept",
+    "rationale": "Score 1.0 passed threshold 0.75.",
+    "retry_asset_ids": [],
+    "prompt_rewrites": {},
+    "reasoning_trace": [
+      "Score 1.0 >= threshold 0.75.",
+      "No high-severity issues found.",
+      "Accepting result."
+    ]
+  },
+  "output_dir": "outputs\\story_comic_two_api",
+  "final_image": "outputs\\story_comic_two_api\\final.png",
+  "rounds_completed": 1
+}

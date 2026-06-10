@@ -1,0 +1,86 @@
+{
+  "total_rounds": 1,
+  "total_generation_calls": 5,
+  "total_retry_calls": 0,
+  "total_prompt_tokens": 1112,
+  "total_completion_tokens": 689,
+  "total_image_generations": 5,
+  "total_vision_calls": 0,
+  "estimated_cost_usd": 0.267,
+  "per_asset_calls": {
+    "character_reference_robot": 1,
+    "panel_1": 1,
+    "panel_2": 1,
+    "panel_3": 1,
+    "panel_4": 1
+  },
+  "provider_usage": [
+    {
+      "role": "planner",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-5.4-mini",
+      "prompt_tokens": 1112,
+      "completion_tokens": 689,
+      "image_generations": 0,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.002
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    },
+    {
+      "role": "image",
+      "provider_profile": "openai_compatible",
+      "provider": "openai_compatible",
+      "model": "gpt-image-2",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "image_generations": 1,
+      "vision_calls": 0,
+      "estimated_cost_usd": 0.053
+    }
+  ],
+  "provider_failures": []
+}

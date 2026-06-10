@@ -1,0 +1,16 @@
+{
+  "name": "Moonlit Forest RPG Asset Pack Style Guide",
+  "visual_style": "hand-painted 2D game art, orthographic or subtle three-quarter game view",
+  "palette": [
+    "moonlit violet",
+    "moss green",
+    "warm lantern gold"
+  ],
+  "mood": "whimsical, readable, family friendly",
+  "typography": "legible post-processed labels, clean sans-serif, high contrast",
+  "negative_prompt": "gritty realism, photorealism, harsh shadows, noisy detail, cluttered compositions",
+  "notes": [
+    "Keep all assets cohesive for a small prototype. Use clear silhouettes, simple readable shapes, and consistent moonlit forest village motifs with animal companions."
+  ],
+  "reference_assets": {}
+}

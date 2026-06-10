@@ -1,0 +1,21 @@
+{
+  "style_patches": [],
+  "character_descriptions": {},
+  "reference_image_paths": {
+    "character_reference_robot": "outputs\\story_comic_full_agent\\assets\\000_character_reference_robot_r1_openai.png"
+  },
+  "revision_lessons": [
+    "Round 1: [medium] asset_consistency - Retry panel with stricter prompt emphasis on minimal readable signage and only one intentional text element: the speech bubble.",
+    "Round 1: [high] visual_defect - Retry panel 2 with explicit instruction to avoid any panel numbering, posters with readable text, or incidental typography inside the artwork.",
+    "Round 1: [medium] story_coherence - Simplify the scene so the pawprints and robot gesture dominate the composition.",
+    "Round 1: [high] asset_consistency - Retry panel 3 using the character reference more strictly, with the kitten kept tiny, simplified, and visually matched to the rest of the comic.",
+    "Round 1: [high] visual_defect - Regenerate panel 3 with explicit suppression of all incidental readable text except the speech bubble.",
+    "Round 1: [high] task_fit - Retry panel 4 with only the dialogue bubble retained and all other readable text removed from the image area.",
+    "Round 1: [high] asset_consistency - Regenerate panel 4 with stronger adherence to the character reference sheet and simplified kitten features.",
+    "Round 1: [medium] story_coherence - Use cleaner staging focused on robot and kitten interaction, with background text minimized or removed.",
+    "Round 1: [high] visual_defect - Redo page composition so each panel image fills its panel frame appropriately, with consistent cropping and minimal dead space.",
+    "Round 1: [high] text_layout_quality - Use either in-panel speech bubbles or external caption/dialogue boxes, not both. Prefer removing the bottom text boxes if speech bubbles are already rendered in the art.",
+    "Round 1: [medium] task_fit - Increase title hierarchy or remove it; prioritize stronger panel integration, balanced margins, and consistent comic-page typography."
+  ],
+  "extra": {}
+}

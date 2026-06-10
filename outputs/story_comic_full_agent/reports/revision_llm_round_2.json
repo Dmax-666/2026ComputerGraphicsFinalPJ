@@ -1,0 +1,32 @@
+{
+  "enabled": true,
+  "stage": "revision_controller",
+  "fallback_decision": {
+    "action": "accept",
+    "rationale": "Score 1.0 passed threshold 0.75.",
+    "retry_asset_ids": [],
+    "prompt_rewrites": {},
+    "reasoning_trace": [
+      "Score 1.0 >= threshold 0.75.",
+      "No high-severity issues found.",
+      "Accepting result."
+    ]
+  },
+  "status": "llm_decided",
+  "provider_profile": "openai_compatible",
+  "provider": "openai_compatible",
+  "model": "gpt-5.4-mini",
+  "decision": {
+    "action": "accept",
+    "rationale": "Score 1.0 passed threshold 0.75 and all evaluators passed; no revision needed.",
+    "retry_asset_ids": [],
+    "prompt_rewrites": {},
+    "reasoning_trace": [
+      "round_index=2 within max_rounds=3",
+      "critique_report.passed=true",
+      "critique_report.score=1.0 >= quality_threshold=0.75",
+      "No issues reported by evaluators",
+      "Accepting assets without revision"
+    ]
+  }
+}
